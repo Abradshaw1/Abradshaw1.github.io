@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import Headshot from './Headshotv2.jpg';
 
+
 export default function Header() {
   return (
     <div className="flex flex-col md:flex-row gap-8 items-start">
