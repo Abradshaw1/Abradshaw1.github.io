@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  
+  body {
+    @apply bg-[#FAF9F6] text-gray-900 antialiased min-h-screen;
+  }
+}
+
+@layer utilities {
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose p {
+    @apply text-gray-600 mb-4;
+  }
+}
