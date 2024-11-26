@@ -62,7 +62,7 @@ const Home: React.FC = () => {
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-center gap-2">
                       <School className="w-5 h-5 text-blue-400" />
-                      <span><strong>M.S. Applied Data Science</strong> - Carnegie Mellon University</span>
+                      <span><strong>M.S. Applied Data Science; In Progress</strong> - Carnegie Mellon University</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <School className="w-5 h-5 text-blue-400" />
