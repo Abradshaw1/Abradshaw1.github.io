@@ -1,6 +1,8 @@
 import React from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import Headshot from './Headshotv2.jpg';
+import CV from './ABradshaw-Resume-CV.pdf';
+
 
 
 export default function Header() {
@@ -32,7 +34,7 @@ export default function Header() {
             { icon: Github, label: 'GitHub', href: 'https://github.com/Abradshaw1' },
             { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
             { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' },
-            { icon: FileText, label: 'CV', href: '/cv.pdf', download: true }
+            { icon: FileText, label: 'CV', href: CV, download: true }
           ].map(({ icon: Icon, label, href, download }) => (
             <a
               key={label}

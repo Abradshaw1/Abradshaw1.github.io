@@ -1,66 +1,78 @@
 export const projects = [
   {
-    id: 'cloud-platform',
-    title: 'Cloud Platform',
-    description: 'A scalable cloud platform built with modern technologies.',
-    fullDescription: `A comprehensive cloud platform that enables businesses to manage their infrastructure efficiently. 
-    This project implements advanced features including auto-scaling, load balancing, and real-time monitoring.
-    The platform supports multiple cloud providers and offers a unified interface for managing cloud resources.`,
-    technologies: ['React', 'TypeScript', 'Node.js', 'AWS'],
+    id: 'college-scorecard',
+    title: 'College Scorecard Analysis',
+    description: 'Python-based educational data analysis tool with API integration.',
+    fullDescription: `Developed a comprehensive Python, PostgreSQL tool for to collect and analyze educational data through IPED's API. 
+    Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
+    technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1200&h=800'  // Data dashboard
   },
   {
-    id: 'ai-assistant',
-    title: 'AI Assistant',
-    description: 'Intelligent assistant powered by machine learning.',
-    fullDescription: `An AI-powered assistant that helps users automate their daily tasks. 
-    The system uses natural language processing to understand user requests and machine learning 
-    to improve its responses over time. Features include task automation, scheduling, and smart notifications.`,
-    technologies: ['Python', 'TensorFlow', 'FastAPI', 'Docker'],
+    id: 'health-audit-gpt',
+    title: 'Health Audit-GPT',
+    description: 'Auditing transformers for healthcare diagnostics reliability.',
+    fullDescription: `Conducted comprehensive auditing of low-parameter generative transformers (FLAN-T5, GPT-Neo) 
+    for healthcare diagnostics applications. Focused on red-teaming their reliability in zero-shot prompt diagnosis, 
+    ensuring safe and accurate medical assessments.`,
+    technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'  // Medical AI visualization
   },
   {
-    id: 'ecommerce',
-    title: 'E-commerce Solution',
-    description: 'Full-featured e-commerce platform with advanced features.',
-    fullDescription: `A modern e-commerce platform built with performance and scalability in mind. 
-    The solution includes features like real-time inventory management, advanced search capabilities, 
-    and a sophisticated recommendation engine.`,
-    technologies: ['Next.js', 'PostgreSQL', 'Stripe', 'Redis'],
+    id: 'multilayer-python',
+    title: 'Multi-Language Integration',
+    description: 'Python framework integrating multiple programming languages for image processing.',
+    fullDescription: `Created Python scripts to interact with five programming languages 
+    to visualize the effects different languages have on run time, memory consumption and image rotation capabilities, demonstrating cross-language 
+    compatibility and performance comparison.`,
+    technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=800'  // Code on multiple screens
   },
   {
-    id: 'analytics',
-    title: 'Analytics Dashboard',
-    description: 'Real-time analytics dashboard with interactive visualizations.',
-    fullDescription: `An interactive analytics dashboard that provides real-time insights into business metrics. 
-    The dashboard features customizable widgets, advanced filtering capabilities, and interactive data visualizations 
-    that help users make data-driven decisions.`,
-    technologies: ['Vue.js', 'D3.js', 'Firebase', 'WebSocket'],
+    id: 'salary-prediction',
+    title: 'SE Salary Prediction',
+    description: 'RNN-LSTM model for software engineer salary predictions.',
+    fullDescription: `Built a Recurrent Neural Network (RNN) with Long Short-Term Memory (LSTM) 
+    architecture to predict software engineer salaries based on open source kaggle data set with different environmental, age, and location factors. Applied advanced regression techniques, statistical analysis, 
+    and visualization to industry datasets for accurate predictions.`,
+    technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long Term Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'  // Data visualization graphs
   },
   {
-    id: 'blockchain',
-    title: 'Blockchain Platform',
-    description: 'Decentralized application platform with smart contracts.',
-    fullDescription: `A blockchain-based platform that enables secure and transparent transactions. 
-    Features include smart contract deployment, wallet integration, and cross-chain compatibility.`,
-    technologies: ['Solidity', 'Web3.js', 'Ethereum', 'React'],
+    id: 'mobile-game',
+    title: 'C++ Mobile Game',
+    description: 'Single-player clicker game with dynamic difficulty scaling.',
+    fullDescription: `Developed an engaging single-player clicker game in C++ featuring dynamic environment changes 
+    and adjustable difficulty levels. The game demonstrates advanced C++ programming concepts and game development 
+    principles.`,
+    technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=1200&h=800'
   },
   {
-    id: 'mobile-app',
-    title: 'Mobile Health App',
-    description: 'Cross-platform mobile application for health tracking.',
-    fullDescription: `A comprehensive health tracking application that helps users monitor their fitness goals,
-    nutrition, and wellness metrics. Includes features like workout planning, meal tracking, and progress analytics.`,
-    technologies: ['React Native', 'Firebase', 'GraphQL', 'Node.js'],
+    id: 'accident-prediction',
+    title: 'Accident Prediction Model',
+    description: 'Teen car accident prediction model using advanced data analysis.',
+    fullDescription: `Developed a predictive model analyzing teen car accidents using various data analysis techniques. 
+    Implemented linear regression and principal component analysis, along with k-means clustering using NumPy and pandas 
+    libraries for comprehensive insights.`,
+    technologies: ['Python', 'Machine Learning', 'Data Analysis', 'NumPy', 'Pandas'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1599837565318-67429bde7162?auto=format&fit=crop&w=1200&h=800' // Data prediction/analysis
+  },
+  {
+    id: 'vacuum-agent',
+    title: 'AI Vacuum Agent',
+    description: 'Self-learning AI vacuum cleaner simulation.',
+    fullDescription: `Built an artificial intelligence learning program modeling a self-sustained vacuum with predictive 
+    cleaning patterns. The project demonstrates practical applications of AI in robotics and autonomous systems using 
+    Python and Scikit-learn.`,
+    technologies: ['Python', 'Artificial Intelligence', 'Scikit-learn', 'Robotics'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800' // Modern robotics/automation
   }
 ];

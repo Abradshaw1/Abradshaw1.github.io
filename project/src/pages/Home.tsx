@@ -5,14 +5,28 @@ import NewsSection from '../components/NewsSection';
 import Publications from '../components/Publications';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import { projects } from '../data/projects';
-import { Cpu, Cloud, Database, Zap, School } from 'lucide-react';
+import { 
+  Timer,
+  TreePine,
+  Brain,
+  Keyboard,
+  Cpu,
+  Flower,
+  UtensilsCrossed,
+  Gauge,
+  School 
+} from 'lucide-react';
 
 const Home: React.FC = () => {
-  const researchInterests = [
-    { icon: Cpu, text: 'Artificial Intelligence' },
-    { icon: Cloud, text: 'Cloud Computing' },
-    { icon: Database, text: 'Distributed Systems' },
-    { icon: Zap, text: 'Web Performance' }
+  const personalInterests = [
+    { icon: Timer, text: 'Long distance running (currently marathon training)' },
+    { icon: TreePine, text: 'Finding the best reading spot in Pittsburgh Parks for hammock reading' },
+    { icon: Brain, text: 'Implicit biases in language' },
+    { icon: Keyboard, text: 'Mechanical Keyboard designing' },
+    { icon: Cpu, text: 'PC building' },
+    { icon: Flower, text: 'Started my own herb Garden!' },
+    { icon: UtensilsCrossed, text: 'Ramen and Japanese culture' },
+    { icon: Gauge, text: 'High performance computing' }
   ];
 
   return (
@@ -35,7 +49,7 @@ const Home: React.FC = () => {
                 </p>
                 
                 <p className="leading-relaxed">
-                  Before joining CMU, I was a visiting researcher in Responsive Environments at the MIT Media Lab, led by Dr. Joe Paradiso, where I worked on model distillation for resource-constrained environments.
+                  Before joining CMU, I was a visiting researcher in Responsive Environments at the <a href="https://www.media.mit.edu/" className="text-blue-600 hover:text-blue-700">MIT Media Lab,</a> led by Dr. Joe Paradiso, where I worked on model distillation for resource-constrained environments.
                   I completed my undergraduate studies at San Diego State University under the supervision of Dr. Shangping Ren, where my research centered on developing a wearable biosensing framework to automate health and environmental data collection for patients with Raynaud's syndrome.
                 </p>
                 
@@ -61,8 +75,8 @@ const Home: React.FC = () => {
           </section>
 
           <section className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900">Selected Work</h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            <h2 className="text-3xl font-bold text-gray-900">Projects</h2>
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
                 <ProjectCard key={project.id} {...project} />
               ))}
@@ -74,13 +88,15 @@ const Home: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <NewsSection />
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900">Research Interests</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Hobbies and Interests</h2>
               <div className="bg-gray-700/80 border border-blue-500/20 p-6 rounded-lg">
                 <ul className="space-y-4">
-                  {researchInterests.map(({ icon: Icon, text }, index) => (
+                  {personalInterests.map(({ icon: Icon, text }, index) => (
                     <li key={index} className="flex items-center gap-3 text-white">
-                      <Icon className="w-5 h-5 text-blue-400" />
-                      <span>{text}</span>
+                      <div className="min-w-[32px] h-8 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
+                      </div>
+                      <span className="text-sm">{text}</span>
                     </li>
                   ))}
                 </ul>

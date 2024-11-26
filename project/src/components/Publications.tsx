@@ -3,28 +3,33 @@ import { BookOpen } from 'lucide-react';
 
 const publications = [
   {
-    title: 'Modern Web Development Practices',
-    journal: 'Tech Journal',
-    year: 2024,
-    link: '#'
+    title: 'A Tailored Health Application: Monitoring the Etiology of Raynaud\'s Disease',
+    journal: 'CSCSU 2024',
+    authors: 'Aidan B., Ramaz T., Shangping R., Ben S.',
+    type: 'Conference Paper',
+    status: 'published',
+    link: 'https://scholarworks.calstate.edu/concern/publications/np193j359'
   },
   {
-    title: 'The Future of Cloud Computing',
-    journal: 'Cloud Weekly',
-    year: 2023,
-    link: '#'
+    title: 'Counterfactual Cross-Attention Maps for Explainable High-Fidelity 3D Radiology Image Generation in Text-to-Image Diffusion Models',
+    journal: 'International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) 2025',
+    authors: 'Aidan B., Weicheng D., Katelyn M., Adam P., Motahhare E., Kayhan B.',
+    type: 'Conference Paper',
+    status: 'in-preparation'
   },
   {
-    title: 'Machine Learning in Production',
-    journal: 'AI Research Quarterly',
-    year: 2023,
-    link: '#'
+    title: 'Exploring Synthetic Image Generation in Radiology Work: Benefits, Perspectives, and Challenges',
+    journal: 'ACM Designing Interactive Systems Conference (DIS) 2025',
+    authors: 'Katelyn M., Motahhare E., Aidan B., Adam P.',
+    type: 'Conference Paper',
+    status: 'in-preparation'
   },
   {
-    title: 'Distributed Systems Architecture',
-    journal: 'System Design Today',
-    year: 2022,
-    link: '#'
+    title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
+    journal: 'Nature 2024',
+    authors: 'Patrick Chwalek, Marie Kuronaga, Marco Giordano, Aidan Bradshaw, Isamar Zhu, Marina Arbetman, Joseph A. Paradiso',
+    type: 'Journal',
+    status: 'in-preparation'
   }
 ];
 
@@ -36,18 +41,27 @@ export default function Publications() {
         {publications.map((pub, index) => (
           <div key={index} className="bg-gray-700/80 border border-blue-500/20 p-4 rounded-lg">
             <div className="flex items-start gap-4">
-              <BookOpen className="w-5 h-5 text-blue-400 mt-1" />
+              <BookOpen className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-white">{pub.title}</h3>
-                <p className="text-gray-300">
-                  {pub.journal} ({pub.year})
+                <p className="text-gray-300 text-sm mt-1">
+                  {pub.authors}
                 </p>
-                <a 
-                  href={pub.link}
-                  className="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block"
-                >
-                  Read More →
-                </a>
+                <p className="text-gray-300 text-sm">
+                  {pub.journal}
+                </p>
+                {pub.status === 'in-preparation' ? (
+                  <span className="text-sm text-blue-400 mt-2 inline-block">
+                    In Preparation
+                  </span>
+                ) : (
+                  <a 
+                    href={pub.link}
+                    className="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block"
+                  >
+                    Read More →
+                  </a>
+                )}
               </div>
             </div>
           </div>
