@@ -14,7 +14,8 @@ import {
   Flower,
   UtensilsCrossed,
   Gauge,
-  School 
+  School, 
+  TowerControl
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
     { icon: Keyboard, text: 'Mechanical Keyboard designing' },
     { icon: Cpu, text: 'PC building' },
     { icon: Flower, text: 'Started my own herb Garden!' },
-    { icon: UtensilsCrossed, text: 'Ramen and Japanese culture' },
+    { icon: TowerControl, text: 'Japanese Shrine Architecture' },
     { icon: Gauge, text: 'High performance computing' }
   ];
 
