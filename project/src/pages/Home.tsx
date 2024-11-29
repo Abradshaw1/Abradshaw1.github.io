@@ -43,7 +43,7 @@ const Home: React.FC = () => {
             <div className="prose max-w-none">
               <div className="space-y-4 text-gray-600">
                 <p className="leading-relaxed">
-                  I am currently finishing my masters of applied data science at CMU and am a research assistant in the{' '}
+                  I am pursuing my masters of applied data science at CMU and am a research assistant in the{' '}
                   <a href="https://dig.cmu.edu/" className="text-blue-600 hover:text-blue-700">DIG Lab</a> in the{' '}
                   <a href="https://hcii.cmu.edu/" className="text-blue-600 hover:text-blue-700">Human-Computer Interaction Institute</a>.
                   My current research focuses on applied machine learning for healthcare applications, where I explain, architect, and audit generative text-to-image diffusion models and their trustworthiness.
