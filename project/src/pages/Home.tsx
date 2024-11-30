@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     { icon: Timer, text: 'Long distance running (currently marathon training)' },
     { icon: TreePine, text: 'Finding the best reading spot in Pittsburgh Parks for hammock reading' },
     { icon: Brain, text: 'Implicit biases in language' },
-    { icon: Keyboard, text: 'Mechanical Keyboard designing' },
+    { icon: Keyboard, text: 'Mechanical Keyboard design' },
     { icon: Cpu, text: 'PC building' },
     { icon: Flower, text: 'Started my own herb Garden!' },
     { icon: TowerControl, text: 'Japanese Shrine Architecture' },
