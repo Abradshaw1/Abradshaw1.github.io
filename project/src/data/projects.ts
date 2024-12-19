@@ -1,4 +1,4 @@
-import raynaudsimage from 'data/raynaudsimage.jpg';
+import raynaudsimage from '../data/raynaudsimage.jpg';
 
 export const projects = [
   {
@@ -29,7 +29,7 @@ export const projects = [
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&h=800&auto=format&fit=crop' // Formatted Unsplash URL
+    image: raynaudsimage // Formatted Unsplash URL
   },
   {
     id: 'health-audit-gpt',
