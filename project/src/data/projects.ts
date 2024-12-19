@@ -29,7 +29,7 @@ export const projects = [
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
     link: '#',
-    image: raynaudsimage // Formatted Unsplash URL
+    image: raynaudsimage
   },
   {
     id: 'health-audit-gpt',
@@ -80,7 +80,7 @@ export const projects = [
     description: 'Parallelized algorithms for efficient prime factorization.',
     fullDescription: `Designed and implemented parallel algorithms for prime factorization of large datasets using Python's multiprocessing capabilities. 
     Benchmarked runtime improvements by comparing sequential, map(), and multiprocessing implementations. Analyzed speedup and efficiency across varying core counts, achieving significant reductions in runtime and exploring theoretical versus observed speedup.`,
-    technologies: ['Python', 'Multiprocessing', 'Matplotlib'],
+    technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
     image: 'https://i.imghippo.com/files/dql4991sxI.png' // Abstract geometric design for parallelism
   },
