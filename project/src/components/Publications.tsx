@@ -20,7 +20,7 @@ const publications = [
   {
     title: 'Exploring Synthetic Image Generation in Radiology Work: Benefits, Perspectives, and Challenges',
     journal: 'ACM Designing Interactive Systems Conference (DIS) 2025',
-    authors: 'Katelyn M., Motahhare E., Aidan B., Adam P.',
+    authors: 'Katelyn M., Arpit M., Aidan B., Motahhare E., Adam P.',
     type: 'Conference Paper',
     status: 'in-preparation'
   },
