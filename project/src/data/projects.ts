@@ -1,3 +1,5 @@
+import raynaudsimage from 'data/raynaudsimage.jpg';
+
 export const projects = [
   {
     id: 'genai-ct',
@@ -7,7 +9,7 @@ export const projects = [
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1610446943937-3b485b7c4e84?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://i.imghippo.com/files/AcWp6845lA.jpg'
   },
   {
     id: 'bee-buzz-classification',
@@ -17,7 +19,7 @@ export const projects = [
     Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
     technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1502227592327-6e172f63d647?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop' // Bee image
   },
   {
     id: 'raynaud-research',
@@ -27,7 +29,7 @@ export const projects = [
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1601042923744-1d264d3b2a01?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&h=800&auto=format&fit=crop' // Formatted Unsplash URL
   },
   {
     id: 'health-audit-gpt',
@@ -60,7 +62,7 @@ export const projects = [
     Developed infographics to communicate findings on obesity trends and their societal impacts.`,
     technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1580281658629-5b6a8a4b411d?auto=format&fit=crop&w=1200&h=800' // Health and obesity graph visualization
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&h=800&auto=format&fit=crop' // Health and obesity image
   },
   {
     id: 'mcmc-decryption',
@@ -70,7 +72,7 @@ export const projects = [
     Implemented optimized text preprocessing and scoring functions to handle large datasets efficiently. Conducted comprehensive analysis of algorithm parameters, including iterations, text length, and scaling, and their impact on decryption accuracy.`,
     technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1532592956142-b6d20653b11f?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800' // Encryption-themed image
   },
   {
     id: 'parallel-factorization',
@@ -80,7 +82,7 @@ export const projects = [
     Benchmarked runtime improvements by comparing sequential, map(), and multiprocessing implementations. Analyzed speedup and efficiency across varying core counts, achieving significant reductions in runtime and exploring theoretical versus observed speedup.`,
     technologies: ['Python', 'Multiprocessing', 'Matplotlib'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1505682634904-d7c7a50c1731?auto=format&fit=crop&w=1200&h=800'
+    image: 'https://i.imghippo.com/files/dql4991sxI.png' // Abstract geometric design for parallelism
   },
   {
     id: 'college-scorecard',
@@ -101,7 +103,7 @@ export const projects = [
     compatibility and performance comparison.`,
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=800'  // Code on multiple screens
+    image: 'https://i.imghippo.com/files/dKsI4998XY.png'  // Code on multiple screens
   },
   {
     id: 'salary-prediction',
