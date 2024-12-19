@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                 </p>
                 
                 <p className="leading-relaxed">
-                  My future research interests lie at the intersection of assistive machine learning for mental health characterization, specifically leveraging cognitive representation and health signals to understand, characterize, and aid in the diagnosis of disease.
+                  My future research interests lie in assistive machine learning for mental health characterization, specifically leveraging cognitive representation and health signals to understand, characterize, and aid in the diagnosis of disease.
                 </p>
 
                 <div className="bg-gray-700/80 border border-blue-500/20 p-6 rounded-lg mt-8">
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <School className="w-5 h-5 text-blue-400" />
-                      <span><strong>B.S. Computer Science, Minor: Applied Mathematics</strong> - San Diego State University</span>
+                      <span><strong>B.S. Computer Science, Minor: Mathematics</strong> - San Diego State University</span>
                     </li>
                   </ul>
                 </div>

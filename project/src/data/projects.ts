@@ -1,13 +1,33 @@
 export const projects = [
   {
-    id: 'college-scorecard',
-    title: 'College Scorecard Analysis',
-    description: 'Python-based educational data analysis tool with API integration.',
-    fullDescription: `Developed a comprehensive Python, PostgreSQL tool for to collect and analyze educational data through IPED's API. 
-    Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
-    technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
+    id: 'genai-ct',
+    title: 'Generative AI for CT Scans',
+    description: 'Generative AI text-to-image models for medical imaging.',
+    fullDescription: `Developed and operationalized text-to-image models to generate conditioned CT scans from prompts, helping patients and doctors understand anatomical diseases. 
+    Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
+    technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1200&h=800'  // Data dashboard
+    image: 'https://images.unsplash.com/photo-1610446943937-3b485b7c4e84?auto=format&fit=crop&w=1200&h=800'
+  },
+  {
+    id: 'bee-buzz-classification',
+    title: 'Bee Buzz Classification',
+    description: 'Tiny ML model for bee species classification.',
+    fullDescription: `Architected and optimized ML models for classifying invasive and native bee species based on audio data. 
+    Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
+    technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1502227592327-6e172f63d647?auto=format&fit=crop&w=1200&h=800'
+  },
+  {
+    id: 'raynaud-research',
+    title: 'Raynaud’s Disease Research',
+    description: 'Multi-modal ML and HCI tools for healthcare.',
+    fullDescription: `Designed cross-platform applications to analyze and predict symptoms for patients with Raynaud’s disease. 
+    Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
+    technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1601042923744-1d264d3b2a01?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'health-audit-gpt',
@@ -19,6 +39,58 @@ export const projects = [
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'  // Medical AI visualization
+  },
+  {
+    id: 'chicago-crime-prediction',
+    title: 'Chicago Crime Prediction Model',
+    description: 'Crime prediction using demographic and spatial data.',
+    fullDescription: `Developed a predictive model for narcotics-related crime patterns in Chicago using a Negative Binomial Generalized Linear Model (GLM). 
+    Incorporated spatial, temporal, and demographic factors, including lagged crime counts and socioeconomic variables. Refined predictors through stepwise regression 
+    to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
+    technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1599837565318-67429bde7162?auto=format&fit=crop&w=1200&h=800' // Crime data visualization
+  },
+  {
+    id: 'health-obesity-analysis',
+    title: 'Health and Obesity Analysis',
+    description: 'Analysis of global obesity and caloric intake trends.',
+    fullDescription: `Investigated obesity prevalence and caloric intake disparities across countries and genders using advanced statistical analyses. 
+    Visualized correlations between daily caloric supply and high BMI-related deaths, emphasizing regional dietary patterns and health risks. 
+    Developed infographics to communicate findings on obesity trends and their societal impacts.`,
+    technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1580281658629-5b6a8a4b411d?auto=format&fit=crop&w=1200&h=800' // Health and obesity graph visualization
+  },
+  {
+    id: 'mcmc-decryption',
+    title: 'MCMC Text Decryption Algorithm',
+    description: 'Markov Chain Monte Carlo-based text decryption for substitution ciphers.',
+    fullDescription: `Developed a Markov Chain Monte Carlo (MCMC) algorithm to decrypt substitution ciphers by leveraging bigram frequency analysis of reference texts. 
+    Implemented optimized text preprocessing and scoring functions to handle large datasets efficiently. Conducted comprehensive analysis of algorithm parameters, including iterations, text length, and scaling, and their impact on decryption accuracy.`,
+    technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1532592956142-b6d20653b11f?auto=format&fit=crop&w=1200&h=800'
+  },
+  {
+    id: 'parallel-factorization',
+    title: 'Parallel Prime Factorization',
+    description: 'Parallelized algorithms for efficient prime factorization.',
+    fullDescription: `Designed and implemented parallel algorithms for prime factorization of large datasets using Python's multiprocessing capabilities. 
+    Benchmarked runtime improvements by comparing sequential, map(), and multiprocessing implementations. Analyzed speedup and efficiency across varying core counts, achieving significant reductions in runtime and exploring theoretical versus observed speedup.`,
+    technologies: ['Python', 'Multiprocessing', 'Matplotlib'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1505682634904-d7c7a50c1731?auto=format&fit=crop&w=1200&h=800'
+  },
+  {
+    id: 'college-scorecard',
+    title: 'College Scorecard Analysis',
+    description: 'Python-based educational data analysis tool with API integration.',
+    fullDescription: `Developed a comprehensive Python, PostgreSQL tool for to collect and analyze educational data through IPED's API. 
+    Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
+    technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1200&h=800'  // Data dashboard
   },
   {
     id: 'multilayer-python',
