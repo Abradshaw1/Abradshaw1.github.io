@@ -35,7 +35,7 @@ export const projects = [
     id: 'health-audit-gpt',
     title: 'Health Audit-GPT',
     description: 'Auditing transformers for healthcare diagnostics reliability.',
-    fullDescription: `Conducted comprehensive auditing of low-parameter generative transformers (FLAN-T5, GPT-Neo) 
+    fullDescription: `Conducted comprehensive auditing of low-parameter generative transformers: Flan-T5-Small (80M), GPT-Neo (125M), DistilGPT-2 (82M), 
     for healthcare diagnostics applications. Focused on red-teaming their reliability in zero-shot prompt diagnosis, 
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
