@@ -9,7 +9,7 @@ export const projects = [
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
-    image: 'https://i.imghippo.com/files/AcWp6845lA.jpg'
+    image: 'https://i.imghippo.com/files/wFHc9914FhQ.png'
   },
   {
     id: 'bee-buzz-classification',
