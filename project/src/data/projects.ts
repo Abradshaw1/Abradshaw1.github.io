@@ -5,7 +5,7 @@ export const projects = [
     id: 'genai-ct',
     title: 'Generative AI for CT Scans',
     description: 'Generative AI text-to-image models for medical imaging.',
-    fullDescription: `Developed and operationalized text-to-image models to generate conditioned CT scans from prompts, helping patients and doctors understand anatomical diseases. 
+    fullDescription: `Explained(XAI) and operationalized text-to-image models to generate conditioned CT scans from prompts, helping patients and doctors understand anatomical diseases. 
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
