@@ -1,5 +1,9 @@
 import raynaudsimage from '../data/raynaudsimage.jpg';
-
+import scorecard from '../data/scorecard.png';
+import infographic from '../data/infographic.png';
+import chicagocrime from '../data/chicagocrime.png';
+import fcnn from '../data/fcnn.png';
+import apred from '../data/apred.png';
 export const projects = [
   {
     id: 'genai-ct',
@@ -40,7 +44,7 @@ export const projects = [
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'  // Medical AI visualization
+    image: fcnn  // Medical AI visualization
   },
   {
     id: 'chicago-crime-prediction',
@@ -51,7 +55,7 @@ export const projects = [
     to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1599837565318-67429bde7162?auto=format&fit=crop&w=1200&h=800' // Crime data visualization
+    image: chicagocrime // Crime data visualization
   },
   {
     id: 'health-obesity-analysis',
@@ -62,7 +66,7 @@ export const projects = [
     Developed infographics to communicate findings on obesity trends and their societal impacts.`,
     technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&h=800&auto=format&fit=crop' // Health and obesity image
+    image: infographic // Health and obesity image
   },
   {
     id: 'mcmc-decryption',
@@ -92,7 +96,7 @@ export const projects = [
     Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1200&h=800'  // Data dashboard
+    image: scorecard  // Data dashboard
   },
   {
     id: 'multilayer-python',
@@ -136,7 +140,7 @@ export const projects = [
     libraries for comprehensive insights.`,
     technologies: ['Python', 'Machine Learning', 'Data Analysis', 'NumPy', 'Pandas'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1599837565318-67429bde7162?auto=format&fit=crop&w=1200&h=800' // Data prediction/analysis
+    image: apred // Data prediction/analysis
   },
   {
     id: 'vacuum-agent',
