@@ -92,7 +92,7 @@ export const projects = [
     id: 'college-scorecard',
     title: 'College Scorecard Analysis',
     description: 'Python-based educational data analysis tool with API integration.',
-    fullDescription: `Developed a comprehensive Python, PostgreSQL tool for to collect and analyze educational data through IPED's API. 
+    fullDescription: `Developed a comprehensive Python, PostgreSQL tool to collect and analyze educational data through IPED's API. 
     Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: '#',
@@ -113,10 +113,10 @@ export const projects = [
     id: 'salary-prediction',
     title: 'SE Salary Prediction',
     description: 'RNN-LSTM model for software engineer salary predictions.',
-    fullDescription: `Built a Recurrent Neural Network (RNN) with Long Short-Term Memory (LSTM) 
+    fullDescription: `Built a Recurrent Neural Network (RNN) with Long Short-Term Memory with (LSTM) Backbone
     architecture to predict software engineer salaries based on open source kaggle data set with different environmental, age, and location factors. Applied advanced regression techniques, statistical analysis, 
     and visualization to industry datasets for accurate predictions.`,
-    technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long Term Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
+    technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'  // Data visualization graphs
   },
