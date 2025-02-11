@@ -22,7 +22,7 @@ const publications = [
     journal: 'ACM Designing Interactive Systems Conference (DIS) 2025',
     authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
     type: 'Conference Paper',
-    status: 'Submitted - Under Review'
+    status: 'under-review'
   },
   {
     title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
@@ -53,6 +53,10 @@ export default function Publications() {
                 {pub.status === 'in-preparation' ? (
                   <span className="text-sm text-blue-400 mt-2 inline-block">
                     In Preparation
+                  </span>
+                ) : pub.status === 'under-review' ? (
+                  <span className="text-sm text-blue-400 mt-2 inline-block">
+                   Submitted - Under Review
                   </span>
                 ) : (
                   <a 
