@@ -18,11 +18,11 @@ const publications = [
     status: 'in-preparation'
   },
   {
-    title: 'Exploring Synthetic Image Generation in Radiology Work: Benefits, Perspectives, and Challenges',
+    title: 'Opportunities & Challenges in Designing Text-to-Image Generative AI for Medical Education, Training, & Practice',
     journal: 'ACM Designing Interactive Systems Conference (DIS) 2025',
-    authors: 'Katelyn M., Arpit M., Aidan B., Motahhare E., Adam P.',
+    authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
     type: 'Conference Paper',
-    status: 'in-preparation'
+    status: 'Submitted - Under Review'
   },
   {
     title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
