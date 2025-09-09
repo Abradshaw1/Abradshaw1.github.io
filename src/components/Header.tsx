@@ -1,6 +1,8 @@
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 export default function Header() {
+  const CV = '/ABradshaw-Resume-CV.pdf';
+  
   return (
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="w-56 h-56 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
@@ -29,7 +31,7 @@ export default function Header() {
             { icon: Github, label: 'GitHub', href: 'https://github.com/Abradshaw1' },
             { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
             { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' },
-            { icon: FileText, label: 'CV', href: '/cv', download: false }
+            { icon: FileText, label: 'CV', href: '/cv' }
           ].map(({ icon: Icon, label, href, download }) => (
             <a
               key={label}

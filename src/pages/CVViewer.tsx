@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Download } from 'lucide-react';
-import CV from '../components/ABradshaw-Resume-CV.pdf';
 
 export default function CVViewer() {
+  const CV = '/ABradshaw-Resume-CV.pdf';
+  
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = CV;
