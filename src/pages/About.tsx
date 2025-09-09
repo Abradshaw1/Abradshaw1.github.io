@@ -111,6 +111,7 @@ export default function About() {
             </a>
             <a
               href="/ABradshaw-Resume-CV.pdf"
+              download="Aidan-Bradshaw-CV.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
