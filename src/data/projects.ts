@@ -59,7 +59,7 @@ export const projects = [
   },
   {
     id: 'raynaud-research',
-    title: 'Raynaud's Disease Research',
+    title: 'Raynaud\'s Disease Research',
     description: 'Multi-modal ML and HCI tools for healthcare.',
     fullDescription: `Designed cross-platform applications to analyze and predict symptoms for patients with Raynaud's disease. 
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
