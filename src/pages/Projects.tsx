@@ -92,7 +92,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
           <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>Projects</h1>
-          <div className="h-0.5 bg-[#00008B] w-full"></div>
+          <div className="h-px bg-[#00008B] w-full"></div>
         </div>
         
         <div 
