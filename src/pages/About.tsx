@@ -12,17 +12,6 @@ import {
 } from 'lucide-react';
 
 export default function About() {
-  const personalInterests = [
-    { icon: Timer, text: 'Long distance running (currently marathon training)' },
-    { icon: TreePine, text: 'Finding the best reading spot in Pittsburgh Parks for hammock reading' },
-    { icon: Brain, text: 'Implicit biases in language' },
-    { icon: Keyboard, text: 'Mechanical Keyboard design' },
-    { icon: Cpu, text: 'PC building' },
-    { icon: Flower, text: 'Started my own herb Garden!' },
-    { icon: TowerControl, text: 'Japanese Shrine Architecture' },
-    { icon: Gauge, text: 'High performance computing' }
-  ];
-
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
@@ -61,13 +50,47 @@ export default function About() {
                 My future research interests lie in assistive machine learning for mental health characterization, specifically leveraging cognitive representation and health signals to understand, characterize, and aid in the diagnosis of disease.
               </p>
             </div>
+          </div>
+        </div>
 
-            <div className="flex flex-wrap gap-3 pt-4">
+        <div className="space-y-12">
+          <div>
+            <h2 className="text-2xl font-light text-slate-900 mb-4">Links</h2>
+            <p className="text-slate-600 mb-6">Download my resume or CV:</p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#"
+                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+              >
+                DOWNLOAD RESUME
+              </a>
+              <a
+                href="#"
+                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+              >
+                DOWNLOAD ACADEMIC CV
+              </a>
+            </div>
+            <p className="text-slate-600 mt-6 mb-4">Download my pictures for communications:</p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://avatars.githubusercontent.com/u/146846937"
+                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+              >
+                PICTURE 1 (PORTRAIT)
+              </a>
+              <a
+                href="https://avatars.githubusercontent.com/u/146846937"
+                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+              >
+                PICTURE 2 (SQUARE)
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-3 mt-8">
               {[
                 { icon: Github, label: 'GitHub', href: 'https://github.com/Abradshaw1' },
                 { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
-                { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' },
-                { icon: FileText, label: 'CV', href: '#' }
+                { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' }
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
@@ -80,53 +103,43 @@ export default function About() {
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-light text-slate-900 mb-2">Education</h2>
-              <div className="w-12 h-0.5 bg-[#00008B]"></div>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white p-6 rounded-xl border border-slate-200">
-                <div className="flex items-start gap-3">
-                  <School className="w-5 h-5 text-[#00008B] mt-1" />
-                  <div>
-                    <h3 className="font-medium text-slate-900">M.S. Applied Data Science</h3>
-                    <p className="text-slate-600">Carnegie Mellon University</p>
-                    <p className="text-sm text-slate-500">In Progress</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200">
-                <div className="flex items-start gap-3">
-                  <School className="w-5 h-5 text-[#00008B] mt-1" />
-                  <div>
-                    <h3 className="font-medium text-slate-900">B.S. Computer Science</h3>
-                    <p className="text-slate-600">San Diego State University</p>
-                    <p className="text-sm text-slate-500">Minor: Mathematics</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-light text-slate-900 mb-2">Interests</h2>
-              <div className="w-12 h-0.5 bg-[#00008B]"></div>
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-slate-200">
-              <ul className="space-y-3">
-                {personalInterests.map(({ icon: Icon, text }, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Icon className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                    <span className="text-sm text-slate-600">{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div>
+            <h2 className="text-2xl font-light text-slate-900 mb-4">Interests</h2>
+            <ul className="space-y-2 text-slate-600">
+              <li className="flex items-start gap-3">
+                <Timer className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Long distance running (currently marathon training)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <TreePine className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Finding the best reading spot in Pittsburgh Parks for hammock reading</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Brain className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Implicit biases in language</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Keyboard className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Mechanical Keyboard design</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Cpu className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>PC building</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Flower className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Started my own herb Garden!</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <TowerControl className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>Japanese Shrine Architecture</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Gauge className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
+                <span>High performance computing</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

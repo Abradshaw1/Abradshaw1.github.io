@@ -6,13 +6,16 @@ export default function Navigation() {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: '/about', label: 'About Me' },
     { path: '/projects', label: 'Projects' }
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 p-6">
       <div className="flex items-center justify-between">
+        <div className="text-2xl font-light text-slate-800" style={{ fontFamily: 'Georgia, serif' }}>
+          Aidan Bradshaw
+        </div>
         <div className="flex gap-6">
           {navItems.map(({ path, label }) => (
             <Link
@@ -27,9 +30,6 @@ export default function Navigation() {
               {label}
             </Link>
           ))}
-        </div>
-        <div className="text-sm font-medium text-slate-800">
-          Aidan Bradshaw
         </div>
       </div>
     </nav>
