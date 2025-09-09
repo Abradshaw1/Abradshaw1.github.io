@@ -53,74 +53,51 @@ export default function About() {
           </div>
         </div>
 
+        {/* Blue divider bar - full width */}
+        <div className="w-full h-0.5 bg-[#00008B] mb-12"></div>
+        
         <div className="space-y-12">
-          {/* Blue divider bar */}
-          <div className="w-16 h-0.5 bg-[#00008B]"></div>
           
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Links</h2>
-            
-            <p className="text-slate-600 mb-4">Download my resume or CV:</p>
-            <div className="flex flex-wrap gap-4 mb-6">
-              <a
-                href="#"
-                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
-              >
-                DOWNLOAD RESUME
-              </a>
-              <a
-                href="#"
-                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
-              >
-                DOWNLOAD ACADEMIC CV
-              </a>
-            </div>
-            
-            <p className="text-slate-600 mb-4">Download my pictures for communications:</p>
-            <div className="flex flex-wrap gap-4 mb-6">
-              <a
-                href="https://avatars.githubusercontent.com/u/146846937"
-                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
-              >
-                PICTURE 1 (PORTRAIT)
-              </a>
-              <a
-                href="https://avatars.githubusercontent.com/u/146846937"
-                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
-              >
-                PICTURE 2 (SQUARE)
-              </a>
-            </div>
+            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>LINKS</h2>
             
             <div className="flex gap-4">
               <a
                 href="https://github.com/Abradshaw1"
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
                 <Github className="w-4 h-4" />
-                GitHub
+                GITHUB
               </a>
               <a
                 href="https://www.linkedin.com/in/aidanbradshaw1/"
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
-                LinkedIn
+                LINKEDIN
               </a>
               <a
                 href="mailto:abradsha@andrew.cmu.edu"
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                Email
+                EMAIL
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              >
+                <FileText className="w-4 h-4" />
+                CV DOWNLOAD
               </a>
             </div>
           </div>
 
-          {/* Blue divider bar */}
-          <div className="w-16 h-0.5 bg-[#00008B]"></div>
+          {/* Blue divider bar - full width */}
+          <div className="w-full h-0.5 bg-[#00008B]"></div>
+          
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
+            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>INTERESTS</h2>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-center gap-3">
                 <Timer className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
