@@ -19,7 +19,7 @@ export default function About() {
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
-          <div className="md:col-span-1 flex justify-center">
+          <div className="md:col-span-1 flex justify-center items-start">
             <div className="w-64 h-64 rounded-lg overflow-hidden bg-slate-200">
               <img
                 src="https://avatars.githubusercontent.com/u/146846937"
@@ -32,10 +32,10 @@ export default function About() {
           <div className="md:col-span-2 space-y-6">
             <div>
               <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>About Me</h1>
-              <div className="h-px bg-[#00008B] w-full"></div>
+              <div className="h-0.5 bg-[#00008B] w-full"></div>
             </div>
             
-            <div className="space-y-4 text-slate-600 leading-relaxed">
+            <div className="space-y-4 text-slate-600 leading-relaxed mt-8">
               <p>
                 I am an AI researcher and embedded systems designer working at the intersection of ubiquitous computing, health sensing, and applied machine learning. I hold an M.S. in Applied Data Science from <span className="relative inline-block">
                   <span className="absolute inset-0 bg-[#00008B] rounded-sm"></span>
