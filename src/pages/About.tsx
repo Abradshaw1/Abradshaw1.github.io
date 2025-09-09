@@ -106,15 +106,12 @@ export default function About() {
           
           <div>
             <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {personalInterests.map(({ icon: Icon, text, size }, index) => (
-                <div key={index} className="flex items-center gap-3 text-slate-600">
-                  <div className="flex items-center justify-center min-w-[32px]">
-                    <Icon className={`${size} text-[#00008B] flex-shrink-0`} />
-                  </div>
-                  <span className="text-sm leading-relaxed">{text}</span>
-                </div>
-              ))}
+            <div className="space-y-2 text-slate-600">
+              <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              <p className="text-sm leading-relaxed">Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              <p className="text-sm leading-relaxed">Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              <p className="text-sm leading-relaxed">Long distance running</p>
+              <p className="text-sm leading-relaxed">Mechanical Keyboard design</p>
             </div>
           </div>
         </div>
