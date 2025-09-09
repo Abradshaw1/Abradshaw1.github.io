@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Publications() {
-  const placeholderImage = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=200';
+  const placeholderImage = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=300&h=200';
 
   const conferencePublications = [
     {
