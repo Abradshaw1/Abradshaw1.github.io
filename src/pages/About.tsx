@@ -54,88 +54,103 @@ export default function About() {
         </div>
 
         <div className="space-y-12">
+          {/* Blue divider bar */}
+          <div className="w-16 h-0.5 bg-[#00008B]"></div>
+          
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-4">Links</h2>
-            <p className="text-slate-600 mb-6">Download my resume or CV:</p>
-            <div className="flex flex-wrap gap-4">
+            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Links</h2>
+            
+            <p className="text-slate-600 mb-4">Download my resume or CV:</p>
+            <div className="flex flex-wrap gap-4 mb-6">
               <a
                 href="#"
-                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
               >
                 DOWNLOAD RESUME
               </a>
               <a
                 href="#"
-                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
               >
                 DOWNLOAD ACADEMIC CV
               </a>
             </div>
-            <p className="text-slate-600 mt-6 mb-4">Download my pictures for communications:</p>
-            <div className="flex flex-wrap gap-4">
+            
+            <p className="text-slate-600 mb-4">Download my pictures for communications:</p>
+            <div className="flex flex-wrap gap-4 mb-6">
               <a
                 href="https://avatars.githubusercontent.com/u/146846937"
-                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
               >
                 PICTURE 1 (PORTRAIT)
               </a>
               <a
                 href="https://avatars.githubusercontent.com/u/146846937"
-                className="px-6 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-colors font-medium"
+                className="px-4 py-2 border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white transition-colors font-medium text-sm"
               >
                 PICTURE 2 (SQUARE)
               </a>
             </div>
-            <div className="flex flex-wrap gap-3 mt-8">
-              {[
-                { icon: Github, label: 'GitHub', href: 'https://github.com/Abradshaw1' },
-                { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
-                { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' }
-              ].map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm"
-                >
-                  <Icon className="w-4 h-4 text-slate-600" />
-                  <span className="text-slate-700">{label}</span>
-                </a>
-              ))}
+            
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/Abradshaw1"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aidanbradshaw1/"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+              <a
+                href="mailto:abradsha@andrew.cmu.edu"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                Email
+              </a>
             </div>
           </div>
 
+          {/* Blue divider bar */}
+          <div className="w-16 h-0.5 bg-[#00008B]"></div>
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-4">Interests</h2>
-            <ul className="space-y-2 text-slate-600">
-              <li className="flex items-start gap-3">
+            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
+            <ul className="space-y-3 text-slate-600">
+              <li className="flex items-center gap-3">
                 <Timer className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Long distance running (currently marathon training)</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <TreePine className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Finding the best reading spot in Pittsburgh Parks for hammock reading</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <Brain className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Implicit biases in language</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <Keyboard className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Mechanical Keyboard design</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <Cpu className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>PC building</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <Flower className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Started my own herb Garden!</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <TowerControl className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>Japanese Shrine Architecture</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <Gauge className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
                 <span>High performance computing</span>
               </li>
