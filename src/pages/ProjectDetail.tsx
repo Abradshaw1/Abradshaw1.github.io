@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { projects } from '../data/projects';
 
 export default function ProjectDetail() {
@@ -25,23 +25,21 @@ export default function ProjectDetail() {
       <div className="max-w-4xl mx-auto px-6">
         <Link 
           to="/projects" 
-          className="inline-flex items-center text-slate-600 hover:text-[#00008B] mb-8 transition-colors"
+          className="inline-flex items-center text-slate-600 hover:text-[#00008B] mb-8 transition-colors text-lg"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" />
+          <ChevronLeft className="w-5 h-5 mr-2" />
           Back to Projects
         </Link>
 
-        <div className="bg-white rounded-2xl overflow-hidden border border-slate-200">
+        <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
         <div className="bg-white overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 p-8">
-            <div className="aspect-video w-full overflow-hidden rounded-lg">
-            <div className="aspect-video w-full overflow-hidden">
+            <div className="aspect-video w-full overflow-hidden rounded-lg border border-slate-200">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
-            </div>
             </div>
             
             <div className="flex flex-col justify-center">
