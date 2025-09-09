@@ -104,7 +104,7 @@ export const projects = [
     to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
     link: '#',
-    image: getProjectImage('chicago-crime.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
+    image: getProjectImage('chic', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'chicago-crime.png'
   },
   {
