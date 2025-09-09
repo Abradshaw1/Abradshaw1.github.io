@@ -78,14 +78,14 @@ export default function About() {
         </div>
 
         {/* Links */}
-        <div className="mt-16">
+        <div className="mt-24">
           <h2
             className="text-4xl font-light text-slate-900 mb-2"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             Links
           </h2>
-          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
+          <div className="h-[2px] bg-[#00008B] w-full mb-6" />
 
           <div className="flex flex-wrap gap-4 mt-6">
             <a
@@ -122,9 +122,9 @@ export default function About() {
         </div>
 
         {/* Interests */}
-        <div className="mt-16">
+        <div className="mt-24">
           <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
-          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
+          <div className="h-[2px] bg-[#00008B] w-full mb-6" />
           <div className="space-y-3 text-slate-600 mt-6">
             <div className="flex items-center gap-3">
               <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
