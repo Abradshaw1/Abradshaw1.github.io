@@ -130,37 +130,32 @@ export default function About() {
           </div>
         </div>
 
-        {/* Interests */}
-        <div className="mt-12">
-          <h2
-            className="text-4xl font-light text-slate-900 mb-2"
-            style={{ fontFamily: 'Georgia, serif' }}
-          >
-            Interests
-          </h2>
-          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
+        {/* full-width divider after Links section */}
+        <div className="w-full h-0.5 bg-[#00008B] my-12" />
 
+        {/* Interests */}
+        <div>
+          <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
           <div className="space-y-3 text-slate-600">
             <div className="flex items-center gap-3">
               <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">
-                Logic &amp; Language — implicit biases, game theory, paradoxes,
-                and linguistics.
-              </p>
+              <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
             </div>
             <div className="flex items-center gap-3">
-              <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Long-distance running</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Mechanical keyboard design</p>
+              <Calculator className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <p className="text-sm leading-relaxed">Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.</p>
             </div>
             <div className="flex items-center gap-3">
               <Gamepad2 className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">
-                Reasoning, games, and language-driven interaction.
-              </p>
+              <p className="text-sm leading-relaxed">Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <p className="text-sm leading-relaxed">Long distance running</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <p className="text-sm leading-relaxed">Mechanical Keyboard design</p>
             </div>
           </div>
         </div>
