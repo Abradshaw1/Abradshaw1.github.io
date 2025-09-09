@@ -31,7 +31,7 @@ export default function ProjectCard({ id, title, description, technologies, imag
       
       <div className="p-6 border-t border-slate-100">
         <div className="space-y-3">
-          <h3 className="text-lg font-medium text-slate-900 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-lg font-medium text-slate-900 group-hover:text-[#00008B] transition-colors">
             {title}
           </h3>
           
@@ -45,7 +45,7 @@ export default function ProjectCard({ id, title, description, technologies, imag
             {technologies.slice(0, 3).map((tech, index) => (
               <span 
                 key={index} 
-                className="text-xs px-2 py-1 bg-slate-100 text-slate-600 rounded-md"
+                className="text-xs px-2 py-1 bg-slate-100 text-[#00008B] rounded-md"
               >
                 {tech}
               </span>

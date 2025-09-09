@@ -9,10 +9,10 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-stone-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-light text-slate-900">Project not found</h1>
-          <Link to="/projects" className="text-blue-600 hover:text-blue-700 mt-4 inline-block">
+          <Link to="/projects" className="text-[#00008B] hover:text-[#000080] mt-4 inline-block">
             Return to projects
           </Link>
         </div>
@@ -21,11 +21,11 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 pt-24 pb-16">
+    <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
         <Link 
           to="/projects" 
-          className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors"
+          className="inline-flex items-center text-slate-600 hover:text-[#00008B] mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Projects
@@ -44,7 +44,7 @@ export default function ProjectDetail() {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-light text-slate-900 mb-2">{project.title}</h1>
-                <div className="w-16 h-0.5 bg-blue-600"></div>
+                <div className="w-16 h-0.5 bg-[#00008B]"></div>
               </div>
               
               <p className="text-slate-600 leading-relaxed text-lg">
@@ -57,7 +57,7 @@ export default function ProjectDetail() {
                   {project.technologies.map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm"
+                      className="px-3 py-1.5 bg-slate-100 text-[#00008B] rounded-lg text-sm"
                     >
                       {tech}
                     </span>

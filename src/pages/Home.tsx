@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-stone-50 flex items-center justify-center px-6">
+    <div className="min-h-screen bg-white flex items-center justify-center px-6">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <div className="space-y-4">
           <h1 className="text-6xl md:text-7xl font-light text-slate-900 tracking-tight">
@@ -22,7 +22,7 @@ export default function Home() {
         <div className="flex gap-4 justify-center pt-8">
           <Link
             to="/about"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00008B] text-white rounded-lg hover:bg-[#000080] transition-colors"
           >
             Learn More
             <ArrowRight className="w-4 h-4" />
