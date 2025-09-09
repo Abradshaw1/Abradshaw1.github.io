@@ -39,19 +39,11 @@ export default function ProjectCard({
       onDragOver={onDragOver}
       onDrop={onDrop}
       onDragEnd={onDragEnd}
-      className={`group bg-white overflow-hidden transition-all duration-500 break-inside-avoid mb-6 cursor-move ${
-        isDragging ? 'opacity-50 scale-95' : 'opacity-100 scale-100'
-      }`}
+      className="group bg-white overflow-hidden transition-all duration-500 break-inside-avoid mb-6 cursor-move"
     >
       <Link 
         to={`/project/${id}`}
         className="block w-full h-full"
-        onClick={(e) => {
-          // Prevent navigation if we're in the middle of dragging
-          if (isDragging) {
-            e.preventDefault();
-          }
-        }}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative`}>
         <img 
