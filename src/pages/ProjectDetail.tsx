@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ChevronLeft, ArrowLeft } from 'lucide-react';
+import { ChevronLeft, ArrowRight } from 'lucide-react';
 import { projects } from '../data/projects';
 
 export default function ProjectDetail() {
@@ -66,13 +66,13 @@ export default function ProjectDetail() {
                   className="group inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition-colors relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    <ArrowLeft className="w-4 h-4" />
                     VIEW SOURCE CODE
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                   <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
                   <span className="absolute inset-0 flex items-center justify-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
-                    <ArrowLeft className="w-4 h-4" />
                     VIEW SOURCE CODE
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </button>
               </div>
