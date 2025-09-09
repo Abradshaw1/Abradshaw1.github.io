@@ -8,19 +8,52 @@ interface ProjectCardProps {
   technologies: string[];
   image: string;
   index: number;
+  onDragStart?: (e: React.DragEvent) => void;
+  onDragOver?: (e: React.DragEvent) => void;
+  onDrop?: (e: React.DragEvent) => void;
+  onDragEnd?: () => void;
+  isDragging?: boolean;
 }
 
-export default function ProjectCard({ id, title, description, technologies, image, index }: ProjectCardProps) {
+export default function ProjectCard({ 
+  id, 
+  title, 
+  description, 
+  technologies, 
+  image, 
+  index,
+  onDragStart,
+  onDragOver,
+  onDrop,
+  onDragEnd,
+  isDragging = false
+}: ProjectCardProps) {
   // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-60', 'h-88', 'h-56', 'h-84'];
   const cardHeight = heights[index % heights.length];
   
   return (
-    <Link 
-      to={`/project/${id}`}
-      className="group block bg-white overflow-hidden transition-all duration-500 break-inside-avoid mb-6"
+    <div
+      draggable
+      onDragStart={onDragStart}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+      onDragEnd={onDragEnd}
+      className={`group bg-white overflow-hidden transition-all duration-500 break-inside-avoid mb-6 cursor-move ${
+        isDragging ? 'opacity-50 scale-95' : 'opacity-100 scale-100'
+      }`}
     >
-      <div className={`${cardHeight} w-full overflow-hidden relative`}>
+      <Link 
+        to={`/project/${id}`}
+        className="block w-full h-full"
+        onClick={(e) => {
+          // Prevent navigation if we're in the middle of dragging
+          if (isDragging) {
+            e.preventDefault();
+          }
+        }}
+      >
+        <div className={`${cardHeight} w-full overflow-hidden relative`}>
         <img 
           src={image} 
           alt={title}
@@ -51,7 +84,8 @@ export default function ProjectCard({ id, title, description, technologies, imag
             </div>
           </div>
         </div>
-      </div>
-    </Link>
+        </div>
+      </Link>
+    </div>
   );
 }
