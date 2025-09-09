@@ -12,15 +12,11 @@ import {
 } from 'lucide-react';
 
 const personalInterests = [
-  { icon: Timer, text: 'Long distance running (currently marathon training)', size: 'w-5 h-5' },
-  { icon: TreePine, text: 'Finding the best reading spot in Pittsburgh Parks for hammock reading', size: 'w-4 h-4' },
-  { icon: Brain, text: 'Implicit biases in language', size: 'w-6 h-6' },
-  { icon: Keyboard, text: 'Mechanical Keyboard design', size: 'w-4 h-4' },
-  { icon: Cpu, text: 'PC building', size: 'w-5 h-5' },
-  { icon: Flower, text: 'Started my own herb Garden!', size: 'w-4 h-4' },
-  { icon: Coffee, text: 'Coffee brewing and roasting techniques', size: 'w-5 h-5' },
-  { icon: TowerControl, text: 'Japanese Shrine Architecture', size: 'w-4 h-4' },
-  { icon: Gauge, text: 'High performance computing', size: 'w-6 h-6' }
+  { icon: Brain, text: 'Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
+  { icon: Brain, text: 'Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
+  { icon: Brain, text: 'Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
+  { icon: Timer, text: 'Long distance running', size: 'w-6 h-6' },
+  { icon: Keyboard, text: 'Mechanical Keyboard design', size: 'w-6 h-6' }
 ];
 
 export default function About() {
