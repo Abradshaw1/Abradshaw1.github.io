@@ -25,7 +25,7 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-1 flex justify-center">
-            <div className="w-56 h-56 rounded-2xl overflow-hidden bg-slate-200">
+            <div className="w-80 h-80 rounded-2xl overflow-hidden bg-slate-200">
               <img
                 src="https://avatars.githubusercontent.com/u/146846937"
                 alt="Aidan Bradshaw"
@@ -42,20 +42,11 @@ export default function About() {
             
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                I am pursuing my masters of applied data science at CMU and am a research assistant in the{' '}
-                <a href="https://dig.cmu.edu/" className="text-[#00008B] hover:text-[#000080] underline">DIG Lab</a> in the{' '}
-                <a href="https://hcii.cmu.edu/" className="text-[#00008B] hover:text-[#000080] underline">Human-Computer Interaction Institute</a>.
-                My current research focuses on applied machine learning for healthcare applications, where I explain, architect, and audit generative text-to-image diffusion models and their trustworthiness.
+                I am an AI researcher and embedded systems designer working at the intersection of ubiquitous computing, health sensing, and applied machine learning. I hold an M.S. in Applied Data Science from Carnegie Mellon University and a B.S. in Computer Science (with a minor in Applied Mathematics) from San Diego State University.
               </p>
               
               <p>
-                Before joining CMU, I was a visiting researcher in Responsive Environments at the{' '}
-                <a href="https://www.media.mit.edu/" className="text-[#00008B] hover:text-[#000080] underline">MIT Media Lab</a>, led by Dr. Joe Paradiso, where I worked on model distillation for resource-constrained environments.
-                I completed my undergraduate studies at San Diego State University under the supervision of Dr. Shangping Ren, where my research centered on developing a wearable biosensing framework to automate health and environmental data collection for patients with Raynaud's syndrome.
-              </p>
-              
-              <p>
-                My future research interests lie in assistive machine learning for mental health characterization, specifically leveraging cognitive representation and health signals to understand, characterize, and aid in the diagnosis of disease.
+                I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University's Human-Computer Interaction Institute and MIT's Media Lab.
               </p>
             </div>
           </div>
