@@ -32,8 +32,10 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="bg-white rounded-2xl overflow-hidden border border-slate-200">
+        <div className="bg-white overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 p-8">
             <div className="aspect-video w-full overflow-hidden rounded-lg">
+            <div className="aspect-video w-full overflow-hidden">
               <img 
                 src={project.image} 
                 alt={project.title} 
