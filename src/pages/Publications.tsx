@@ -67,8 +67,8 @@ export default function Publications() {
     image: string;
     showAllLinks: boolean;
   }) => (
-    <div className="flex gap-8 py-6 border-b border-slate-200 last:border-b-0">
-      <div className="w-40 h-32 flex-shrink-0 bg-slate-100 rounded overflow-hidden">
+    <div className="flex gap-6 py-6 border-b border-slate-200 last:border-b-0">
+      <div className="w-48 h-32 flex-shrink-0 bg-slate-100 rounded overflow-hidden">
         <img 
           src={image} 
           alt={title}

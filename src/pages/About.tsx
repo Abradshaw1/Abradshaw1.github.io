@@ -20,7 +20,7 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-1 flex justify-center">
-            <div className="w-80 h-80 rounded-2xl overflow-hidden bg-slate-200">
+            <div className="w-96 h-96 rounded-2xl overflow-hidden bg-slate-200">
               <img
                 src="https://avatars.githubusercontent.com/u/146846937"
                 alt="Aidan Bradshaw"
@@ -78,8 +78,16 @@ export default function About() {
                 EMAIL
               </a>
               <a
-                href="/ABradshaw-Resume-CV.pdf"
-                download="Aidan_Bradshaw_CV.pdf"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const link = document.createElement('a');
+                  link.href = '/ABradshaw-Resume-CV.pdf';
+                  link.download = 'Aidan_Bradshaw_CV.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
                 <FileText className="w-4 h-4" />

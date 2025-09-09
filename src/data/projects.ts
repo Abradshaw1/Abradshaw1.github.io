@@ -92,8 +92,8 @@ export const projects = [
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
-    image: getProjectImage('health-audit-gpt.png', 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'health-audit-gpt.png'
+    image: getProjectImage(null, 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'),
+    customImage: null
   },
   {
     id: 'chicago-crime-prediction',
