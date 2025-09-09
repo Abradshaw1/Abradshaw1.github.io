@@ -29,7 +29,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="md:col-span-2 space-y-6">
+          <div className="md:col-span-2 space-y-6 mt-4">
             <div>
               <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>About Me</h1>
               <div className="h-0.5 bg-[#00008B] w-full"></div>
@@ -43,7 +43,7 @@ export default function About() {
                 </span> and a B.S. in Computer Science (with a minor in Applied Mathematics) from San Diego State University.
               </p>
               
-              <p>
+                  <a href="https://iis.ee.ethz.ch/" className="relative text-white px-1 hover:underline">Integrated Systems Laboratory</a>
                 I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University's <span className="relative inline-block">
                   <span className="absolute inset-0 bg-[#00008B] rounded-sm"></span>
                   <a href="https://hcii.cmu.edu/" className="relative text-white px-1 hover:underline">Human-Computer Interaction Institute</a>
