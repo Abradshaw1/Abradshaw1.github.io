@@ -25,7 +25,7 @@ export default function About() {
         {/* header grid */}
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-1 flex justify-center items-start">
-            <div className="w-64 h-64 rounded-lg overflow-hidden bg-slate-200">
+            <div className="w-64 h-80 rounded-lg overflow-hidden bg-slate-200">
               <img
                 src="https://avatars.githubusercontent.com/u/146846937"
                 alt="Aidan Bradshaw"
