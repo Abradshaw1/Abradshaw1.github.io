@@ -12,7 +12,7 @@ export default function CVViewer() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
+    <div className="min-h-screen bg-white pt-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <Link 
@@ -32,8 +32,8 @@ export default function CVViewer() {
           </button>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="h-[800px] w-full">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+          <div className="h-[calc(100vh-200px)] w-full">
             <iframe
               src={CV}
               className="w-full h-full border-0"

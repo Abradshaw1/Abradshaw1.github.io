@@ -13,7 +13,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 p-6">
       <div className="flex items-center justify-between">
-        <div className="text-2xl font-light text-slate-800" style={{ fontFamily: 'Georgia, serif' }}>
+        <div className="text-3xl font-light text-slate-800" style={{ fontFamily: 'Georgia, serif' }}>
           Aidan Bradshaw
         </div>
         <div className="flex gap-6">
@@ -21,7 +21,7 @@ export default function Navigation() {
             <Link
               key={path}
               to={path}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                 location.pathname === path
                   ? 'text-[#00008B]'
                   : 'text-slate-600 hover:text-[#00008B]'

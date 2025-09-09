@@ -8,16 +8,11 @@ import {
   Flower,
   TowerControl,
   Gauge,
-  Coffee
+  Coffee,
+  MessageSquare,
+  Calculator,
+  Gamepad2
 } from 'lucide-react';
-
-const personalInterests = [
-  { icon: Brain, text: 'Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
-  { icon: Brain, text: 'Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
-  { icon: Brain, text: 'Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.', size: 'w-6 h-6' },
-  { icon: Timer, text: 'Long distance running', size: 'w-6 h-6' },
-  { icon: Keyboard, text: 'Mechanical Keyboard design', size: 'w-6 h-6' }
-];
 
 export default function About() {
   return (
@@ -97,12 +92,27 @@ export default function About() {
           
           <div>
             <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
-            <div className="space-y-2 text-slate-600">
-              <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
-              <p className="text-sm leading-relaxed">Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.</p>
-              <p className="text-sm leading-relaxed">Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
-              <p className="text-sm leading-relaxed">Long distance running</p>
-              <p className="text-sm leading-relaxed">Mechanical Keyboard design</p>
+            <div className="space-y-3 text-slate-600">
+              <div className="flex items-center gap-3">
+                <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+                <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Calculator className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+                <p className="text-sm leading-relaxed">Decision Theory & Logic – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Gamepad2 className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+                <p className="text-sm leading-relaxed">Reasoning, Games & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+                <p className="text-sm leading-relaxed">Long distance running</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+                <p className="text-sm leading-relaxed">Mechanical Keyboard design</p>
+              </div>
             </div>
           </div>
         </div>
