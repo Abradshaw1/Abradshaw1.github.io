@@ -42,7 +42,7 @@ export default function About() {
           <div className="md:col-span-2 space-y-6">
             <div>
               <h1 className="text-4xl font-light text-slate-900 mb-2" style={{ fontFamily: 'Georgia, serif' }}>About Me</h1>
-              <div className="h-0.5 bg-[#00008B]" style={{width: 'fit-content', paddingRight: '1rem'}}></div>
+              <div className="h-0.5 bg-[#00008B] w-full max-w-fit"></div>
             </div>
             
             <div className="space-y-4 text-slate-600 leading-relaxed">
