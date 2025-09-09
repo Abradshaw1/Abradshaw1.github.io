@@ -20,7 +20,7 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-1 flex justify-center">
-            <div className="w-96 h-96 rounded-2xl overflow-hidden bg-slate-200">
+            <div className="w-80 h-80 rounded-2xl overflow-hidden bg-slate-200">
               <img
                 src="https://avatars.githubusercontent.com/u/146846937"
                 alt="Aidan Bradshaw"
@@ -32,7 +32,7 @@ export default function About() {
           <div className="md:col-span-2 space-y-6">
             <div>
               <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>About Me</h1>
-              <div className="h-0.5 bg-[#00008B] w-full max-w-fit"></div>
+              <div className="h-px bg-[#00008B] w-full"></div>
             </div>
             
             <div className="space-y-4 text-slate-600 leading-relaxed">
@@ -48,7 +48,7 @@ export default function About() {
         </div>
 
         {/* Blue divider bar - full width */}
-        <div className="w-full h-0.5 bg-[#00008B] mb-12"></div>
+        <div className="w-full h-px bg-[#00008B] mb-12"></div>
         
         <div className="space-y-12">
           
@@ -81,12 +81,7 @@ export default function About() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  const link = document.createElement('a');
-                  link.href = '/ABradshaw-Resume-CV.pdf';
-                  link.download = 'Aidan_Bradshaw_CV.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                  window.open('/ABradshaw-Resume-CV.pdf', '_blank');
                 }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
@@ -97,7 +92,7 @@ export default function About() {
           </div>
 
           {/* Blue divider bar - full width */}
-          <div className="w-full h-0.5 bg-[#00008B]"></div>
+          <div className="w-full h-px bg-[#00008B]"></div>
           
           <div>
             <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
