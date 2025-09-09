@@ -77,9 +77,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* full-width divider between sections */}
-        <div className="w-full h-0.5 bg-[#00008B] my-12" />
-
         {/* Links */}
         <div>
           <h2
