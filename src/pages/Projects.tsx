@@ -11,7 +11,6 @@ export default function Projects() {
   const handleDragStart = (index: number) => {
     setDraggedCard(index);
     setHoveredCard(null);
-    e.dataTransfer.effectAllowed = 'move';
   };
 
   const handleDragEnter = (index: number) => {
