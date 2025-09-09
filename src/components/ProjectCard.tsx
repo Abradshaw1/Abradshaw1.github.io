@@ -26,35 +26,29 @@ export default function ProjectCard({ id, title, description, technologies, imag
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      
-      <div className="p-6">
-        <div className="space-y-3">
-          <h3 className="text-lg font-medium text-slate-900 group-hover:text-[#00008B] transition-colors">
-            {title}
-          </h3>
-          
-          <div className="h-px bg-slate-200"></div>
-          
-          <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">
-            {description}
-          </p>
-          
-          <div className="flex flex-wrap gap-1.5 pt-2">
-            {technologies.slice(0, 3).map((tech, index) => (
-              <span 
-                key={index} 
-                className="text-xs px-2 py-1 bg-slate-100 text-[#00008B] rounded-md"
-              >
-                {tech}
-              </span>
-            ))}
-            {technologies.length > 3 && (
-              <span className="text-xs px-2 py-1 bg-slate-100 text-slate-500 rounded-md">
-                +{technologies.length - 3} more
-              </span>
-            )}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+          <div className="text-white">
+            <h3 className="text-lg font-medium mb-2 group-hover:text-white transition-colors">
+              {title}
+            </h3>
+            <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3">
+              {description}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {technologies.slice(0, 3).map((tech, index) => (
+                <span 
+                  key={index} 
+                  className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+              {technologies.length > 3 && (
+                <span className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm">
+                  +{technologies.length - 3} more
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>
