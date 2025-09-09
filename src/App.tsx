@@ -1,17 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Aidan Bradshaw
-        </h1>
-        <p className="text-xl text-gray-600">
-          Carnegie Mellon University - M.S. Applied Data Science
-        </p>
-      </div>
-    </div>
+    <Router basename="/">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
+    </Router>
   );
 }
 

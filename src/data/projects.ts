@@ -1,10 +1,3 @@
-import raynaudsimage from '../data/raynaudsimage.jpg';
-import scorecard from '../data/scorecard.png';
-import infographic from '../data/infographic.png';
-import chicagocrime from '../data/chicagocrime.png';
-import fcnn from '../data/fcnn.png';
-import apred from '../data/apred.png';
-
 export const projects = [
   {
     id: 'bayesian-alzheimers',
@@ -65,7 +58,7 @@ export const projects = [
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
     link: '#',
-    image: raynaudsimage
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'health-audit-gpt',
@@ -76,7 +69,7 @@ export const projects = [
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
-    image: fcnn
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'chicago-crime-prediction',
@@ -87,7 +80,7 @@ export const projects = [
     to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
     link: '#',
-    image: chicagocrime
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'health-obesity-analysis',
@@ -98,7 +91,7 @@ export const projects = [
     Developed infographics to communicate findings on obesity trends and their societal impacts.`,
     technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
     link: '#',
-    image: infographic
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'mcmc-decryption',
@@ -118,7 +111,7 @@ export const projects = [
     Benchmarked runtime improvements by comparing sequential, map(), and multiprocessing implementations. Analyzed speedup and efficiency across varying core counts, achieving significant reductions in runtime and exploring theoretical versus observed speedup.`,
     technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
-    image: 'https://i.imghippo.com/files/dql4991sxI.png'
+    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'college-scorecard',
@@ -128,7 +121,7 @@ export const projects = [
     Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: '#',
-    image: scorecard
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'multilayer-python',
@@ -139,7 +132,7 @@ export const projects = [
     compatibility and performance comparison.`,
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: '#',
-    image: 'https://i.imghippo.com/files/dKsI4998XY.png'
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'salary-prediction',
@@ -172,7 +165,7 @@ export const projects = [
     libraries for comprehensive insights.`,
     technologies: ['Python', 'Machine Learning', 'Data Analysis', 'NumPy', 'Pandas'],
     link: '#',
-    image: apred
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800'
   },
   {
     id: 'vacuum-agent',
