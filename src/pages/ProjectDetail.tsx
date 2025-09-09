@@ -30,18 +30,16 @@ export default function ProjectDetail() {
           Back to Projects
         </Link>
 
-        <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-        <div className="bg-white overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 p-8 min-h-[500px]">
-            <div className="w-full h-full overflow-hidden rounded-lg">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="flex flex-col justify-center">
+        <div className="grid md:grid-cols-2 gap-8 min-h-[500px]">
+          <div className="w-full h-full overflow-hidden rounded-lg">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          <div className="flex flex-col justify-center">
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-light text-black mb-2">{project.title}</h1>
@@ -55,13 +53,9 @@ export default function ProjectDetail() {
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Technologies Used</h2>
                 <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
-                <ul className="space-y-1">
-                  {project.technologies.map((tech, index) => (
-                    <li key={index} className="text-slate-600">
-                      • {tech}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-slate-600">
+                  {project.technologies.join(', ')}
+                </p>
               </div>
               
               <div>
@@ -75,9 +69,7 @@ export default function ProjectDetail() {
                 </a>
               </div>
             </div>
-            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
