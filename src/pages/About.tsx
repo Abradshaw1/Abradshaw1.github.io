@@ -52,7 +52,7 @@ export default function About() {
                 the intersection of ubiquitous computing, health sensing, and
                 applied machine learning. I hold an M.S. in Applied Data Science
                 from{' '}
-                <HighlightLink href="https://www.cmu.edu/">
+                <HighlightLink href="https://iis.ee.ethz.ch/">
                   Carnegie Mellon University
                 </HighlightLink>{' '}
                 and a B.S. in Computer Science (with a minor in Applied
