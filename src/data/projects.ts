@@ -1,3 +1,5 @@
+};
+
 export const projects = [
   {
     id: 'parsons-prompt-classification',
@@ -50,7 +52,8 @@ export const projects = [
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
-    image: 'https://i.imghippo.com/files/wFHc9914FhQ.png'
+    image: getProjectImage('genai-ct.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
+    customImage: 'genai-ct.png' // Set to null if using fallback
   },
   {
     id: 'bee-buzz-classification',
@@ -60,7 +63,8 @@ export const projects = [
     Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
     technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'
+    image: getProjectImage('bee-buzz.gif', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
+    customImage: 'bee-buzz.gif'
   },
   {
     id: 'raynaud-research',
@@ -70,7 +74,8 @@ export const projects = [
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('raynauds-research.jpg', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'raynauds-research.jpg'
   },
   {
     id: 'health-audit-gpt',
@@ -81,7 +86,8 @@ export const projects = [
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('health-audit-gpt.png', 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'health-audit-gpt.png'
   },
   {
     id: 'chicago-crime-prediction',
@@ -92,7 +98,8 @@ export const projects = [
     to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('chicago-crime.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'chicago-crime.png'
   },
   {
     id: 'health-obesity-analysis',
@@ -103,7 +110,8 @@ export const projects = [
     Developed infographics to communicate findings on obesity trends and their societal impacts.`,
     technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('health-obesity.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'health-obesity.png'
   },
   {
     id: 'mcmc-decryption',
@@ -113,7 +121,8 @@ export const projects = [
     Implemented optimized text preprocessing and scoring functions to handle large datasets efficiently. Conducted comprehensive analysis of algorithm parameters, including iterations, text length, and scaling, and their impact on decryption accuracy.`,
     technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('mcmc-decryption.gif', 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'mcmc-decryption.gif'
   },
   {
     id: 'parallel-factorization',
@@ -123,7 +132,8 @@ export const projects = [
     Benchmarked runtime improvements by comparing sequential, map(), and multiprocessing implementations. Analyzed speedup and efficiency across varying core counts, achieving significant reductions in runtime and exploring theoretical versus observed speedup.`,
     technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('parallel-factorization.png', 'https://i.imghippo.com/files/dql4991sxI.png'),
+    customImage: 'parallel-factorization.png'
   },
   {
     id: 'college-scorecard',
@@ -133,7 +143,8 @@ export const projects = [
     Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('college-scorecard.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'college-scorecard.png'
   },
   {
     id: 'multilayer-python',
@@ -144,7 +155,8 @@ export const projects = [
     compatibility and performance comparison.`,
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('multilayer-python.jpg', 'https://i.imghippo.com/files/dKsI4998XY.png'),
+    customImage: 'multilayer-python.jpg'
   },
   {
     id: 'salary-prediction',
@@ -155,7 +167,8 @@ export const projects = [
     and visualization to industry datasets for accurate predictions.`,
     technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('salary-prediction.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'salary-prediction.png'
   },
   {
     id: 'mobile-game',
@@ -166,7 +179,8 @@ export const projects = [
     principles.`,
     technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('mobile-game.gif', 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'mobile-game.gif'
   },
   {
     id: 'accident-prediction',
@@ -177,17 +191,19 @@ export const projects = [
     libraries for comprehensive insights.`,
     technologies: ['Python', 'Machine Learning', 'Data Analysis', 'NumPy', 'Pandas'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800'
+    image: getProjectImage('accident-prediction.jpg', 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'accident-prediction.jpg'
   },
+// Helper function to get project image path
   {
-    id: 'vacuum-agent',
-    title: 'AI Vacuum Agent',
-    description: 'Self-learning AI vacuum cleaner simulation.',
-    fullDescription: `Built an artificial intelligence learning program modeling a self-sustained vacuum with predictive 
-    cleaning patterns. The project demonstrates practical applications of AI in robotics and autonomous systems using 
-    Python and Scikit-learn.`,
+const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
     technologies: ['Python', 'Artificial Intelligence', 'Scikit-learn', 'Robotics'],
+  if (imageName) {
     link: '#',
+    return `/project-images/${imageName}`;
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'
   }
+    image: getProjectImage('vacuum-agent.png', 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'vacuum-agent.png'
+  return fallbackUrl;
 ];
