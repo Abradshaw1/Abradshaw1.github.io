@@ -43,6 +43,7 @@ export default function About() {
                 About Me
               </h1>
               <div className="h-px bg-[#00008B] w-full" />
+            </div>
 
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
