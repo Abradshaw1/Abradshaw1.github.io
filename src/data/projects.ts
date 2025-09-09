@@ -193,8 +193,10 @@ export const projects = [
     image: getProjectImage('accident-prediction.jpg', 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'accident-prediction.jpg'
   },
+]
 // Helper function to get project image path
   {
+  }
 const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
     technologies: ['Python', 'Artificial Intelligence', 'Scikit-learn', 'Robotics'],
   if (imageName) {
@@ -204,3 +206,4 @@ const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
   }
     image: getProjectImage('vacuum-agent.png', 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'vacuum-agent.png'
+}
