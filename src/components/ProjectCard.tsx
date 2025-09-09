@@ -18,7 +18,7 @@ export default function ProjectCard({ id, title, description, technologies, imag
   return (
     <Link 
       to={`/project/${id}`}
-      className="group block bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 break-inside-avoid mb-6"
+      className="group block bg-white rounded-xl overflow-hidden transition-all duration-300 break-inside-avoid mb-6"
     >
       <div className={`${cardHeight} w-full overflow-hidden relative`}>
         <img 
