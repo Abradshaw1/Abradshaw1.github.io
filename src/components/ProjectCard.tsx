@@ -65,7 +65,7 @@ export default function ProjectCard({
       onDragOver={handleDragOver}
       onDrop={handleDrop}
       onDragEnd={onDragEnd}
-      className={`group bg-white overflow-hidden transition-all duration-300 break-inside-avoid mb-6 shadow-sm min-w-[280px] ${
+      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full ${
         !isGhost ? 'cursor-move' : 'cursor-default'
       } ${
         isDropTarget ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
