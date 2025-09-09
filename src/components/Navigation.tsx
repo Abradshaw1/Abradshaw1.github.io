@@ -7,7 +7,8 @@ export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Me' },
-    { path: '/projects', label: 'Projects' }
+    { path: '/projects', label: 'Projects' },
+    { path: '/publications', label: 'Publications' }
   ];
 
   return (
