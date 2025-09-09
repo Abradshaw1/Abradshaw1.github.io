@@ -185,7 +185,7 @@ export const projects = [
     principles.`,
     technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
-    image: getProjectImage('mobile-game.gif', 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=1200&h=800'),
+    image: getProjectImage('mobile-game.gif', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'mobile-game.gif'
   },
   {

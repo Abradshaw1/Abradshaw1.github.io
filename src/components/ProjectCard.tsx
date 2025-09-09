@@ -65,7 +65,7 @@ export default function ProjectCard({
       onDragOver={handleDragOver}
       onDrop={handleDrop}
       onDragEnd={onDragEnd}
-      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full min-h-[256px] ${
+      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-6 ${
         !isGhost ? 'cursor-move' : 'cursor-default'
       } ${
         isDropTarget ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
@@ -88,7 +88,7 @@ export default function ProjectCard({
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             console.log(`Failed to load image for ${title}:`, image);
-            e.currentTarget.src = 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=1200&h=800';
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800';
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 transition-all duration-500">
