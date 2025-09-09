@@ -9,11 +9,11 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center">
+      <div className="min-h-screen bg-stone-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900">Project not found</h1>
-          <Link to="/" className="text-blue-600 hover:text-blue-700 mt-4 inline-block">
-            Return home
+          <h1 className="text-2xl font-light text-slate-900">Project not found</h1>
+          <Link to="/projects" className="text-blue-600 hover:text-blue-700 mt-4 inline-block">
+            Return to projects
           </Link>
         </div>
       </div>
@@ -21,42 +21,53 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-3xl">
+    <div className="min-h-screen bg-stone-50 pt-24 pb-16">
+      <div className="max-w-4xl mx-auto px-6">
         <Link 
-          to="/" 
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
+          to="/projects" 
+          className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Home
+          Back to Projects
         </Link>
 
-        <div className="bg-gray-700/80 border border-blue-500/20 rounded-lg overflow-hidden">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-72 object-cover"
-          />
+        <div className="bg-white rounded-2xl overflow-hidden border border-slate-200">
+          <div className="aspect-video w-full overflow-hidden">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
           <div className="p-8">
-            <h1 className="text-3xl font-bold text-white mb-4">{project.title}</h1>
-            <p className="text-gray-300 mb-6 leading-relaxed">{project.fullDescription}</p>
-            
-            <div className="mb-6">
-              <h2 className="text-xl font-semibold text-white mb-3">Technologies Used</h2>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            <div className="space-y-6">
+              <div>
+                <h1 className="text-3xl font-light text-slate-900 mb-2">{project.title}</h1>
+                <div className="w-16 h-0.5 bg-blue-600"></div>
+              </div>
+              
+              <p className="text-slate-600 leading-relaxed text-lg">
+                {project.fullDescription}
+              </p>
+              
+              <div>
+                <h2 className="text-xl font-medium text-slate-900 mb-4">Technologies Used</h2>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, index) => (
+                    <span 
+                      key={index}
+                      className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
