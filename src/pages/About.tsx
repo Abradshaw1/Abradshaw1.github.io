@@ -72,7 +72,7 @@ export default function About() {
         <div className="space-y-12">
           
           <div>
-            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>LINKS</h2>
+            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Links</h2>
             
             <div className="flex gap-4">
               <a
@@ -110,7 +110,7 @@ export default function About() {
           <div className="w-full h-0.5 bg-[#00008B]"></div>
           
           <div>
-            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>INTERESTS</h2>
+            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {personalInterests.map(({ icon: Icon, text, size }, index) => (
                 <div key={index} className="flex items-center gap-3 text-slate-600">
