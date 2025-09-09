@@ -82,7 +82,7 @@ export default function Publications() {
     showAllLinks: boolean;
   }) => (
     <div className="flex gap-6 py-6 border-b border-slate-200 last:border-b-0">
-      <div className="w-48 h-32 flex-shrink-0 bg-slate-100 rounded overflow-hidden flex items-center justify-center">
+      <div className="w-64 h-40 flex-shrink-0 bg-slate-100 rounded overflow-hidden flex items-center justify-center">
         <img 
           src={image} 
           alt={title}
