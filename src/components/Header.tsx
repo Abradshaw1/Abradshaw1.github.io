@@ -29,12 +29,11 @@ export default function Header() {
             { icon: Github, label: 'GitHub', href: 'https://github.com/Abradshaw1' },
             { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
             { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' },
-            { icon: FileText, label: 'CV', href: '#', download: true }
+            { icon: FileText, label: 'CV', href: '/cv', download: false }
           ].map(({ icon: Icon, label, href, download }) => (
             <a
               key={label}
               href={href}
-              download={download}
               className="flex items-center gap-2 px-4 py-2 bg-gray-600/90 rounded-md hover:bg-gray-600 text-[#60A5FA] transition-colors text-sm font-medium"
             >
               <Icon className="w-4 h-4" />

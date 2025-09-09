@@ -31,13 +31,13 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-        <div className="bg-white overflow-hidden border border-white shadow-sm">
-          <div className="grid md:grid-cols-2 gap-8 p-8">
-            <div className="aspect-video w-full overflow-hidden rounded-lg">
+        <div className="bg-white overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8 p-8 min-h-[500px]">
+            <div className="w-full h-full overflow-hidden rounded-lg">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover"
               />
             </div>
             
@@ -53,17 +53,26 @@ export default function ProjectDetail() {
               </p>
               
               <div>
-                <h2 className="text-xl font-medium text-slate-900 mb-4">Technologies Used</h2>
-                <div className="flex flex-wrap gap-2">
+                <h2 className="text-xl font-medium text-slate-900 mb-2">Technologies Used</h2>
+                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
+                <ul className="space-y-1">
                   {project.technologies.map((tech, index) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1.5 bg-slate-100 text-[#00008B] rounded-lg text-sm"
-                    >
-                      {tech}
-                    </span>
+                    <li key={index} className="text-slate-600">
+                      • {tech}
+                    </li>
                   ))}
-                </div>
+                </ul>
+              </div>
+              
+              <div>
+                <h2 className="text-xl font-medium text-slate-900 mb-2">Code</h2>
+                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center text-[#00008B] hover:text-[#000080] underline"
+                >
+                  View Source Code →
+                </a>
               </div>
             </div>
             </div>
