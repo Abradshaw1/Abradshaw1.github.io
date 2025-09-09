@@ -8,8 +8,21 @@ import {
   Cpu,
   Flower,
   TowerControl,
-  Gauge
+  Gauge,
+  Coffee
 } from 'lucide-react';
+
+const personalInterests = [
+  { icon: Timer, text: 'Long distance running (currently marathon training)', size: 'w-5 h-5' },
+  { icon: TreePine, text: 'Finding the best reading spot in Pittsburgh Parks for hammock reading', size: 'w-4 h-4' },
+  { icon: Brain, text: 'Implicit biases in language', size: 'w-6 h-6' },
+  { icon: Keyboard, text: 'Mechanical Keyboard design', size: 'w-4 h-4' },
+  { icon: Cpu, text: 'PC building', size: 'w-5 h-5' },
+  { icon: Flower, text: 'Started my own herb Garden!', size: 'w-4 h-4' },
+  { icon: Coffee, text: 'Coffee brewing and roasting techniques', size: 'w-5 h-5' },
+  { icon: TowerControl, text: 'Japanese Shrine Architecture', size: 'w-4 h-4' },
+  { icon: Gauge, text: 'High performance computing', size: 'w-6 h-6' }
+];
 
 export default function About() {
   return (
@@ -59,7 +72,7 @@ export default function About() {
         <div className="space-y-12">
           
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>LINKS</h2>
+            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>LINKS</h2>
             
             <div className="flex gap-4">
               <a
@@ -97,41 +110,17 @@ export default function About() {
           <div className="w-full h-0.5 bg-[#00008B]"></div>
           
           <div>
-            <h2 className="text-2xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>INTERESTS</h2>
-            <ul className="space-y-3 text-slate-600">
-              <li className="flex items-center gap-3">
-                <Timer className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Long distance running (currently marathon training)</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <TreePine className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Finding the best reading spot in Pittsburgh Parks for hammock reading</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Brain className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Implicit biases in language</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Keyboard className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Mechanical Keyboard design</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Cpu className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>PC building</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Flower className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Started my own herb Garden!</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <TowerControl className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>Japanese Shrine Architecture</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Gauge className="w-4 h-4 text-[#00008B] mt-1 flex-shrink-0" />
-                <span>High performance computing</span>
-              </li>
-            </ul>
+            <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>INTERESTS</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {personalInterests.map(({ icon: Icon, text, size }, index) => (
+                <div key={index} className="flex items-center gap-3 text-slate-600">
+                  <div className="flex items-center justify-center min-w-[32px]">
+                    <Icon className={`${size} text-[#00008B] flex-shrink-0`} />
+                  </div>
+                  <span className="text-sm leading-relaxed">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
