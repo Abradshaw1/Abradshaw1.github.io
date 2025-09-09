@@ -6,7 +6,6 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Publications from './pages/Publications';
-import CVViewer from './pages/CVViewer';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/publications" element={<Publications />} />
-          <Route path="/cv" element={<CVViewer />} />
         </Routes>
         <Footer />
       </div>

@@ -78,7 +78,8 @@ export default function About() {
                 EMAIL
               </a>
               <a
-                href="/cv"
+                href="/ABradshaw-Resume-CV.pdf"
+                download="Aidan_Bradshaw_CV.pdf"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
               >
                 <FileText className="w-4 h-4" />
