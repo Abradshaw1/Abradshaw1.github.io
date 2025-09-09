@@ -42,6 +42,7 @@ export default function ProjectDetail() {
                 className="w-full h-full object-cover"
               />
             </div>
+            </div>
             
             <div className="flex flex-col justify-center">
             <div className="space-y-6">
@@ -70,6 +71,7 @@ export default function ProjectDetail() {
             </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
