@@ -92,24 +92,30 @@ export default function ProjectCard({
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 transition-all duration-500">
           <div className="text-white">
-            <h3 className="text-lg font-medium mb-2 transition-colors duration-500 group-hover:text-[#00008B]">
+            <h3 className="text-lg font-medium mb-2 relative overflow-hidden">
+              <span className="relative z-10">{title}</span>
+              <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+            </h3>
+            <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3 relative overflow-hidden">
+              <span className="relative z-10">{description}</span>
+              <div className="absolute inset-0 bg-[#00008B]/70 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-100"></div>
               {title}
             </h3>
-            <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3 transition-colors duration-500 group-hover:text-[#00008B]">
-              {description}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {technologies.slice(0, 3).map((tech, index) => (
                 <span 
                   key={index} 
-                  className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm transition-all duration-500 group-hover:bg-[#00008B]/80 group-hover:text-white"
+                  className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm relative overflow-hidden transition-all duration-500"
                 >
-                  {tech}
+                  <span className="relative z-10">{tech}</span>
+                  <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" style={{transitionDelay: `${200 + index * 50}ms`}}></div>
                 </span>
               ))}
               {technologies.length > 3 && (
-                <span className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm transition-all duration-500 group-hover:bg-[#00008B]/80 group-hover:text-white">
-                  +{technologies.length - 3} more
+                <span className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm relative overflow-hidden transition-all duration-500">
+                  <span className="relative z-10">+{technologies.length - 3} more</span>
+                  <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out delay-300"></div>
                 </span>
               )}
             </div>
