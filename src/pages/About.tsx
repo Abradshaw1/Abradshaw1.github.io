@@ -85,6 +85,7 @@ export default function About() {
           >
             Links
           </h2>
+          <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
 
           <div className="flex flex-wrap gap-4">
             <a
