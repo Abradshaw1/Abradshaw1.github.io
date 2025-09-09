@@ -61,11 +61,11 @@ export default function ProjectDetail() {
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Code</h2>
                 <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
-                <a 
-                  href="#" 
-                  className="inline-flex items-center text-[#00008B] hover:text-[#000080] underline"
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
                 >
-                  View Source Code →
+                  VIEW SOURCE CODE
                 </a>
               </div>
             </div>
