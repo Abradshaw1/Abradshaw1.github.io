@@ -193,17 +193,21 @@ export const projects = [
     image: getProjectImage('accident-prediction.jpg', 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'accident-prediction.jpg'
   },
-]
-// Helper function to get project image path
   {
-  }
-const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
+    id: 'vacuum-agent',
+    title: 'Vacuum Agent AI',
+    description: 'Intelligent vacuum cleaning agent with pathfinding algorithms.',
+    fullDescription: `Developed an intelligent vacuum cleaning agent using artificial intelligence techniques. 
+    Implemented pathfinding algorithms and decision-making systems for efficient cleaning patterns.`,
     technologies: ['Python', 'Artificial Intelligence', 'Scikit-learn', 'Robotics'],
-  if (imageName) {
     link: '#',
-    return `/project-images/${imageName}`;
-    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'
-  }
     image: getProjectImage('vacuum-agent.png', 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'vacuum-agent.png'
-}
+  }
+]
+
+// Helper function to get project image path
+const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
+  if (imageName) {
+    return `/project-images/${imageName}`;
+  }
