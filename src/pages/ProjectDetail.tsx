@@ -34,7 +34,7 @@ export default function ProjectDetail() {
         <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
         <div className="bg-white overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 p-8">
-            <div className="aspect-video w-full overflow-hidden rounded-lg border border-slate-200">
+            <div className="aspect-video w-full overflow-hidden rounded-lg">
               <img 
                 src={project.image} 
                 alt={project.title} 
@@ -46,7 +46,7 @@ export default function ProjectDetail() {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-light text-slate-900 mb-2">{project.title}</h1>
-                <div className="w-16 h-0.5 bg-[#00008B]"></div>
+                <div className="h-0.5 bg-[#00008B] w-fit pr-4" style={{width: 'fit-content'}}></div>
               </div>
               
               <p className="text-slate-600 leading-relaxed text-lg">
