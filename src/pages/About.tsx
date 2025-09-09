@@ -26,9 +26,9 @@ export default function About() {
                 alt="Aidan Bradshaw"
                 className="w-full h-full object-cover"
               />
+            </div>
             <div className="h-0.5 bg-[#00008B] w-full"></div>
           </div>
-        </div>
           
           <div className="md:col-span-2 space-y-6">
             <div>
@@ -133,6 +133,4 @@ export default function About() {
       </div>
     </div>
   );
-}
-  )
 }
