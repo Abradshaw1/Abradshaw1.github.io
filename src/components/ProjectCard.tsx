@@ -18,7 +18,7 @@ export default function ProjectCard({ id, title, description, technologies, imag
   return (
     <Link 
       to={`/project/${id}`}
-      className="group block bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-all duration-300 break-inside-avoid mb-6"
+      className="group block bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 break-inside-avoid mb-6"
     >
       <div className={`${cardHeight} w-full overflow-hidden relative`}>
         <img 
@@ -29,7 +29,7 @@ export default function ProjectCard({ id, title, description, technologies, imag
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       
-      <div className="p-6 border-t border-slate-100">
+      <div className="p-6">
         <div className="space-y-3">
           <h3 className="text-lg font-medium text-slate-900 group-hover:text-[#00008B] transition-colors">
             {title}
