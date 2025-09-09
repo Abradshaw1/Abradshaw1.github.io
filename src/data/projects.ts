@@ -204,5 +204,3 @@ const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
   }
     image: getProjectImage('vacuum-agent.png', 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'vacuum-agent.png'
-  return fallbackUrl;
-];
