@@ -1,3 +1,10 @@
+// Helper function to get project image path
+const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
+  if (imageName) {
+    return `/project-images/${imageName}`;
+  }
+  return fallbackUrl;
+}
 
 export const projects = [
   {
@@ -52,7 +59,7 @@ export const projects = [
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
     link: '#',
     image: getProjectImage('genai-ct.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
-    customImage: 'genai-ct.png' // Set to null if using fallback
+    customImage: 'genai-ct.png'
   },
   {
     id: 'bee-buzz-classification',
@@ -205,10 +212,3 @@ export const projects = [
     customImage: 'vacuum-agent.png'
   }
 ]
-
-// Helper function to get project image path
-const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
-  if (imageName) {
-    return `/project-images/${imageName}`;
-  }
-}
