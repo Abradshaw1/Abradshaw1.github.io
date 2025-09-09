@@ -1,92 +1,55 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
 
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
-  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
-  const dragCounter = useRef(0);
+  const [draggedCard, setDraggedCard] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const handleDragStart = (e: React.DragEvent, index: number) => {
-    setDraggedIndex(index);
-    setDragOverIndex(null);
+  const handleDragStart = (index: number) => {
+    setDraggedCard(index);
+    setHoveredCard(null);
     e.dataTransfer.effectAllowed = 'move';
-    dragCounter.current = 0;
   };
 
-  const handleDragEnter = (e: React.DragEvent, index: number) => {
-    e.preventDefault();
-    dragCounter.current++;
-    if (draggedIndex !== null && draggedIndex !== index) {
-      setDragOverIndex(index);
+  const handleDragEnter = (index: number) => {
+    if (draggedCard !== null && draggedCard !== index) {
+      setHoveredCard(index);
     }
   };
 
-  const handleDragLeave = (e: React.DragEvent) => {
-    dragCounter.current--;
-    if (dragCounter.current === 0) {
-      setDragOverIndex(null);
-    }
+  const handleDragLeave = () => {
+    setHoveredCard(null);
   };
 
-  const handleDragOver = (e: React.DragEvent, index: number) => {
+  const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    if (draggedIndex !== null && draggedIndex !== index) {
-      setDragOverIndex(index);
-    }
   };
 
-  const handleDrop = (e: React.DragEvent, dropIndex: number) => {
-    e.preventDefault();
-    
-    if (draggedIndex === null) {
-      setDraggedIndex(null);
-      setDragOverIndex(null);
+  const handleDrop = (dropIndex: number) => {
+    if (draggedCard === null || draggedCard === dropIndex) {
+      setDraggedCard(null);
+      setHoveredCard(null);
       return;
     }
 
-    if (draggedIndex !== dropIndex) {
-      const newProjects = [...projectList];
-      const draggedProject = newProjects[draggedIndex];
-      
-      // Remove dragged item
-      newProjects.splice(draggedIndex, 1);
-      // Insert at new position
-      newProjects.splice(dropIndex, 0, draggedProject);
-      
-      setProjectList(newProjects);
-    }
+    // Swap the two cards
+    const newProjects = [...projectList];
+    const temp = newProjects[draggedCard];
+    newProjects[draggedCard] = newProjects[dropIndex];
+    newProjects[dropIndex] = temp;
     
-    setDraggedIndex(null);
-    setDragOverIndex(null);
+    setProjectList(newProjects);
+    setDraggedCard(null);
+    setHoveredCard(null);
   };
 
   const handleDragEnd = () => {
-    setDraggedIndex(null);
-    setDragOverIndex(null);
+    setDraggedCard(null);
+    setHoveredCard(null);
   };
-
-  // Create display order for smooth animations
-  const getDisplayOrder = () => {
-    if (draggedIndex === null || dragOverIndex === null) {
-      return projectList.map((_, index) => index);
-    }
-
-    const order = projectList.map((_, index) => index);
-    const draggedItem = order[draggedIndex];
-    
-    // Remove dragged item
-    order.splice(draggedIndex, 1);
-    // Insert at hover position
-    order.splice(dragOverIndex, 0, draggedItem);
-    
-    return order;
-  };
-
-  const displayOrder = getDisplayOrder();
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
@@ -101,21 +64,20 @@ export default function Projects() {
         </div>
         
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          {displayOrder.map((originalIndex, displayIndex) => {
-            const project = projectList[originalIndex];
+          {projectList.map((project, index) => {
             return (
             <ProjectCard 
               key={project.id} 
               {...project} 
-              index={originalIndex}
-              onDragStart={(e) => handleDragStart(e, originalIndex)}
-              onDragEnter={(e) => handleDragEnter(e, originalIndex)}
+              index={index}
+              onDragStart={() => handleDragStart(index)}
+              onDragEnter={() => handleDragEnter(index)}
               onDragLeave={handleDragLeave}
-              onDragOver={(e) => handleDragOver(e, originalIndex)}
-              onDrop={(e) => handleDrop(e, originalIndex)}
+              onDragOver={handleDragOver}
+              onDrop={() => handleDrop(index)}
               onDragEnd={handleDragEnd}
-              isDragging={draggedIndex === originalIndex}
-              isHovered={dragOverIndex === originalIndex}
+              isDragging={draggedCard === index}
+              isHovered={hoveredCard === index}
             />
           )})}
         </div>

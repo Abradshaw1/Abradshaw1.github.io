@@ -8,11 +8,11 @@ interface ProjectCardProps {
   technologies: string[];
   image: string;
   index: number;
-  onDragStart?: (e: React.DragEvent) => void;
-  onDragEnter?: (e: React.DragEvent) => void;
-  onDragLeave?: (e: React.DragEvent) => void;
+  onDragStart?: () => void;
+  onDragEnter?: () => void;
+  onDragLeave?: () => void;
   onDragOver?: (e: React.DragEvent) => void;
-  onDrop?: (e: React.DragEvent) => void;
+  onDrop?: () => void;
   onDragEnd?: () => void;
   isDragging?: boolean;
   isHovered?: boolean;
@@ -38,22 +38,51 @@ export default function ProjectCard({
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-60', 'h-88', 'h-56', 'h-84'];
   const cardHeight = heights[index % heights.length];
   
+  const handleDragStart = (e: React.DragEvent) => {
+    e.dataTransfer.effectAllowed = 'move';
+    onDragStart?.();
+  };
+
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    onDragEnter?.();
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    onDragOver?.(e);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    onDrop?.();
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    // Prevent navigation if we're in the middle of a drag operation
+    if (isDragging) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div
       draggable
-      onDragStart={onDragStart}
-      onDragEnter={onDragEnter}
+      onDragStart={handleDragStart}
+      onDragEnter={handleDragEnter}
       onDragLeave={onDragLeave}
-      onDragOver={onDragOver}
-      onDrop={onDrop}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
       onDragEnd={onDragEnd}
       className={`group bg-white overflow-hidden transition-all duration-300 break-inside-avoid mb-6 cursor-move ${
-        isHovered ? 'transform translate-y-2' : ''
+        isHovered ? 'transform scale-105 shadow-2xl z-10' : ''
       }`}
     >
       <Link 
         to={`/project/${id}`}
         className="block w-full h-full"
+        onClick={handleClick}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative`}>
         <img 
