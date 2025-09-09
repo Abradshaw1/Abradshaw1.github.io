@@ -52,7 +52,7 @@ export default function ProjectDetail() {
               
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Technologies Used</h2>
-                <div className="h-px bg-[#00008B] w-full mb-4"></div>
+                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
                 <p className="text-slate-600">
                   {project.technologies.join(', ')}
                 </p>
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
               
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Code</h2>
-                <div className="h-px bg-[#00008B] w-full mb-4"></div>
+                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
                 <a 
                   href="#" 
                   className="inline-flex items-center text-[#00008B] hover:text-[#000080] underline"

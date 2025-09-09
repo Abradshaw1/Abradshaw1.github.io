@@ -26,7 +26,7 @@ export default function About() {
                 alt="Aidan Bradshaw"
                 className="w-full h-full object-cover"
               />
-            </div>
+            <div className="h-0.5 bg-[#00008B] w-full"></div>
           </div>
           
           <div className="md:col-span-2 space-y-6">
@@ -37,18 +37,27 @@ export default function About() {
             
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                I am an AI researcher and embedded systems designer working at the intersection of ubiquitous computing, health sensing, and applied machine learning. I hold an M.S. in Applied Data Science from Carnegie Mellon University and a B.S. in Computer Science (with a minor in Applied Mathematics) from San Diego State University.
+                I am an AI researcher and embedded systems designer working at the intersection of ubiquitous computing, health sensing, and applied machine learning. I hold an M.S. in Applied Data Science from <span className="relative inline-block">
+                  <span className="absolute inset-0 bg-[#00008B] transform -skew-x-12 rounded-sm"></span>
+                  <a href="https://www.cmu.edu/" className="relative text-white px-1 hover:underline">Carnegie Mellon University</a>
+                </span> and a B.S. in Computer Science (with a minor in Applied Mathematics) from San Diego State University.
               </p>
               
               <p>
-                I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University's Human-Computer Interaction Institute and MIT's Media Lab.
+                I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University's <span className="relative inline-block">
+                  <span className="absolute inset-0 bg-[#00008B] transform -skew-x-12 rounded-sm"></span>
+                  <a href="https://hcii.cmu.edu/" className="relative text-white px-1 hover:underline">Human-Computer Interaction Institute</a>
+                </span> and <span className="relative inline-block">
+                  <span className="absolute inset-0 bg-[#00008B] transform -skew-x-12 rounded-sm"></span>
+                  <a href="https://www.media.mit.edu/" className="relative text-white px-1 hover:underline">MIT's Media Lab</a>
+                </span>.
               </p>
             </div>
           </div>
         </div>
 
         {/* Blue divider bar - full width */}
-        <div className="w-full h-px bg-[#00008B] mb-12"></div>
+        <div className="w-full h-0.5 bg-[#00008B] mb-12"></div>
         
         <div className="space-y-12">
           
@@ -92,7 +101,7 @@ export default function About() {
           </div>
 
           {/* Blue divider bar - full width */}
-          <div className="w-full h-px bg-[#00008B]"></div>
+          <div className="w-full h-0.5 bg-[#00008B]"></div>
           
           <div>
             <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>

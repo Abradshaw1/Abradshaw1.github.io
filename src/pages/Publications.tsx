@@ -103,7 +103,7 @@ export default function Publications() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="mb-12">
           <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>Publications</h1>
-          <div className="h-px bg-[#00008B] w-full"></div>
+          <div className="h-0.5 bg-[#00008B] w-full"></div>
         </div>
         
         <div className="space-y-12">
@@ -112,7 +112,7 @@ export default function Publications() {
             <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
               Conference Papers
             </h2>
-            <div className="h-px bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
             <div className="space-y-0">
               {conferencePublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -125,7 +125,7 @@ export default function Publications() {
             <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
               Journals
             </h2>
-            <div className="h-px bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
             <div className="space-y-0">
               {journalPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -138,7 +138,7 @@ export default function Publications() {
             <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
               Posters
             </h2>
-            <div className="h-px bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
             <div className="space-y-0">
               {posterPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />

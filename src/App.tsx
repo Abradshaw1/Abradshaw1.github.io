@@ -12,7 +12,7 @@ function App() {
       <div className="min-h-screen bg-stone-50">
         <Navigation />
         <Routes>
-          <Route path="/" element={<Projects />} />
+          <Route path="/" element={<About />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
