@@ -92,9 +92,8 @@ export default function Projects() {
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
-          <h1 className="text-4xl font-light text-slate-900 mb-2" style={{ fontFamily: 'Georgia, serif' }}>Projects</h1>
+          <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>Projects</h1>
           <div className="h-0.5 bg-[#00008B] w-full"></div>
-          <div className="h-0.5 bg-[#00008B] w-full max-w-fit"></div>
           <p className="text-slate-600 mt-4 max-w-2xl">
             A collection of research projects, applications, and experiments spanning machine learning, 
             healthcare technology, and data science.

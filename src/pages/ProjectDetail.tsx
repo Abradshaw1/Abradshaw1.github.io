@@ -45,7 +45,7 @@ export default function ProjectDetail() {
             <div className="flex flex-col justify-center">
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl font-light text-slate-900 mb-2">{project.title}</h1>
+                <h1 className="text-3xl font-light text-black mb-2">{project.title}</h1>
                 <div className="h-0.5 bg-[#00008B] w-full"></div>
               </div>
               
