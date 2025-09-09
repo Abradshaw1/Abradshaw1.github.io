@@ -8,14 +8,13 @@ interface ProjectCardProps {
   technologies: string[];
   image: string;
   index: number;
-  onDragStart?: () => void;
-  onDragEnter?: () => void;
-  onDragLeave?: () => void;
+  onDragStart?: (e: React.DragEvent) => void;
   onDragOver?: (e: React.DragEvent) => void;
   onDrop?: () => void;
   onDragEnd?: () => void;
   isDragging?: boolean;
-  isHovered?: boolean;
+  isDropTarget?: boolean;
+  isGhost?: boolean;
 }
 
 export default function ProjectCard({ 
@@ -26,13 +25,12 @@ export default function ProjectCard({
   image, 
   index,
   onDragStart,
-  onDragEnter,
-  onDragLeave,
   onDragOver,
   onDrop,
   onDragEnd,
   isDragging = false,
-  isHovered = false
+  isDropTarget = false,
+  isGhost = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-60', 'h-88', 'h-56', 'h-84'];
@@ -40,12 +38,7 @@ export default function ProjectCard({
   
   const handleDragStart = (e: React.DragEvent) => {
     e.dataTransfer.effectAllowed = 'move';
-    onDragStart?.();
-  };
-
-  const handleDragEnter = (e: React.DragEvent) => {
-    e.preventDefault();
-    onDragEnter?.();
+    onDragStart?.(e);
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -68,15 +61,17 @@ export default function ProjectCard({
 
   return (
     <div
-      draggable
+      draggable={!isGhost}
       onDragStart={handleDragStart}
-      onDragEnter={handleDragEnter}
-      onDragLeave={onDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
       onDragEnd={onDragEnd}
-      className={`group bg-white overflow-hidden transition-all duration-300 break-inside-avoid mb-6 cursor-move ${
-        isHovered ? 'transform scale-105 shadow-2xl z-10' : ''
+      className={`group bg-white overflow-hidden transition-all duration-300 break-inside-avoid mb-6 ${
+        !isGhost ? 'cursor-move' : 'cursor-default'
+      } ${
+        isDropTarget ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
+      } ${
+        isGhost ? 'shadow-2xl' : ''
       }`}
     >
       <Link 
@@ -85,6 +80,9 @@ export default function ProjectCard({
         onClick={handleClick}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative`}>
+        {isDropTarget && (
+          <div className="absolute inset-0 bg-blue-100 opacity-20 z-10"></div>
+        )}
         <img 
           src={image} 
           alt={title}
