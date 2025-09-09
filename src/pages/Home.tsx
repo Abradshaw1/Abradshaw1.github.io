@@ -10,9 +10,6 @@ export default function Home() {
           <h1 className="text-6xl md:text-7xl font-light text-slate-900 tracking-tight">
             Aidan Bradshaw
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            M.S. Applied Data Science at Carnegie Mellon University
-          </p>
           <p className="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed">
             Research in applied machine learning for healthcare applications, 
             generative AI, and human-computer interaction
