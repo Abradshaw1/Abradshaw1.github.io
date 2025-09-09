@@ -9,10 +9,13 @@ interface ProjectCardProps {
   image: string;
   index: number;
   onDragStart?: (e: React.DragEvent) => void;
+  onDragEnter?: (e: React.DragEvent) => void;
+  onDragLeave?: (e: React.DragEvent) => void;
   onDragOver?: (e: React.DragEvent) => void;
   onDrop?: (e: React.DragEvent) => void;
   onDragEnd?: () => void;
   isDragging?: boolean;
+  isHovered?: boolean;
 }
 
 export default function ProjectCard({ 
@@ -23,10 +26,13 @@ export default function ProjectCard({
   image, 
   index,
   onDragStart,
+  onDragEnter,
+  onDragLeave,
   onDragOver,
   onDrop,
   onDragEnd,
-  isDragging = false
+  isDragging = false,
+  isHovered = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-60', 'h-88', 'h-56', 'h-84'];
@@ -36,10 +42,14 @@ export default function ProjectCard({
     <div
       draggable
       onDragStart={onDragStart}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
       onDragOver={onDragOver}
       onDrop={onDrop}
       onDragEnd={onDragEnd}
-      className="group bg-white overflow-hidden transition-all duration-500 break-inside-avoid mb-6 cursor-move"
+      className={`group bg-white overflow-hidden transition-all duration-300 break-inside-avoid mb-6 cursor-move ${
+        isHovered ? 'transform translate-y-2' : ''
+      }`}
     >
       <Link 
         to={`/project/${id}`}
