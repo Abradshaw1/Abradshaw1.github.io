@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileText, School } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { 
   Timer,
   TreePine,
