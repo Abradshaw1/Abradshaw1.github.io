@@ -32,7 +32,7 @@ export default function ProjectCard({
   isGhost = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
-  const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-64', 'h-88', 'h-64', 'h-84'];
+  const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
   
   const handleDragStart = (e: React.DragEvent) => {

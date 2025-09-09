@@ -57,18 +57,18 @@ export default function About() {
               <p>
                 I am currently based in Zurich, working as a research assistant
                 at ETH Zurich&apos;s{' '}
-                <HighlightLink href="https://iis.ee.ethz.ch/">
+                <HighlightLink href="https://iis.ee.ethz.ch/" style={{ textDecorationThickness: '2px' }}>
                   Integrated Systems Laboratory
                 </HighlightLink>
                 . My previous work spans AI applications in TinyML, sensor
                 fusion, wearables, signal processing, interface design,
                 multimodal diffusion, and mHealth during my time at Carnegie
                 Mellon University&apos;s{' '}
-                <HighlightLink href="https://hcii.cmu.edu/">
+                <HighlightLink href="https://hcii.cmu.edu/" style={{ textDecorationThickness: '2px' }}>
                   Human-Computer Interaction Institute
                 </HighlightLink>{' '}
                 and{' '}
-                <HighlightLink href="https://www.media.mit.edu/">
+                <HighlightLink href="https://www.media.mit.edu/" style={{ textDecorationThickness: '2px' }}>
                   MIT&apos;s Media Lab
                 </HighlightLink>
                 .

@@ -20,4 +20,9 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
+  
+  /* Standardize all underlines to 2px */
+  a {
+    text-decoration-thickness: 2px !important;
+  }
 }
