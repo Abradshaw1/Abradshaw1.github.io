@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Mail, FileText, School } from 'lucide-react';
 import { 
   Timer,

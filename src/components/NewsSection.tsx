@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, School, Award, MapPin, FileText } from 'lucide-react';
 
 const newsItems = [
