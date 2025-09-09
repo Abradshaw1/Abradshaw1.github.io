@@ -211,3 +211,4 @@ const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
   if (imageName) {
     return `/project-images/${imageName}`;
   }
+}
