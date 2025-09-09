@@ -83,7 +83,7 @@ export default function About() {
             className="text-4xl font-light text-slate-900 mb-2"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Links
+            Resources
           </h2>
           <div className="h-[2px] bg-[#00008B] w-full mb-6" />
 
