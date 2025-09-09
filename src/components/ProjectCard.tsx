@@ -101,23 +101,6 @@ export default function ProjectCard({
               <span className="relative z-10">{description}</span>
               <div className="absolute inset-0 bg-[#00008B]/70 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-100"></div>
             </p>
-            <div className="flex flex-wrap gap-1.5">
-              {technologies.slice(0, 3).map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm relative overflow-hidden transition-all duration-500"
-                >
-                  <span className="relative z-10">{tech}</span>
-                  <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" style={{transitionDelay: `${200 + index * 50}ms`}}></div>
-                </span>
-              ))}
-              {technologies.length > 3 && (
-                <span className="text-xs px-2 py-1 bg-white/20 text-white rounded-sm relative overflow-hidden transition-all duration-500">
-                  <span className="relative z-10">+{technologies.length - 3} more</span>
-                  <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out delay-300"></div>
-                </span>
-              )}
-            </div>
           </div>
         </div>
         </div>
