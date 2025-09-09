@@ -78,15 +78,13 @@ export default function About() {
         </div>
 
         {/* Links */}
-        <div>
+        <div className="mt-12">
           <h2
             className="text-4xl font-light text-slate-900 mb-2"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             Links
           </h2>
-          {/* match About Me underline width (section width, not full container) */}
-          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
 
           <div className="flex flex-wrap gap-4">
             <a
@@ -122,12 +120,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* full-width divider after Links section */}
-        <div className="w-full h-0.5 bg-[#00008B] my-12" />
-
         {/* Interests */}
-        <div>
+        <div className="mt-12">
           <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
+          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
           <div className="space-y-3 text-slate-600">
             <div className="flex items-center gap-3">
               <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
