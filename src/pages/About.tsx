@@ -51,12 +51,8 @@ export default function About() {
                 I am an AI researcher and embedded systems designer working at
                 the intersection of ubiquitous computing, health sensing, and
                 applied machine learning. I hold an M.S. in Applied Data Science
-                from{' '}
-                <HighlightLink href="https://iis.ee.ethz.ch/">
-                  Carnegie Mellon University
-                </HighlightLink>{' '}
-                and a B.S. in Computer Science (with a minor in Applied
-                Mathematics) from San Diego State University.
+                from Carnegie Mellon University and a B.S. in Computer Science 
+                (with a minor in Applied Mathematics) from San Diego State University.
               </p>
 
               <p>
