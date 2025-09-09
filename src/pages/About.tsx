@@ -42,7 +42,8 @@ export default function About() {
               >
                 About Me
               </h1>
-            </div>
+              {/* section-width underline to match Links */}
+              #
 
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
