@@ -44,7 +44,7 @@ export default function About() {
               </p>
               
                   <a href="https://iis.ee.ethz.ch/" className="relative text-white px-1 hover:underline">Integrated Systems Laboratory</a>
-                I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University's <span className="relative inline-block">
+                I am currently based in Zurich, working as a research assistant at ETH Zurich's Integrated Systems Laboratory. My previous work spans AI applications in TinyML, sensor fusion, wearables, signal processing, interface design, multimodal diffusion, and mHealth during my time at Carnegie Mellon University\'s <span className="relative inline-block">
                   <span className="absolute inset-0 bg-[#00008B] rounded-sm"></span>
                   <a href="https://hcii.cmu.edu/" className="relative text-white px-1 hover:underline">Human-Computer Interaction Institute</a>
                 </span> and <span className="relative inline-block">
