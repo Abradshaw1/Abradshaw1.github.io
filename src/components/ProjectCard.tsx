@@ -99,8 +99,6 @@ export default function ProjectCard({
             <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3 relative overflow-hidden">
               <span className="relative z-10">{description}</span>
               <div className="absolute inset-0 bg-[#00008B]/70 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-100"></div>
-              {title}
-            </h3>
             </p>
             <div className="flex flex-wrap gap-1.5">
               {technologies.slice(0, 3).map((tech, index) => (
