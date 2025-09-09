@@ -78,16 +78,16 @@ export default function About() {
         </div>
 
         {/* Links */}
-        <div className="mt-12">
+        <div className="mt-16">
           <h2
             className="text-4xl font-light text-slate-900 mb-2"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             Links
           </h2>
-          <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
+          <div className="h-0.5 bg-[#00008B] w-full mb-6" />
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mt-6">
             <a
               href="https://github.com/Abradshaw1"
               className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
@@ -122,10 +122,10 @@ export default function About() {
         </div>
 
         {/* Interests */}
-        <div className="mt-12">
+        <div className="mt-16">
           <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
           <div className="h-0.5 bg-[#00008B] w-full mb-6" />
-          <div className="space-y-3 text-slate-600">
+          <div className="space-y-3 text-slate-600 mt-6">
             <div className="flex items-center gap-3">
               <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics.</p>
