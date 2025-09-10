@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
