@@ -30,6 +30,7 @@ export default function Header() {
             { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/aidanbradshaw1/' },
             { icon: Mail, label: 'Email', href: 'mailto:abradsha@andrew.cmu.edu' },
             { icon: FileText, label: 'CV', href: '/ABradshaw-Resume-CV.pdf', download: true }
+            { icon: FileText, label: 'CV', href: '/ABradshaw-Resume-CV.pdf', download: true },
             { icon: FileText, label: 'CV', href: '/Aidan_Bradshaw_Resume_CV.pdf', download: true }
           ].map(({ icon: Icon, label, href, download }) => (
             <a
