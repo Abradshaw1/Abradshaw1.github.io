@@ -6,8 +6,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   index: number;
-  onDragStart?: (e: React.DragEvent) => void;
-  onDragEnd?: () => void;
+  onMouseDown?: (e: React.MouseEvent) => void;
   isDragging?: boolean;
 }
 
@@ -17,17 +16,15 @@ export default function ProjectCard({
   description, 
   image, 
   index,
-  onDragStart,
-  onDragEnd,
+  onMouseDown,
   isDragging = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
   
-  const handleDragStart = (e: React.DragEvent) => {
-    e.dataTransfer.effectAllowed = 'move';
-    onDragStart?.(e);
+  const handleMouseDown = (e: React.MouseEvent) => {
+    onMouseDown?.(e);
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -39,9 +36,7 @@ export default function ProjectCard({
 
   return (
     <div
-      draggable={true}
-      onDragStart={handleDragStart}
-      onDragEnd={onDragEnd}
+      onMouseDown={handleMouseDown}
       className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 cursor-move"
     >
       <Link 

@@ -5,104 +5,100 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [dragStartOffset, setDragStartOffset] = useState({ x: 0, y: 0 });
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
   const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleDragStart = (index: number, e: React.DragEvent) => {
+  const handleMouseDown = (index: number, e: React.MouseEvent) => {
+    e.preventDefault();
     const rect = e.currentTarget.getBoundingClientRect();
     
-    // Store the offset from mouse to card's top-left corner
-    setDragStartOffset({
+    setDragOffset({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top
     });
     
-    setDraggedCard(index);
+    setDragPosition({
+      x: e.clientX - (e.clientX - rect.left),
+      y: e.clientY - (e.clientY - rect.top)
+    });
     
-    // Create invisible drag image
-    const dragImage = new Image();
-    dragImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
-    e.dataTransfer.setDragImage(dragImage, 0, 0);
+    setDraggedCard(index);
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-
-    // Update mouse position
+  const handleMouseMove = (e: MouseEvent) => {
+    if (draggedCard === null) return;
+    
     const containerRect = containerRef.current?.getBoundingClientRect();
-    if (containerRect && draggedCard !== null) {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
+    if (!containerRect) return;
+    
+    setDragPosition({
+      x: e.clientX - dragOffset.x,
+      y: e.clientY - dragOffset.y
+    });
 
-      // Calculate dragged card position relative to container
-      const draggedCardX = e.clientX - containerRect.left - dragStartOffset.x;
-      const draggedCardY = e.clientY - containerRect.top - dragStartOffset.y;
+    // Calculate dragged card position relative to container
+    const draggedCardX = e.clientX - containerRect.left - dragOffset.x;
+    const draggedCardY = e.clientY - containerRect.top - dragOffset.y;
 
-      const newPositions: { [key: number]: { x: number; y: number } } = {};
+    const newPositions: { [key: number]: { x: number; y: number } } = {};
+    
+    projectList.forEach((_, index) => {
+      if (index === draggedCard) return;
       
-      projectList.forEach((_, index) => {
-        if (index === draggedCard) return;
-        
-        // Get the card element to calculate its position
-        const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
-        if (cardElement) {
-          const cardRect = cardElement.getBoundingClientRect();
-          const cardContainerPos = {
-            x: cardRect.left - containerRect.left,
-            y: cardRect.top - containerRect.top
-          };
+      const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
+      if (cardElement) {
+        const cardRect = cardElement.getBoundingClientRect();
+        const cardContainerPos = {
+          x: cardRect.left - containerRect.left,
+          y: cardRect.top - containerRect.top
+        };
 
-          // Approximate dragged card dimensions
-          const draggedCardRect = {
-            x: draggedCardX,
-            y: draggedCardY,
-            width: 300,
-            height: 400
-          };
+        // Approximate dragged card dimensions
+        const draggedCardRect = {
+          x: draggedCardX,
+          y: draggedCardY,
+          width: 300,
+          height: 400
+        };
 
-          // Check if cards are overlapping
-          const isOverlapping = (
-            draggedCardRect.x < cardContainerPos.x + cardRect.width &&
-            draggedCardRect.x + draggedCardRect.width > cardContainerPos.x &&
-            draggedCardRect.y < cardContainerPos.y + cardRect.height &&
-            draggedCardRect.y + draggedCardRect.height > cardContainerPos.y
-          );
+        // Check if cards are overlapping
+        const isOverlapping = (
+          draggedCardRect.x < cardContainerPos.x + cardRect.width &&
+          draggedCardRect.x + draggedCardRect.width > cardContainerPos.x &&
+          draggedCardRect.y < cardContainerPos.y + cardRect.height &&
+          draggedCardRect.y + draggedCardRect.height > cardContainerPos.y
+        );
 
-          if (isOverlapping) {
-            // Calculate push direction
-            const centerX = draggedCardRect.x + draggedCardRect.width / 2;
-            const centerY = draggedCardRect.y + draggedCardRect.height / 2;
-            const cardCenterX = cardContainerPos.x + cardRect.width / 2;
-            const cardCenterY = cardContainerPos.y + cardRect.height / 2;
-            
-            const deltaX = cardCenterX - centerX;
-            const deltaY = cardCenterY - centerY;
-            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            
-            if (distance > 0) {
-              const pushDistance = 50; // How far to push cards away
-              newPositions[index] = {
-                x: (deltaX / distance) * pushDistance,
-                y: (deltaY / distance) * pushDistance
-              };
-            }
-          } else {
-            // Return to original position
-            newPositions[index] = { x: 0, y: 0 };
+        if (isOverlapping) {
+          // Calculate push direction
+          const centerX = draggedCardRect.x + draggedCardRect.width / 2;
+          const centerY = draggedCardRect.y + draggedCardRect.height / 2;
+          const cardCenterX = cardContainerPos.x + cardRect.width / 2;
+          const cardCenterY = cardContainerPos.y + cardRect.height / 2;
+          
+          const deltaX = cardCenterX - centerX;
+          const deltaY = cardCenterY - centerY;
+          const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+          
+          if (distance > 0) {
+            const pushDistance = 50;
+            newPositions[index] = {
+              x: (deltaX / distance) * pushDistance,
+              y: (deltaY / distance) * pushDistance
+            };
           }
+        } else {
+          newPositions[index] = { x: 0, y: 0 };
         }
-      });
+      }
+    });
 
-      setCardPositions(newPositions);
-    }
+    setCardPositions(newPositions);
   };
 
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
+  const handleMouseUp = (e: MouseEvent) => {
     if (draggedCard === null) {
       setDraggedCard(null);
       setCardPositions({});
@@ -150,10 +146,18 @@ export default function Projects() {
     setCardPositions({});
   };
 
-  const handleDragEnd = () => {
-    setDraggedCard(null);
-    setCardPositions({});
-  };
+  // Add event listeners
+  React.useEffect(() => {
+    if (draggedCard !== null) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
+    }
+  }, [draggedCard, dragOffset, projectList]);
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
@@ -166,22 +170,10 @@ export default function Projects() {
         <div 
           ref={containerRef}
           className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 relative"
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
         >
           {projectList.map((project, index) => {
             const isBeingDragged = draggedCard === index;
             const cardPosition = cardPositions[index] || { x: 0, y: 0 };
-            
-            // Calculate position for dragged card
-            let draggedCardPosition = { x: 0, y: 0 };
-            if (isBeingDragged && containerRef.current) {
-              const containerRect = containerRef.current.getBoundingClientRect();
-              draggedCardPosition = {
-                x: mousePosition.x - containerRect.left - dragStartOffset.x,
-                y: mousePosition.y - containerRect.top - dragStartOffset.y
-              };
-            }
             
             return (
               <div
@@ -190,17 +182,16 @@ export default function Projects() {
                 className={`transition-all duration-300 ${isBeingDragged ? 'z-50 shadow-2xl' : ''}`}
                 style={{
                   transform: isBeingDragged 
-                    ? `translate(${draggedCardPosition.x}px, ${draggedCardPosition.y}px) rotate(5deg)` 
+                    ? `translate(${dragPosition.x}px, ${dragPosition.y}px) rotate(5deg)` 
                     : `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
                   position: isBeingDragged ? 'fixed' : 'relative',
-                  pointerEvents: isBeingDragged ? 'none' : 'auto',
+                  pointerEvents: isBeingDragged ? 'none' : 'auto'
                 }}
               >
                 <ProjectCard 
                   {...project} 
                   index={index}
-                  onDragStart={(e) => handleDragStart(index, e)}
-                  onDragEnd={handleDragEnd}
+                  onMouseDown={(e) => handleMouseDown(index, e)}
                   isDragging={isBeingDragged}
                 />
               </div>
