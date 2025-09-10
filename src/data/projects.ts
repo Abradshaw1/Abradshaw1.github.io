@@ -181,7 +181,7 @@ export const projects = [
     fullDescription: `Built a Recurrent Neural Network (RNN) with Long Short-Term Memory with (LSTM) Backbone
     architecture to predict software engineer salaries based on open source kaggle data set with different environmental, age, and location factors. Applied advanced regression techniques, statistical analysis, 
     and visualization to industry datasets for accurate predictions.`,
-    technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
+    technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Python'],
     link: 'https://github.com/Abradshaw1/Software-engineer-salary-predction',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800',
     customImage: null
@@ -215,7 +215,7 @@ export const projects = [
     fullDescription: `Developed a predictive model analyzing teen car accidents using various data analysis techniques. 
     Implemented linear regression and principal component analysis, along with k-means clustering using NumPy and pandas 
     libraries for comprehensive insights.`,
-    technologies: ['Python', 'Machine Learning', 'Data Analysis', 'NumPy', 'Pandas'],
+    technologies: ['Python', 'NumPy', 'Pandas'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800',
     customImage: null
@@ -226,7 +226,7 @@ export const projects = [
     description: 'Intelligent vacuum cleaning agent with pathfinding algorithms.',
     fullDescription: `Developed an intelligent vacuum cleaning agent using artificial intelligence techniques. 
     Implemented pathfinding algorithms and decision-making systems for efficient cleaning patterns.`,
-    technologies: ['Python', 'Artificial Intelligence', 'Scikit-learn', 'Robotics'],
+    technologies: ['Python', 'Scikit-learn'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800',
     customImage: null
