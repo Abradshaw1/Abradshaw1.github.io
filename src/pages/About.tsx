@@ -92,21 +92,21 @@ export default function About() {
           <div className="flex flex-wrap gap-4 mt-6">
             <a
               href="https://github.com/Abradshaw1"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <Github className="w-4 h-4" />
               GITHUB
             </a>
             <a
               href="https://www.linkedin.com/in/aidanbradshaw1/"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <Linkedin className="w-4 h-4" />
               LINKEDIN
             </a>
             <a
               href="mailto:abradsha@andrew.cmu.edu"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               EMAIL
