@@ -112,7 +112,7 @@ export const projects = [
     fullDescription: `Developed a predictive model for narcotics-related crime patterns in Chicago using a Negative Binomial Generalized Linear Model (GLM). 
     Incorporated spatial, temporal, and demographic factors, including lagged crime counts and socioeconomic variables. Refined predictors through stepwise regression 
     to achieve high accuracy, capturing seasonal trends and spatial clustering of crime.`,
-    technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'Statistical Modeling'],
+    technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'NumPy', 'Matplotlib'],
     link: '#',
     image: getProjectImage('chicago crime.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'chicago crime.png'
