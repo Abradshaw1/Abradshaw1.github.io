@@ -7,9 +7,12 @@ interface ProjectCardProps {
   image: string;
   index: number;
   onDragStart?: () => void;
+  onDrag?: (e: React.DragEvent) => void;
   onDragOver?: (e: React.DragEvent) => void;
   onDrop?: (e: React.DragEvent) => void;
+  onDragEnd?: () => void;
   isDragging?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function ProjectCard({ 
@@ -19,9 +22,12 @@ export default function ProjectCard({
   image, 
   index,
   onDragStart,
+  onDrag,
   onDragOver,
   onDrop,
-  isDragging = false
+  onDragEnd,
+  isDragging = false,
+  style = {}
 }: ProjectCardProps) {
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
@@ -30,11 +36,12 @@ export default function ProjectCard({
     <div
       draggable
       onDragStart={onDragStart}
+      onDrag={onDrag}
       onDragOver={onDragOver}
       onDrop={onDrop}
-      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${
-        isDragging ? 'opacity-50' : 'opacity-100'
-      }`}
+      onDragEnd={onDragEnd}
+      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4"
+      style={style}
     >
       <Link 
         to={`/project/${id}`}

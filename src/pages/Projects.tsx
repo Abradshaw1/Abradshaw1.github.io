@@ -6,9 +6,14 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
+  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
 
   const handleDragStart = (index: number) => {
     setDraggedCard(index);
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    setDragPosition({ x: e.clientX, y: e.clientY });
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -32,6 +37,25 @@ export default function Projects() {
     setDraggedCard(null);
   };
 
+  const handleDragEnd = () => {
+    setDraggedCard(null);
+  };
+
+  const getCardStyle = (index: number) => {
+    if (draggedCard === null || draggedCard === index) {
+      return {};
+    }
+
+    // Simple push away effect for other cards
+    const pushDistance = 20;
+    const direction = index > draggedCard ? 1 : -1;
+    
+    return {
+      transform: `translateX(${direction * pushDistance}px)`,
+      transition: 'transform 0.3s ease'
+    };
+  };
+
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-6">
@@ -47,9 +71,12 @@ export default function Projects() {
               {...project} 
               index={index}
               onDragStart={() => handleDragStart(index)}
+              onDrag={handleDrag}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
-              isDragging={draggedCard === index}
+              onDragEnd={handleDragEnd}
+              isDragging={false}
+              style={getCardStyle(index)}
             />
           ))}
         </div>
