@@ -124,7 +124,7 @@ export const projects = [
     fullDescription: `Investigated obesity prevalence and caloric intake disparities across countries and genders using advanced statistical analyses. 
     Visualized correlations between daily caloric supply and high BMI-related deaths, emphasizing regional dietary patterns and health risks. 
     Developed infographics to communicate findings on obesity trends and their societal impacts.`,
-    technologies: ['Data Visualization', 'Statistical Analysis', 'Health Data Analysis', 'Python', 'Infographic Design'],
+    technologies: ['R', 'Matplotlib', 'Plotly', 'Seaborn'],
     link: '#',
     image: getProjectImage('obesity.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'obesity.png'
