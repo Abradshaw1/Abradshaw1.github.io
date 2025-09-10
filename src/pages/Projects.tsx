@@ -5,25 +5,19 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [dragStartOffset, setDragStartOffset] = useState({ x: 0, y: 0 });
   const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleDragStart = (index: number, e: React.DragEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const containerRect = containerRef.current?.getBoundingClientRect();
     
-    if (containerRect) {
-      setDragOffset({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
-      setDragPosition({
-        x: rect.left - containerRect.left,
-        y: rect.top - containerRect.top
-      });
-    }
+    // Store the offset from mouse to card's top-left corner
+    setDragStartOffset({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
     
     setDraggedCard(index);
     
@@ -36,24 +30,17 @@ export default function Projects() {
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
 
-    // Update drag position and calculate card avoidance
+    // Update mouse position
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (containerRect && draggedCard !== null) {
-      const newX = e.clientX - containerRect.left - dragOffset.x;
-      const newY = e.clientY - containerRect.top - dragOffset.y;
-      
-      setDragPosition({
-        x: newX,
-        y: newY
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
       });
 
-      // Calculate which cards should move away
-      const draggedCardRect = {
-        x: newX,
-        y: newY,
-        width: 300, // Approximate card width
-        height: 400  // Approximate card height
-      };
+      // Calculate dragged card position relative to container
+      const draggedCardX = e.clientX - containerRect.left - dragStartOffset.x;
+      const draggedCardY = e.clientY - containerRect.top - dragStartOffset.y;
 
       const newPositions: { [key: number]: { x: number; y: number } } = {};
       
@@ -67,6 +54,14 @@ export default function Projects() {
           const cardContainerPos = {
             x: cardRect.left - containerRect.left,
             y: cardRect.top - containerRect.top
+          };
+
+          // Approximate dragged card dimensions
+          const draggedCardRect = {
+            x: draggedCardX,
+            y: draggedCardY,
+            width: 300,
+            height: 400
           };
 
           // Check if cards are overlapping
@@ -174,37 +169,31 @@ export default function Projects() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
         >
-          {/* Dragged card overlay */}
-          {draggedCard !== null && (
-            <div
-              className="fixed pointer-events-none z-50 opacity-80"
-              style={{
-                left: dragPosition.x,
-                top: dragPosition.y,
-                transform: 'rotate(5deg)',
-                width: '300px', // Fixed width for dragged card
-              }}
-            >
-              <ProjectCard 
-                {...projectList[draggedCard]} 
-                index={draggedCard}
-                isDragging={false}
-                isGhost={true}
-              />
-            </div>
-          )}
-          
           {projectList.map((project, index) => {
             const isBeingDragged = draggedCard === index;
             const cardPosition = cardPositions[index] || { x: 0, y: 0 };
+            
+            // Calculate position for dragged card
+            let draggedCardPosition = { x: 0, y: 0 };
+            if (isBeingDragged && containerRef.current) {
+              const containerRect = containerRef.current.getBoundingClientRect();
+              draggedCardPosition = {
+                x: mousePosition.x - containerRect.left - dragStartOffset.x,
+                y: mousePosition.y - containerRect.top - dragStartOffset.y
+              };
+            }
             
             return (
               <div
                 key={project.id}
                 data-card-index={index}
-                className={`transition-all duration-300 ${isBeingDragged ? 'opacity-30' : ''}`}
+                className={`transition-all duration-300 ${isBeingDragged ? 'z-50 shadow-2xl' : ''}`}
                 style={{
-                  transform: `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
+                  transform: isBeingDragged 
+                    ? `translate(${draggedCardPosition.x}px, ${draggedCardPosition.y}px) rotate(5deg)` 
+                    : `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
+                  position: isBeingDragged ? 'fixed' : 'relative',
+                  pointerEvents: isBeingDragged ? 'none' : 'auto',
                 }}
               >
                 <ProjectCard 

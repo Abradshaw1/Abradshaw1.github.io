@@ -9,7 +9,6 @@ interface ProjectCardProps {
   onDragStart?: (e: React.DragEvent) => void;
   onDragEnd?: () => void;
   isDragging?: boolean;
-  isGhost?: boolean;
 }
 
 export default function ProjectCard({ 
@@ -20,8 +19,7 @@ export default function ProjectCard({
   index,
   onDragStart,
   onDragEnd,
-  isDragging = false,
-  isGhost = false
+  isDragging = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
@@ -41,14 +39,10 @@ export default function ProjectCard({
 
   return (
     <div
-      draggable={!isGhost}
+      draggable={true}
       onDragStart={handleDragStart}
       onDragEnd={onDragEnd}
-      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${
-        !isGhost ? 'cursor-move' : 'cursor-default'
-      } ${
-        isGhost ? 'shadow-2xl' : ''
-      }`}
+      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 cursor-move"
     >
       <Link 
         to={`/project/${id}`}
