@@ -41,8 +41,8 @@ export default function Publications() {
       authors: 'Sawyer J., Aidan B., Ramaz T., Ben S., Shangping R.',
       title: 'A Customizable, Real-time Mobile Health Application for Raynaud\'s Syndrome and Beyond',
       venue: 'IEEE International Conference on E-health Networking, Application & Services (IEEE Healthcom) 2025',
-      image: getPublicationImage(null),
-      customImage: null,
+      image: getPublicationImage('custommHealthapp.png'),
+      customImage: 'custommHealthapp.png',
       showAllLinks: true
     }
   ];
