@@ -76,7 +76,7 @@ export default function Publications() {
       image: getPublicationImage('pittaiposter.png'),
       customImage: 'pittaiposter.png',
       showAllLinks: false,
-      pdfLink: null
+      pdfLink: undefined
     }
   ];
 
