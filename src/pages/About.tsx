@@ -113,8 +113,8 @@ export default function About() {
             </a>
             <a
               href="/project-images/Aidan_Bradshaw_Resume_CV.pdf"
-              download
-              target="_self"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <FileText className="w-4 h-4" />
