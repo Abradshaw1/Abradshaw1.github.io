@@ -73,8 +73,8 @@ export default function Publications() {
       authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
       title: 'Opportunities and Challenges in Designing Text-to-Image Generative AI for Medical Education, Training, and Practice',
       venue: 'Pitt AI in Healthcare Research Symposium, 2024',
-      image: getPublicationImage(null),
-      customImage: null,
+      image: getPublicationImage('pittaiposter.png'),
+      customImage: 'pittaiposter.png',
       showAllLinks: false,
       pdfLink: undefined
     }
@@ -108,7 +108,7 @@ export default function Publications() {
           {title}
         </h3>
         <p className="text-slate-600 text-sm mb-1">
-          {authors}
+          <span dangerouslySetInnerHTML={{ __html: authors.replace(/Aidan B\./g, '<strong>Aidan B.</strong>') }} />
         </p>
         <p className="text-[#00008B] text-sm font-medium italic">
           {venue}
