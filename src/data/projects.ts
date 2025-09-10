@@ -64,9 +64,9 @@ export const projects = [
     technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800',
-    detailImage: getProjectImage('thermal_forecasting.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
+    detailImage: getProjectImage('esapower.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
     customImage: null,
-    detailCustomImage: 'thermal_forecasting.png'
+    detailCustomImage: 'esapower.png'
   },
   {
     id: 'genai-ct',
@@ -87,8 +87,8 @@ export const projects = [
     Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
     technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
     link: '#',
-    image: getProjectImage('bee_buzz.gif', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
-    customImage: 'bee_buzz.gif'
+    image: getProjectImage('buzzdetection.png', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
+    customImage: 'buzzdetection.png'
   },
   {
     id: 'raynaud-research',
