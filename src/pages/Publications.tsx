@@ -113,23 +113,26 @@ export default function Publications() {
         <p className="text-[#00008B] text-sm font-medium italic">
           {venue}
         </p>
-        <div className="flex gap-4 mt-3">
-          {pdfLink ? (
-            <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
-              [PDF]
-            </a>
-          ) : (
-            <span className="text-slate-400 text-sm">[PDF Coming Soon]</span>
-          )}
-          {showAllLinks && codeLink && (
-            <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
-              [Code]
-            </a>
-          )}
-          {showAllLinks && !codeLink && (
-            <span className="text-slate-400 text-sm">[Code Coming Soon]</span>
-          )}
-        </div>
+        {(pdfLink || (showAllLinks && codeLink) || (showAllLinks && !codeLink)) && (
+          <div className="flex gap-4 mt-3">
+            {pdfLink && (
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
+                [PDF]
+              </a>
+            )}
+            {!pdfLink && showAllLinks && (
+              <span className="text-slate-400 text-sm">[PDF Coming Soon]</span>
+            )}
+            {showAllLinks && codeLink && (
+              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
+                [Code]
+              </a>
+            )}
+            {showAllLinks && !codeLink && (
+              <span className="text-slate-400 text-sm">[Code Coming Soon]</span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
