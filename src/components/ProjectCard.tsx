@@ -6,7 +6,9 @@ interface ProjectCardProps {
   description: string;
   image: string;
   index: number;
-  onMouseDown?: (e: React.MouseEvent) => void;
+  onDragStart?: () => void;
+  onDragOver?: (e: React.DragEvent) => void;
+  onDrop?: (e: React.DragEvent) => void;
   isDragging?: boolean;
 }
 
@@ -16,59 +18,50 @@ export default function ProjectCard({
   description, 
   image, 
   index,
-  onMouseDown,
+  onDragStart,
+  onDragOver,
+  onDrop,
   isDragging = false
 }: ProjectCardProps) {
-  // Vary card heights for masonry effect
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
-  
-  const handleMouseDown = (e: React.MouseEvent) => {
-    // Only call onMouseDown, don't prevent default here
-    // This allows normal clicks to work
-    onMouseDown?.(e);
-  };
-
-  const handleClick = (e: React.MouseEvent) => {
-    // Only prevent navigation if we're actively dragging
-    if (isDragging) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  };
 
   return (
     <div
-      onMouseDown={handleMouseDown}
-      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`}
+      draggable
+      onDragStart={onDragStart}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${
+        isDragging ? 'opacity-50' : 'opacity-100'
+      }`}
     >
       <Link 
         to={`/project/${id}`}
         className="block w-full h-full"
-        onClick={handleClick}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative min-h-[256px]`}>
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          onError={(e) => {
-            console.log(`Failed to load image for ${title}:`, image);
-            e.currentTarget.src = 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800';
-          }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 transition-all duration-500">
-          <div className="text-white">
-            <h3 className="text-lg font-medium mb-2 relative overflow-hidden">
-              <span className="relative z-10">{title}</span>
-              <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
-            </h3>
-            <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3 relative overflow-hidden">
-              <span className="relative z-10">{description}</span>
-              <div className="absolute inset-0 bg-[#00008B]/70 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-100"></div>
-            </p>
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            onError={(e) => {
+              console.log(`Failed to load image for ${title}:`, image);
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800';
+            }}
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 transition-all duration-500">
+            <div className="text-white">
+              <h3 className="text-lg font-medium mb-2 relative overflow-hidden">
+                <span className="relative z-10">{title}</span>
+                <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+              </h3>
+              <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3 relative overflow-hidden">
+                <span className="relative z-10">{description}</span>
+                <div className="absolute inset-0 bg-[#00008B]/70 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-100"></div>
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       </Link>
     </div>
