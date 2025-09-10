@@ -14,15 +14,21 @@ export default function Projects() {
   const handleMouseDown = (index: number, e: React.MouseEvent) => {
     e.preventDefault();
     const rect = e.currentTarget.getBoundingClientRect();
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    if (!containerRect) return;
+    
+    // Calculate offset to center the card on cursor
+    const cardCenterX = rect.width / 2;
+    const cardCenterY = rect.height / 2;
     
     setDragOffset({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      x: cardCenterX,
+      y: cardCenterY
     });
     
     setDragPosition({
-      x: e.clientX - (e.clientX - rect.left),
-      y: e.clientY - (e.clientY - rect.top)
+      x: e.clientX - cardCenterX,
+      y: e.clientY - cardCenterY
     });
     
     setDraggedCard(index);
@@ -31,13 +37,9 @@ export default function Projects() {
   const handleMouseMove = (e: MouseEvent) => {
     if (draggedCard === null) return;
     
-    // Get the dragged card element to know its dimensions
-    const draggedElement = document.querySelector(`[data-card-index="${draggedCard}"]`) as HTMLElement;
-    if (!draggedElement) return;
-    
-    const cardRect = draggedElement.getBoundingClientRect();
-    const cardWidth = cardRect.width;
-    const cardHeight = cardRect.height;
+    // Use standard card dimensions for consistency
+    const cardWidth = 300; // Approximate card width
+    const cardHeight = 400; // Approximate card height
     
     // Constrain to viewport
     const maxX = window.innerWidth - cardWidth;
@@ -54,9 +56,11 @@ export default function Projects() {
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (!containerRect) return;
 
-    // Calculate dragged card position relative to container
+    // Calculate dragged card center position relative to container
     const draggedCardX = constrainedX - containerRect.left;
     const draggedCardY = constrainedY - containerRect.top;
+    const draggedCardCenterX = draggedCardX + cardWidth / 2;
+    const draggedCardCenterY = draggedCardY + cardHeight / 2;
 
     const newPositions: { [key: number]: { x: number; y: number } } = {};
     
@@ -70,43 +74,39 @@ export default function Projects() {
           x: cardRect.left - containerRect.left,
           y: cardRect.top - containerRect.top
         };
+        
+        const cardCenterX = cardContainerPos.x + cardRect.width / 2;
+        const cardCenterY = cardContainerPos.y + cardRect.height / 2;
 
-        // Approximate dragged card dimensions
-        const draggedCardRect = {
-          x: draggedCardX,
-          y: draggedCardY,
-          width: cardWidth,
-          height: cardHeight
-        };
+        // Calculate distance between card centers
+        const deltaX = cardCenterX - draggedCardCenterX;
+        const deltaY = cardCenterY - draggedCardCenterY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        
+        // Define interaction radius (when cards start to repel each other)
+        const interactionRadius = 150;
 
-        // Check if cards are overlapping
-        const isOverlapping = (
-          draggedCardRect.x < cardContainerPos.x + cardRect.width &&
-          draggedCardRect.x + draggedCardRect.width > cardContainerPos.x &&
-          draggedCardRect.y < cardContainerPos.y + cardRect.height &&
-          draggedCardRect.y + draggedCardRect.height > cardContainerPos.y
-        );
-
-        if (isOverlapping) {
-          // Calculate push direction
-          const centerX = draggedCardRect.x + draggedCardRect.width / 2;
-          const centerY = draggedCardRect.y + draggedCardRect.height / 2;
-          const cardCenterX = cardContainerPos.x + cardRect.width / 2;
-          const cardCenterY = cardContainerPos.y + cardRect.height / 2;
+        if (distance < interactionRadius && distance > 0) {
+          // Calculate push strength based on distance (closer = stronger push)
+          const pushStrength = (interactionRadius - distance) / interactionRadius;
+          const maxPushDistance = 80;
+          const pushDistance = pushStrength * maxPushDistance;
           
-          const deltaX = cardCenterX - centerX;
-          const deltaY = cardCenterY - centerY;
-          const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+          // Normalize direction vector
+          const directionX = deltaX / distance;
+          const directionY = deltaY / distance;
           
-          if (distance > 0) {
-            const pushDistance = 50;
-            newPositions[index] = {
-              x: (deltaX / distance) * pushDistance,
-              y: (deltaY / distance) * pushDistance
-            };
-          }
+          newPositions[index] = {
+            x: directionX * pushDistance,
+            y: directionY * pushDistance
+          };
         } else {
-          newPositions[index] = { x: 0, y: 0 };
+          // Smoothly return to original position
+          const currentPos = cardPositions[index] || { x: 0, y: 0 };
+          newPositions[index] = {
+            x: currentPos.x * 0.9, // Gradual return
+            y: currentPos.y * 0.9
+          };
         }
       }
     });
@@ -121,28 +121,31 @@ export default function Projects() {
       return;
     }
 
-    // Find the card we're dropping on
+    // Find the card we're dropping on based on cursor position
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (containerRect) {
       const dropX = e.clientX - containerRect.left;
       const dropY = e.clientY - containerRect.top;
       
       let dropIndex = -1;
+      let minDistance = Infinity;
+      
       projectList.forEach((_, index) => {
         if (index === draggedCard) return;
         
         const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
         if (cardElement) {
           const cardRect = cardElement.getBoundingClientRect();
-          const cardPos = {
-            x: cardRect.left - containerRect.left,
-            y: cardRect.top - containerRect.top,
-            width: cardRect.width,
-            height: cardRect.height
-          };
+          const cardCenterX = (cardRect.left - containerRect.left) + cardRect.width / 2;
+          const cardCenterY = (cardRect.top - containerRect.top) + cardRect.height / 2;
           
-          if (dropX >= cardPos.x && dropX <= cardPos.x + cardPos.width &&
-              dropY >= cardPos.y && dropY <= cardPos.y + cardPos.height) {
+          const distance = Math.sqrt(
+            Math.pow(dropX - cardCenterX, 2) + Math.pow(dropY - cardCenterY, 2)
+          );
+          
+          // If cursor is close to this card's center, consider it for swapping
+          if (distance < 100 && distance < minDistance) {
+            minDistance = distance;
             dropIndex = index;
           }
         }
@@ -159,7 +162,12 @@ export default function Projects() {
     }
 
     setDraggedCard(null);
-    setCardPositions({});
+    // Smoothly animate cards back to their original positions
+    const returnPositions: { [key: number]: { x: number; y: number } } = {};
+    Object.keys(cardPositions).forEach(key => {
+      returnPositions[parseInt(key)] = { x: 0, y: 0 };
+    });
+    setCardPositions(returnPositions);
   };
 
   // Add event listeners
