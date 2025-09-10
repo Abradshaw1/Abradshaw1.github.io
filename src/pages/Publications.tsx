@@ -60,8 +60,8 @@ export default function Publications() {
       authors: 'Aidan Bradshaw, Elif Basokur, Marco Giordano, Luca Benini and Christoph Lietner.',
       title: 'Muybridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
       venue: '(Submitted), Nature Sensors 2025',
-      image: getPublicationImage(null),
-      customImage: null,
+      image: getPublicationImage('muybridge_temp.png'),
+      customImage: 'muybridge_temp.png',
       showAllLinks: true
     }
   ];
