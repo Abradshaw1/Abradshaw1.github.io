@@ -5,9 +5,9 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [dragOverCard, setDragOverCard] = useState<number | null>(null);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleDragStart = (index: number, e: React.DragEvent) => {
@@ -26,7 +26,6 @@ export default function Projects() {
     }
     
     setDraggedCard(index);
-    setDragOverCard(null);
     
     // Create invisible drag image
     const dragImage = new Image();
@@ -34,57 +33,131 @@ export default function Projects() {
     e.dataTransfer.setDragImage(dragImage, 0, 0);
   };
 
-  const handleDragOver = (index: number, e: React.DragEvent) => {
+  const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    
-    if (draggedCard !== null && draggedCard !== index) {
-      setDragOverCard(index);
-    }
-    
-    // Update drag position
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    if (containerRect) {
-      setDragPosition({
-        x: e.clientX - containerRect.left - dragOffset.x,
-        y: e.clientY - containerRect.top - dragOffset.y
-      });
-    }
-  };
 
-  const handleContainerDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    
-    // Update drag position when dragging over container
+    // Update drag position and calculate card avoidance
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (containerRect && draggedCard !== null) {
+      const newX = e.clientX - containerRect.left - dragOffset.x;
+      const newY = e.clientY - containerRect.top - dragOffset.y;
+      
       setDragPosition({
-        x: e.clientX - containerRect.left - dragOffset.x,
-        y: e.clientY - containerRect.top - dragOffset.y
+        x: newX,
+        y: newY
       });
+
+      // Calculate which cards should move away
+      const draggedCardRect = {
+        x: newX,
+        y: newY,
+        width: 300, // Approximate card width
+        height: 400  // Approximate card height
+      };
+
+      const newPositions: { [key: number]: { x: number; y: number } } = {};
+      
+      projectList.forEach((_, index) => {
+        if (index === draggedCard) return;
+        
+        // Get the card element to calculate its position
+        const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
+        if (cardElement) {
+          const cardRect = cardElement.getBoundingClientRect();
+          const cardContainerPos = {
+            x: cardRect.left - containerRect.left,
+            y: cardRect.top - containerRect.top
+          };
+
+          // Check if cards are overlapping
+          const isOverlapping = (
+            draggedCardRect.x < cardContainerPos.x + cardRect.width &&
+            draggedCardRect.x + draggedCardRect.width > cardContainerPos.x &&
+            draggedCardRect.y < cardContainerPos.y + cardRect.height &&
+            draggedCardRect.y + draggedCardRect.height > cardContainerPos.y
+          );
+
+          if (isOverlapping) {
+            // Calculate push direction
+            const centerX = draggedCardRect.x + draggedCardRect.width / 2;
+            const centerY = draggedCardRect.y + draggedCardRect.height / 2;
+            const cardCenterX = cardContainerPos.x + cardRect.width / 2;
+            const cardCenterY = cardContainerPos.y + cardRect.height / 2;
+            
+            const deltaX = cardCenterX - centerX;
+            const deltaY = cardCenterY - centerY;
+            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            
+            if (distance > 0) {
+              const pushDistance = 50; // How far to push cards away
+              newPositions[index] = {
+                x: (deltaX / distance) * pushDistance,
+                y: (deltaY / distance) * pushDistance
+              };
+            }
+          } else {
+            // Return to original position
+            newPositions[index] = { x: 0, y: 0 };
+          }
+        }
+      });
+
+      setCardPositions(newPositions);
     }
   };
 
-  const handleDrop = (dropIndex: number) => {
-    if (draggedCard === null || draggedCard === dropIndex) {
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    if (draggedCard === null) {
       setDraggedCard(null);
-      setDragOverCard(null);
+      setCardPositions({});
       return;
     }
 
-    // Swap the two cards
-    const newProjects = [...projectList];
-    const temp = newProjects[draggedCard];
-    newProjects[draggedCard] = newProjects[dropIndex];
-    newProjects[dropIndex] = temp;
-    
-    setProjectList(newProjects);
+    // Find the card we're dropping on
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    if (containerRect) {
+      const dropX = e.clientX - containerRect.left;
+      const dropY = e.clientY - containerRect.top;
+      
+      let dropIndex = -1;
+      projectList.forEach((_, index) => {
+        if (index === draggedCard) return;
+        
+        const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
+        if (cardElement) {
+          const cardRect = cardElement.getBoundingClientRect();
+          const cardPos = {
+            x: cardRect.left - containerRect.left,
+            y: cardRect.top - containerRect.top,
+            width: cardRect.width,
+            height: cardRect.height
+          };
+          
+          if (dropX >= cardPos.x && dropX <= cardPos.x + cardPos.width &&
+              dropY >= cardPos.y && dropY <= cardPos.y + cardPos.height) {
+            dropIndex = index;
+          }
+        }
+      });
+      
+      if (dropIndex !== -1) {
+        // Swap the cards
+        const newProjects = [...projectList];
+        const temp = newProjects[draggedCard];
+        newProjects[draggedCard] = newProjects[dropIndex];
+        newProjects[dropIndex] = temp;
+        setProjectList(newProjects);
+      }
+    }
+
     setDraggedCard(null);
-    setDragOverCard(null);
+    setCardPositions({});
   };
 
   const handleDragEnd = () => {
     setDraggedCard(null);
-    setDragOverCard(null);
+    setCardPositions({});
   };
 
   return (
@@ -98,7 +171,8 @@ export default function Projects() {
         <div 
           ref={containerRef}
           className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 relative"
-          onDragOver={handleContainerDragOver}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
         >
           {/* Dragged card overlay */}
           {draggedCard !== null && (
@@ -108,6 +182,7 @@ export default function Projects() {
                 left: dragPosition.x,
                 top: dragPosition.y,
                 transform: 'rotate(5deg)',
+                width: '300px', // Fixed width for dragged card
               }}
             >
               <ProjectCard 
@@ -120,26 +195,24 @@ export default function Projects() {
           )}
           
           {projectList.map((project, index) => {
-            const shouldShift = dragOverCard !== null && draggedCard !== null && 
-                               index === dragOverCard && index !== draggedCard;
             const isBeingDragged = draggedCard === index;
+            const cardPosition = cardPositions[index] || { x: 0, y: 0 };
             
             return (
               <div
                 key={project.id}
-                className={`transition-all duration-300 ${
-                  shouldShift ? 'transform translate-y-4' : ''
-                } ${isBeingDragged ? 'opacity-30' : ''}`}
+                data-card-index={index}
+                className={`transition-all duration-300 ${isBeingDragged ? 'opacity-30' : ''}`}
+                style={{
+                  transform: `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
+                }}
               >
                 <ProjectCard 
                   {...project} 
                   index={index}
                   onDragStart={(e) => handleDragStart(index, e)}
-                  onDragOver={(e) => handleDragOver(index, e)}
-                  onDrop={() => handleDrop(index)}
                   onDragEnd={handleDragEnd}
                   isDragging={isBeingDragged}
-                  isDropTarget={dragOverCard === index && draggedCard !== index}
                 />
               </div>
           )})}

@@ -7,11 +7,8 @@ interface ProjectCardProps {
   image: string;
   index: number;
   onDragStart?: (e: React.DragEvent) => void;
-  onDragOver?: (e: React.DragEvent) => void;
-  onDrop?: () => void;
   onDragEnd?: () => void;
   isDragging?: boolean;
-  isDropTarget?: boolean;
   isGhost?: boolean;
 }
 
@@ -22,11 +19,8 @@ export default function ProjectCard({
   image, 
   index,
   onDragStart,
-  onDragOver,
-  onDrop,
   onDragEnd,
   isDragging = false,
-  isDropTarget = false,
   isGhost = false
 }: ProjectCardProps) {
   // Vary card heights for masonry effect
@@ -36,17 +30,6 @@ export default function ProjectCard({
   const handleDragStart = (e: React.DragEvent) => {
     e.dataTransfer.effectAllowed = 'move';
     onDragStart?.(e);
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    onDragOver?.(e);
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    onDrop?.();
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -60,13 +43,9 @@ export default function ProjectCard({
     <div
       draggable={!isGhost}
       onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDrop={handleDrop}
       onDragEnd={onDragEnd}
       className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${
         !isGhost ? 'cursor-move' : 'cursor-default'
-      } ${
-        isDropTarget ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
       } ${
         isGhost ? 'shadow-2xl' : ''
       }`}
@@ -77,9 +56,6 @@ export default function ProjectCard({
         onClick={handleClick}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative min-h-[256px]`}>
-        {isDropTarget && (
-          <div className="absolute inset-0 bg-blue-100 opacity-20 z-10"></div>
-        )}
         <img 
           src={image} 
           alt={title}
