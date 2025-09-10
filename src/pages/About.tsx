@@ -113,10 +113,10 @@ export default function About() {
             </a>
             <a
               href="/Aidan_Bradshaw_Resume_CV.pdf"
-              download="Aidan_Bradshaw_Resume_CV.pdf"
+              download
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] hover:border-blue-300 border-2 border-transparent transition-all duration-300"
             >
               <FileText className="w-4 h-4" />
               CV DOWNLOAD
