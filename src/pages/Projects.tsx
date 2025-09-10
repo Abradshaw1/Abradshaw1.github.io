@@ -97,7 +97,7 @@ export default function Projects() {
         
         <div 
           ref={containerRef}
-          className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 relative"
+          className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 relative max-w-5xl mx-auto"
           onDragOver={handleContainerDragOver}
         >
           {/* Dragged card overlay */}
