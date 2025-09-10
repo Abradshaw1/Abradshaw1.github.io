@@ -31,15 +31,15 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8 min-h-[500px]">
-          <div className="w-full h-full overflow-hidden rounded-lg flex items-center justify-center bg-slate-100">
+          <div className="w-full overflow-hidden rounded-lg flex items-center justify-center bg-slate-100" style={{ height: 'fit-content' }}>
             <img 
               src={project.detailImage || project.image} 
               alt={project.title} 
-              className="max-w-full max-h-full object-contain"
+              className="w-full h-auto object-contain"
             />
           </div>
           
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-start">
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-light text-black mb-2">{project.title}</h1>
