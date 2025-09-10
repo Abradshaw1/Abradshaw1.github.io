@@ -89,7 +89,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="mb-12">
           <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>Projects</h1>
           <div className="h-0.5 bg-[#00008B] w-full"></div>
@@ -97,7 +97,7 @@ export default function Projects() {
         
         <div 
           ref={containerRef}
-          className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 relative max-w-5xl mx-auto"
+          className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 relative"
           onDragOver={handleContainerDragOver}
         >
           {/* Dragged card overlay */}
