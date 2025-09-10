@@ -134,14 +134,14 @@ export const projects = [
     customImage: null
   },
   {
-    id: 'college-scorecard',
-    title: 'College Scorecard Analysis',
-    description: 'Python-based educational data analysis tool with API integration.',
-    fullDescription: `I implemented a Python–PostgreSQL pipeline to analyze U.S. higher education data via the Department of Education’s IPEDS API. Streamlit provided a lightweight interface for interactive dashboards, while Psycopg handled SQL queries for institutional performance metrics. Users could explore trends in admissions, graduation rates, and student debt through dynamic visualizations.`,
-    technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
-    link: 'https://github.com/Abradshaw1/CollegeScoreCard',
-    image: getProjectImage('scoreavrd.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'scoreavrd.png'
+    id: 'mobile-game',
+    title: 'C++ Mobile Game',
+    description: 'Single-player clicker game with dynamic difficulty scaling.',
+    fullDescription: `This project focused on designing a single-player clicker game with adaptive challenge. Implemented in C++, the system used a dynamic difficulty adjustment mechanism and an evolving in-game environment to keep players engaged. The work served both as an exercise in applying object-oriented programming concepts and as a proof of concept for lightweight mobile game mechanics.`,
+    technologies: ['C++', 'Game Development', 'Mobile Development'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800',
+    customImage: null
   },
   {
     id: 'genai-ct',
@@ -167,14 +167,14 @@ export const projects = [
     customImage: 'Parsons_RLHF.png'
   },
   {
-    id: 'mobile-game',
-    title: 'C++ Mobile Game',
-    description: 'Single-player clicker game with dynamic difficulty scaling.',
-    fullDescription: `This project focused on designing a single-player clicker game with adaptive challenge. Implemented in C++, the system used a dynamic difficulty adjustment mechanism and an evolving in-game environment to keep players engaged. The work served both as an exercise in applying object-oriented programming concepts and as a proof of concept for lightweight mobile game mechanics.`,
-    technologies: ['C++', 'Game Development', 'Mobile Development'],
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    id: 'college-scorecard',
+    title: 'College Scorecard Analysis',
+    description: 'Python-based educational data analysis tool with API integration.',
+    fullDescription: `I implemented a Python–PostgreSQL pipeline to analyze U.S. higher education data via the Department of Education’s IPEDS API. Streamlit provided a lightweight interface for interactive dashboards, while Psycopg handled SQL queries for institutional performance metrics. Users could explore trends in admissions, graduation rates, and student debt through dynamic visualizations.`,
+    technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
+    link: 'https://github.com/Abradshaw1/CollegeScoreCard',
+    image: getProjectImage('scoreavrd.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'scoreavrd.png'
   },
   {
     id: 'salary-prediction',
