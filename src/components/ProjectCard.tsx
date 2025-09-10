@@ -33,20 +33,15 @@ export default function ProjectCard({
   const cardHeight = heights[index % heights.length];
 
   const handleDragStart = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
     if (onDragStart) {
       onDragStart();
     }
   };
 
-  const handleClick = (e: React.MouseEvent) => {
-    // Only navigate if we're not in the middle of a drag operation
-    if (isDragging) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  const handleMouseDown = (e: React.MouseEvent) => {
+    // Allow normal clicking - don't prevent default
   };
+
   return (
     <div
       draggable
@@ -55,20 +50,20 @@ export default function ProjectCard({
       onDragOver={onDragOver}
       onDrop={onDrop}
       onDragEnd={onDragEnd}
-      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 cursor-move"
+      onMouseDown={handleMouseDown}
+      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4"
       style={style}
     >
       <Link 
         to={`/project/${id}`}
         className="block w-full h-full"
-        onClick={handleClick}
         draggable={false}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative min-h-[256px]`}>
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             draggable={false}
             onError={(e) => {
               console.log(`Failed to load image for ${title}:`, image);
