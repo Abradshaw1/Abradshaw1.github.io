@@ -207,6 +207,16 @@ export const projects = [
     customImage: null
   },
   {
+    id: 'muybridge-gait-estimation',
+    title: 'MuyBridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
+    description: 'Edge-native quantized 2.5D fusion pipeline for real-time center of mass estimation from single RGB camera.',
+    fullDescription: `Estimating the body's center of mass (CoM) from monocular video is critical for gait analysis and clinical monitoring, but remains difficult to achieve outside controlled settings. Existing methods split between efficient but depth-blind 2D pose estimators and computationally heavy 3D pipelines, forcing a trade-off between invalid kinematics and costly multi-view setups. We present MuyBridge, an edge-native quantized 2.5D fusion pipeline for real-time center of mass (CoM) estimation from a single RGB camera in CoreML. By aligning keypoints with sampled depth, MuyBridge produces CoM trajectories with fully zero-shot priors, requiring no subject-specific calibration or retraining, and yielding robust estimates in both 2D and 3D. On-device evaluation on iPhone 16 shows that MuyBridge achieves efficient and accurate CoM estimation, making biomechanics practical, private, and scalable beyond the lab.`,
+    technologies: ['PyTorch', 'MMPose', 'CoreML', 'ONNX', 'Diffusers', 'NumPy', 'SwiftUI', 'AVFoundation', 'Xcode', 'Accelerate'],
+    link: '#',
+    image: getProjectImage('muyrbridge.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'muyrbridge.png'
+  },
+  {
     id: 'accident-prediction',
     title: 'Accident Prediction Model',
     description: 'Teen car accident prediction model using advanced data analysis.',
