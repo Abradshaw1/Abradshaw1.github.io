@@ -20,6 +20,26 @@ function HighlightLink({
   );
 }
 
+const handleCVDownload = async (e: React.MouseEvent) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('/project-images/Aidan_Bradshaw_Resume_CV.pdf');
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Aidan_Bradshaw_Resume_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error('Download failed:', error);
+    // Fallback to direct link
+    window.open('/project-images/Aidan_Bradshaw_Resume_CV.pdf', '_blank');
+  }
+};
+
 export default function About() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
@@ -112,10 +132,8 @@ export default function About() {
               EMAIL
             </a>
             <a
-              href="/project-images/Aidan_Bradshaw_Resume_CV.pdf"
-              download="Aidan_Bradshaw_Resume_CV.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
-            >
+              href="#"
+              onClick={handleCVDownload}
               <FileText className="w-4 h-4" />
               CV DOWNLOAD
             </a>
