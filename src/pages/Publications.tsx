@@ -54,7 +54,8 @@ export default function Publications() {
       venue: '(Submitted), Nature 2025',
       image: getPublicationImage(null),
       customImage: null,
-      showAllLinks: true
+      showAllLinks: true,
+      codeLink: 'https://github.com/Abradshaw1/AS2.0_REPO'
     },
     {
       authors: 'Aidan Bradshaw, Elif Basokur, Marco Giordano, Luca Benini and Christoph Lietner.',

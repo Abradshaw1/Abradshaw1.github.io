@@ -75,7 +75,7 @@ export const projects = [
     fullDescription: `Explained(XAI) and operationalized text-to-image models to generate conditioned CT scans from prompts, helping patients and doctors understand anatomical diseases. 
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
     technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
-    link: '#',
+    link: 'https://github.com/cmudig/GenAIxRad-Viewer',
     image: getProjectImage('genaict.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
     customImage: 'genaict.png'
   },
@@ -86,7 +86,7 @@ export const projects = [
     fullDescription: `Architected and optimized ML models for classifying invasive and native bee species based on audio data. 
     Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
     technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/AS2.0_REPO',
     image: getProjectImage('buzzdetection.png', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
     customImage: 'buzzdetection.png'
   },
@@ -109,7 +109,7 @@ export const projects = [
     for healthcare diagnostics applications. Focused on red-teaming their reliability in zero-shot prompt diagnosis, 
     ensuring safe and accurate medical assessments.`,
     technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/HealthAudit-GPT',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800',
     customImage: null
   },
@@ -166,7 +166,7 @@ export const projects = [
     fullDescription: `Developed a comprehensive Python, PostgreSQL tool to collect and analyze educational data through IPED's API. 
     Using streamlit, I created an interactive dashboard for viewing, tracking and evaluating institutional performance and changes.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/CollegeScoreCard',
     image: getProjectImage('scoreavrd.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'scoreavrd.png'
   },
@@ -178,7 +178,7 @@ export const projects = [
     to visualize the effects different languages have on run time, memory consumption and image rotation capabilities, demonstrating cross-language 
     compatibility and performance comparison.`,
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/Multi-layered-Python-scripting',
     image: getProjectImage('multilanguage.jpg', 'https://i.imghippo.com/files/dKsI4998XY.png'),
     customImage: 'multilanguage.jpg'
   },
@@ -190,7 +190,7 @@ export const projects = [
     architecture to predict software engineer salaries based on open source kaggle data set with different environmental, age, and location factors. Applied advanced regression techniques, statistical analysis, 
     and visualization to industry datasets for accurate predictions.`,
     technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Statistical Analysis', 'Python'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/Software-engineer-salary-predction',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800',
     customImage: null
   },
@@ -212,7 +212,7 @@ export const projects = [
     description: 'Edge-native quantized 2.5D fusion pipeline for real-time center of mass estimation from single RGB camera.',
     fullDescription: `Estimating the body's center of mass (CoM) from monocular video is critical for gait analysis and clinical monitoring, but remains difficult to achieve outside controlled settings. Existing methods split between efficient but depth-blind 2D pose estimators and computationally heavy 3D pipelines, forcing a trade-off between invalid kinematics and costly multi-view setups. We present MuyBridge, an edge-native quantized 2.5D fusion pipeline for real-time center of mass (CoM) estimation from a single RGB camera in CoreML. By aligning keypoints with sampled depth, MuyBridge produces CoM trajectories with fully zero-shot priors, requiring no subject-specific calibration or retraining, and yielding robust estimates in both 2D and 3D. On-device evaluation on iPhone 16 shows that MuyBridge achieves efficient and accurate CoM estimation, making biomechanics practical, private, and scalable beyond the lab.`,
     technologies: ['PyTorch', 'MMPose', 'CoreML', 'ONNX', 'Diffusers', 'NumPy', 'SwiftUI', 'AVFoundation', 'Xcode', 'Accelerate'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/Muybridge',
     image: getProjectImage('muyrbridge.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'muyrbridge.png'
   },
