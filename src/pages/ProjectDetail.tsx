@@ -33,7 +33,7 @@ export default function ProjectDetail() {
         <div className="grid md:grid-cols-2 gap-8 min-h-[500px]">
           <div className="w-full h-full overflow-hidden rounded-lg">
             <img 
-              src={project.image} 
+              src={project.detailImage || project.image} 
               alt={project.title} 
               className="w-full h-full object-cover"
             />
