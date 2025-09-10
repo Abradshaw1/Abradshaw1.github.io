@@ -133,7 +133,7 @@ export const projects = [
     fullDescription: `This project explored parallel computing approaches to integer factorization. I designed sequential, multiprocessing, and map-based implementations in Python to compare runtime efficiency across varying core counts. Benchmarking experiments revealed theoretical versus observed speedups, which I visualized with Matplotlib.`,
     technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
-    image: 'https://i.imghippo.com/files/dql4991sxI.png',
+    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&h=800',
     customImage: null
   },
   {
