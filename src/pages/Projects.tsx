@@ -6,14 +6,13 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
 
   const handleDragStart = (index: number) => {
     setDraggedCard(index);
   };
 
   const handleDrag = (e: React.DragEvent) => {
-    setDragPosition({ x: e.clientX, y: e.clientY });
+    // Drag position tracking removed as it wasn't being used
   };
 
   const handleDragOver = (e: React.DragEvent) => {

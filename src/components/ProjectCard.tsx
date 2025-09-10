@@ -26,19 +26,18 @@ export default function ProjectCard({
   onDragOver,
   onDrop,
   onDragEnd,
-  isDragging = false,
   style = {}
 }: ProjectCardProps) {
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
 
-  const handleDragStart = (e: React.DragEvent) => {
+  const handleDragStart = (_e: React.DragEvent) => {
     if (onDragStart) {
       onDragStart();
     }
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (_e: React.MouseEvent) => {
     // Allow normal clicking - don't prevent default
   };
 
