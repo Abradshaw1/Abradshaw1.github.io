@@ -32,8 +32,8 @@ export default function Publications() {
       authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
       title: 'A Human-Centered Approach to Identifying Promises, Risks, & Challenges of Text-to-Image Generative AI in Radiology',
       venue: 'Artificial Intelligence in Ethics and Society (AIES) 2025',
-      image: getPublicationImage(null),
-      customImage: null,
+      image: getPublicationImage('MedSynUI.png'),
+      customImage: 'MedSynUI.png',
       showAllLinks: false,
       pdfLink: 'https://arxiv.org/pdf/2507.16207'
     },
@@ -52,8 +52,8 @@ export default function Publications() {
       authors: 'Patrick Chwalek, Marie Kuronaga, Marco Giordano, Aidan Bradshaw, Isamar Zhu, Marina Arbetman, and Joseph A. Paradiso.',
       title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
       venue: '(Submitted), Nature 2025',
-      image: getPublicationImage(null),
-      customImage: null,
+      image: getPublicationImage('buzzdetection.png'),
+      customImage: 'buzzdetection.png',
       showAllLinks: true,
       codeLink: 'https://github.com/Abradshaw1/AS2.0_REPO'
     },
