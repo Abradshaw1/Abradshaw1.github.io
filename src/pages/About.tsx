@@ -29,7 +29,7 @@ export default function About() {
           <div className="md:col-span-1 flex justify-center items-start mt-16">
             <div className="w-64 h-80 rounded-lg overflow-hidden bg-slate-200">
               <img
-                src="https://avatars.githubusercontent.com/u/146846937"
+                src="/project-images/Headshot1.jpg"
                 alt="Aidan Bradshaw"
                 className="w-full h-full object-cover"
               />
