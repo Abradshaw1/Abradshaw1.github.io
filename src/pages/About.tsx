@@ -112,7 +112,7 @@ export default function About() {
               EMAIL
             </a>
             <a
-              href="/project-images/Aidan_Bradshaw_Resume_CV.pdf"
+              href="/Aidan_Bradshaw_Resume_CV.pdf"
               download="Aidan_Bradshaw_CV.pdf"
               target="_self"
 
