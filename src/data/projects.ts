@@ -9,7 +9,7 @@ const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
 export const projects = [
   {
     id: 'parsons-prompt-classification',
-    title: 'Parsons Prompt Classification: Automating Malicious Prompt Detection',
+    title: 'Automating Malicious Prompt Detection',
     description: 'Domain-specific malicious-prompt classifier with synthetic data + RLHF and department routing.',
     fullDescription: `Built a policy-aware pipeline for ParsonsGPT: cleaned policy docs, generated and filtered synthetic prompts, and added a lightweight RLHF loop to refine generations. Fine-tuned a deBERTa-v3-small classifier (LoRA/PEFT) to flag and route prompts (HR/Legal/Security) with large gains over baseline and production-friendly latency.`,
     technologies: [
