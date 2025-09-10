@@ -61,8 +61,8 @@ export default function ProjectDetail() {
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Code</h2>
                 <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
-                <button
-                  href="#"
+                <a
+                  href={project.link}
                   className="group inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition-colors relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -74,7 +74,7 @@ export default function ProjectDetail() {
                     VIEW SOURCE CODE
                     <ArrowRight className="w-4 h-4" />
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
