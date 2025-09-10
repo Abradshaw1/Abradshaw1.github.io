@@ -148,3 +148,5 @@ export default function Projects() {
     </div>
   );
 }
+
+export default Projects;
