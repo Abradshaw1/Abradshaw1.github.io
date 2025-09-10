@@ -116,7 +116,7 @@ export default function About() {
               download
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#00008B] text-white text-sm hover:bg-[#000080] hover:border-blue-300 border-2 border-transparent transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <FileText className="w-4 h-4" />
               CV DOWNLOAD
