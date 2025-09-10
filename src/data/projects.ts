@@ -1,17 +1,9 @@
 // Helper function to get project image path
-const getProjectImage = (imageName: string | null, fallbackUrl: string, detailImageName?: string | null) => {
+const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
   if (imageName) {
     return `/project-images/${imageName}`;
   }
   return fallbackUrl;
-};
-
-// Helper function to get project detail image path (for project detail pages)
-const getProjectDetailImage = (detailImageName: string | null, cardImageName: string | null, fallbackUrl: string) => {
-  if (detailImageName) {
-    return `/project-images/${detailImageName}`;
-  }
-  return getProjectImage(cardImageName, fallbackUrl);
 };
 
 export const projects = [
