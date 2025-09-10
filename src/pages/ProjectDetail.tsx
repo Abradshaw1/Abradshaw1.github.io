@@ -31,11 +31,11 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8 min-h-[500px]">
-          <div className="w-full h-full overflow-hidden rounded-lg">
+          <div className="w-full h-full overflow-hidden rounded-lg flex items-center justify-center bg-slate-100">
             <img 
               src={project.detailImage || project.image} 
               alt={project.title} 
-              className="w-full h-full object-cover"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
           
