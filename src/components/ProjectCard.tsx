@@ -4,7 +4,6 @@ interface ProjectCardProps {
   id: string;
   title: string;
   description: string;
-  technologies: string[];
   image: string;
   index: number;
   onDragStart?: (e: React.DragEvent) => void;
@@ -20,7 +19,6 @@ export default function ProjectCard({
   id, 
   title, 
   description, 
-  technologies, 
   image, 
   index,
   onDragStart,

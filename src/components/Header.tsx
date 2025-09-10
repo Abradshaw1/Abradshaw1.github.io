@@ -1,8 +1,6 @@
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 export default function Header() {
-  const CV = '/ABradshaw-Resume-CV.pdf';
-  
   return (
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="w-56 h-56 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">

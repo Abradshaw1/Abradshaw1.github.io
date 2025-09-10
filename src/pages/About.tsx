@@ -4,14 +4,16 @@ import { Timer, Keyboard, MessageSquare, Calculator, Gamepad2 } from 'lucide-rea
 function HighlightLink({
   href,
   children,
+  style,
 }: {
   href: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }) {
   return (
     <span className="relative inline-block align-baseline">
       <span className="absolute inset-0 bg-[#00008B] rounded-sm"></span>
-      <a href={href} className="relative text-white px-1 hover:underline">
+      <a href={href} className="relative text-white px-1 hover:underline" style={style}>
         {children}
       </a>
     </span>
