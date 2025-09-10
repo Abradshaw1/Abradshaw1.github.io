@@ -27,7 +27,7 @@ export const projects = [
     fullDescription: `Analyzed Allen Institute SEA-AD brain dataset with simulation-based inference. 
     Implemented bootstrapping, permutation tests, and Bayesian inference in Stan to study gene–pathology associations. 
     Compared Poisson vs. Negative Binomial hierarchical pseudotime models, incorporating APOE genotype as covariate.`,
-    technologies: ['R', 'Stan', 'Bayesian Inference', 'Bootstrapping', 'Negative Binomial Modeling', 'Gene–Pathology Analysis'],
+    technologies: ['R', 'tidyverse', 'ggplot2', 'Stan', 'Bayesian Inference', 'Bootstrapping', 'Negative Binomial Modeling', 'Gene–Pathology Analysis'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('alzheimers.png', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800'),
@@ -40,7 +40,7 @@ export const projects = [
     description: 'Built a supervised pipeline to predict departure delays using pre-departure metadata.',
     fullDescription: `Built a supervised pipeline to predict departure delays (≥15 min) using only pre-departure metadata (schedules, routes, weather, turnaround). 
     Engineered features (aircraft delay history, precipitation, wind speed) and trained an XGBoost classifier with class imbalance handling, achieving AUC 0.839 on 2024 PIT data.`,
-    technologies: ['Python', 'XGBoost', 'Feature Engineering', 'Airline On-Time Performance Data'],
+    technologies: ['Python', 'XGBoost', 'Feature Engineering', 'Airline On-Time Performance Data', 'Pandas', 'NumPy', 'Scikit-learn'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('flight_prediction.png', 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800'),
@@ -53,7 +53,7 @@ export const projects = [
     description: 'Modeled thermal power across 7,000+ orbits using STL+ARIMA and Time Series Regression.',
     fullDescription: `Modeled thermal power across 7,000+ orbits using STL+ARIMA and Time Series Regression (TSR) with exogenous telemetry (solar heating, eclipse duration, transmitter load). 
     Achieved MAPE 12.9% with STL+ARIMA and 4.3% with TSR, enabling interpretable, energy-aware scheduling for spacecraft operations.`,
-    technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis'],
+    technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis', 'STL decomposition'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('esapower.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
@@ -66,7 +66,7 @@ export const projects = [
     description: 'Generative AI text-to-image models for medical imaging.',
     fullDescription: `Explained(XAI) and operationalized text-to-image models to generate conditioned CT scans from prompts, helping patients and doctors understand anatomical diseases. 
     Collaborated with Boston University EECS and UPMC to explain diffusion models using cross-attention maps and implemented sparse attention for efficiency.`,
-    technologies: ['Generative AI', 'Medical Imaging', 'Text-to-Image Models', 'Python', 'Machine Learning'],
+    technologies: ['Diffusion models (U-Net backbone, latent consistency)', 'DPPM, DDPM sampling', 'PyTorch', 'sparse attention', 'Python', 'DICOM preprocessing'],
     link: 'https://github.com/cmudig/GenAIxRad-Viewer',
     image: getProjectImage('genaict.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
     customImage: 'genaict.png'
@@ -77,7 +77,7 @@ export const projects = [
     description: 'Tiny ML model for bee species classification.',
     fullDescription: `Architected and optimized ML models for classifying invasive and native bee species based on audio data. 
     Enhanced frameworks for higher accuracy and compressed models for real-time classification on microcontrollers. Collaborated with researchers from MIT, Kioxia R&D, and ETH Zurich.`,
-    technologies: ['Machine Learning', 'Audio Classification', 'Microcontrollers', 'Python', 'TinyML'],
+    technologies: ['Quantization', 'Analog devices toolchain', 'MAX7800 featherboard', 'Pytorch', 'W&B/TensorBoard', 'ESC-50 dataset', 'Spectograms', 'Sparse attention', 'Layer pruning',],
     link: 'https://github.com/Abradshaw1/AS2.0_REPO',
     image: getProjectImage('buzzdetection.png', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
     customImage: 'buzzdetection.png'
@@ -88,7 +88,7 @@ export const projects = [
     description: 'Multi-modal ML and HCI tools for healthcare.',
     fullDescription: `Designed cross-platform applications to analyze and predict symptoms for patients with Raynaud's disease. 
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
-    technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
+    technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS Auto-scaling', 'JavaScript', 'PostgreSQL', 'RESTAPI', 'Xcode', 'Android studio'],
     link: 'https://github.com/Abradshaw1/HealthApp',
     image: getProjectImage('healthapp.png', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'healthapp.png'
@@ -100,7 +100,7 @@ export const projects = [
     fullDescription: `Conducted comprehensive auditing of low-parameter generative transformers: Flan-T5-Small (80M), GPT-Neo (125M), DistilGPT-2 (82M), 
     for healthcare diagnostics applications. Focused on red-teaming their reliability in zero-shot prompt diagnosis, 
     ensuring safe and accurate medical assessments.`,
-    technologies: ['Machine Learning', 'Healthcare AI', 'Natural Language Processing', 'Python', 'PyTorch'],
+    technologies: ['Hugging Face Transformers (Flan-T5-Small, GPT-Neo, DistilGPT-2)', 'Medical QA datasets (MedQA, PubMed abstracts)', 'Python', 'PyTorch'],
     link: 'https://github.com/Abradshaw1/HealthAudit-GPT',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800',
     customImage: null
