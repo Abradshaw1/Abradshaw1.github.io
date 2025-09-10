@@ -73,7 +73,8 @@ export default function Publications() {
       venue: 'Pitt AI in Healthcare Research Symposium, 2024',
       image: getPublicationImage(null),
       customImage: null,
-      showAllLinks: false
+      showAllLinks: false,
+      pdfLink: undefined
     }
   ];
 
