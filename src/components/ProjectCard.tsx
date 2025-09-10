@@ -32,26 +32,44 @@ export default function ProjectCard({
   const heights = ['h-64', 'h-80', 'h-72', 'h-96', 'h-56', 'h-88', 'h-60', 'h-84', 'h-76', 'h-92', 'h-68', 'h-52'];
   const cardHeight = heights[index % heights.length];
 
+  const handleDragStart = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onDragStart) {
+      onDragStart();
+    }
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    // Only navigate if we're not in the middle of a drag operation
+    if (isDragging) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
   return (
     <div
       draggable
-      onDragStart={onDragStart}
+      onDragStart={handleDragStart}
       onDrag={onDrag}
       onDragOver={onDragOver}
       onDrop={onDrop}
       onDragEnd={onDragEnd}
-      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4"
+      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 cursor-move"
       style={style}
     >
       <Link 
         to={`/project/${id}`}
         className="block w-full h-full"
+        onClick={handleClick}
+        draggable={false}
       >
         <div className={`${cardHeight} w-full overflow-hidden relative min-h-[256px]`}>
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+            draggable={false}
             onError={(e) => {
               console.log(`Failed to load image for ${title}:`, image);
               e.currentTarget.src = 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800';

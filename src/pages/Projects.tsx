@@ -75,7 +75,7 @@ export default function Projects() {
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
               onDragEnd={handleDragEnd}
-              isDragging={false}
+              isDragging={draggedCard === index}
               style={getCardStyle(index)}
             />
           ))}
