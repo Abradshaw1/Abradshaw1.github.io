@@ -43,7 +43,7 @@ export default function Publications() {
       venue: 'IEEE International Conference on E-health Networking, Application & Services (IEEE Healthcom) 2025',
       image: getPublicationImage(null),
       customImage: null,
-      showAllLinks: false
+      showAllLinks: true
     }
   ];
 
@@ -63,7 +63,8 @@ export default function Publications() {
       venue: '(Submitted), Nature Sensors 2025',
       image: getPublicationImage('muybridge_temp.png'),
       customImage: 'muybridge_temp.png',
-      showAllLinks: true
+      showAllLinks: true,
+      codeLink: 'https://github.com/Abradshaw1/Muybridge'
     }
   ];
 
