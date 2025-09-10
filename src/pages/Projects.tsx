@@ -6,32 +6,54 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [dragStartPos, setDragStartPos] = useState({ x: 0, y: 0 });
   const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
   const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
+  const [isDragMode, setIsDragMode] = useState(false);
+  const [holdTimer, setHoldTimer] = useState<NodeJS.Timeout | null>(null);
+  const [mouseStartPos, setMouseStartPos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (index: number, e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
-
-    // Get the card's current position
-    const cardElement = e.currentTarget as HTMLElement;
-    const rect = cardElement.getBoundingClientRect();
     
-    // Calculate where the user clicked relative to the card center
-    const clickOffsetX = e.clientX - (rect.left + rect.width / 2);
-    const clickOffsetY = e.clientY - (rect.top + rect.height / 2);
+    const startX = e.clientX;
+    const startY = e.clientY;
+    setMouseStartPos({ x: startX, y: startY });
+    setDragPosition({ x: startX, y: startY });
     
-    // Store the initial drag position (centered on cursor)
-    setDragStartPos({ x: clickOffsetX, y: clickOffsetY });
-    setDragPosition({ x: e.clientX, y: e.clientY });
+    // Start hold timer - if user holds for 500ms, enter drag mode
+    const timer = setTimeout(() => {
+      setIsDragMode(true);
+      setDraggedCard(index);
+    }, 500);
     
-    setDraggedCard(index);
+    setHoldTimer(timer);
+    
+    // Add temporary mouse move listener to detect if user moves before hold completes
+    const handleEarlyMove = (moveEvent: MouseEvent) => {
+      const deltaX = Math.abs(moveEvent.clientX - startX);
+      const deltaY = Math.abs(moveEvent.clientY - startY);
+      
+      // If user moves more than 5px before hold completes, cancel drag mode
+      if (deltaX > 5 || deltaY > 5) {
+        if (timer) clearTimeout(timer);
+        document.removeEventListener('mousemove', handleEarlyMove);
+        document.removeEventListener('mouseup', handleEarlyUp);
+      }
+    };
+    
+    const handleEarlyUp = () => {
+      if (timer) clearTimeout(timer);
+      document.removeEventListener('mousemove', handleEarlyMove);
+      document.removeEventListener('mouseup', handleEarlyUp);
+    };
+    
+    document.addEventListener('mousemove', handleEarlyMove);
+    document.addEventListener('mouseup', handleEarlyUp);
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-    if (draggedCard === null) return;
+    if (draggedCard === null || !isDragMode) return;
     
     // Update drag position to follow cursor exactly
     setDragPosition({ x: e.clientX, y: e.clientY });
@@ -93,8 +115,15 @@ export default function Projects() {
   };
 
   const handleMouseUp = (e: MouseEvent) => {
-    if (draggedCard === null) {
+    // Clear any pending hold timer
+    if (holdTimer) {
+      clearTimeout(holdTimer);
+      setHoldTimer(null);
+    }
+    
+    if (draggedCard === null || !isDragMode) {
       setDraggedCard(null);
+      setIsDragMode(false);
       setCardPositions({});
       return;
     }
@@ -138,6 +167,7 @@ export default function Projects() {
     }
 
     setDraggedCard(null);
+    setIsDragMode(false);
     // Animate all cards back to original positions
     const returnPositions: { [key: number]: { x: number; y: number } } = {};
     Object.keys(cardPositions).forEach(key => {
@@ -147,7 +177,7 @@ export default function Projects() {
   };
 
   React.useEffect(() => {
-    if (draggedCard !== null) {
+    if (draggedCard !== null && isDragMode) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
       
@@ -156,7 +186,7 @@ export default function Projects() {
         document.removeEventListener('mouseup', handleMouseUp);
       };
     }
-  }, [draggedCard, projectList, cardPositions]);
+  }, [draggedCard, isDragMode, projectList, cardPositions]);
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
@@ -172,21 +202,22 @@ export default function Projects() {
         >
           {projectList.map((project, index) => {
             const isBeingDragged = draggedCard === index;
+            const showDragState = isBeingDragged && isDragMode;
             const cardPosition = cardPositions[index] || { x: 0, y: 0 };
             
             return (
               <div
                 key={project.id}
                 data-card-index={index}
-                className={`transition-all duration-300 ease-out ${isBeingDragged ? 'z-50' : ''}`}
+                className={`transition-all duration-300 ease-out ${showDragState ? 'z-50' : ''}`}
                 style={{
-                  transform: isBeingDragged 
+                  transform: showDragState 
                     ? `translate(${dragPosition.x - dragStartPos.x}px, ${dragPosition.y - dragStartPos.y}px) scale(1.05) rotate(3deg)` 
                     : `translate(${cardPosition.x}px, ${cardPosition.y}px) scale(1)`,
-                  position: isBeingDragged ? 'fixed' : 'relative',
-                  pointerEvents: isBeingDragged ? 'none' : 'auto', 
-                  zIndex: isBeingDragged ? 1000 : 'auto',
-                  filter: isBeingDragged ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))' : 'none',
+                  position: showDragState ? 'fixed' : 'relative',
+                  pointerEvents: showDragState ? 'none' : 'auto', 
+                  zIndex: showDragState ? 1000 : 'auto',
+                  filter: showDragState ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))' : 'none',
                   transformOrigin: 'center center'
                 }}
               >
@@ -194,7 +225,7 @@ export default function Projects() {
                   {...project} 
                   index={index}
                   onMouseDown={(e) => handleMouseDown(index, e)}
-                  isDragging={isBeingDragged}
+                  isDragging={showDragState}
                 />
               </div>
           )})}

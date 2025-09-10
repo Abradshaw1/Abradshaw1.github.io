@@ -24,20 +24,23 @@ export default function ProjectCard({
   const cardHeight = heights[index % heights.length];
   
   const handleMouseDown = (e: React.MouseEvent) => {
+    // Only call onMouseDown, don't prevent default here
+    // This allows normal clicks to work
     onMouseDown?.(e);
   };
 
   const handleClick = (e: React.MouseEvent) => {
-    // Prevent navigation if we're in the middle of a drag operation
+    // Only prevent navigation if we're actively dragging
     if (isDragging) {
       e.preventDefault();
+      e.stopPropagation();
     }
   };
 
   return (
     <div
       onMouseDown={handleMouseDown}
-      className="group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 cursor-move"
+      className={`group bg-white overflow-hidden transition-all duration-300 shadow-sm w-full break-inside-avoid mb-4 ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`}
     >
       <Link 
         to={`/project/${id}`}
