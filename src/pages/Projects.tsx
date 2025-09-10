@@ -11,7 +11,7 @@ export default function Projects() {
     setDraggedCard(index);
   };
 
-  const handleDrag = (e: React.DragEvent) => {
+  const handleDrag = (_e: React.DragEvent) => {
     // Drag position tracking removed as it wasn't being used
   };
 
