@@ -6,30 +6,26 @@ import { projects } from '../data/projects';
 export default function Projects() {
   const [projectList, setProjectList] = useState(projects);
   const [draggedCard, setDraggedCard] = useState<number | null>(null);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [dragStartPos, setDragStartPos] = useState({ x: 0, y: 0 });
   const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
   const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (index: number, e: React.MouseEvent) => {
     e.preventDefault();
-    const rect = e.currentTarget.getBoundingClientRect();
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    if (!containerRect) return;
+    e.stopPropagation();
+
+    // Get the card's current position
+    const cardElement = e.currentTarget as HTMLElement;
+    const rect = cardElement.getBoundingClientRect();
     
-    // Calculate offset to center the card on cursor
-    const cardCenterX = rect.width / 2;
-    const cardCenterY = rect.height / 2;
+    // Calculate where the user clicked relative to the card center
+    const clickOffsetX = e.clientX - (rect.left + rect.width / 2);
+    const clickOffsetY = e.clientY - (rect.top + rect.height / 2);
     
-    setDragOffset({
-      x: cardCenterX,
-      y: cardCenterY
-    });
-    
-    setDragPosition({
-      x: e.clientX - cardCenterX,
-      y: e.clientY - cardCenterY
-    });
+    // Store the initial drag position (centered on cursor)
+    setDragStartPos({ x: clickOffsetX, y: clickOffsetY });
+    setDragPosition({ x: e.clientX, y: e.clientY });
     
     setDraggedCard(index);
   };
@@ -37,30 +33,15 @@ export default function Projects() {
   const handleMouseMove = (e: MouseEvent) => {
     if (draggedCard === null) return;
     
-    // Use standard card dimensions for consistency
-    const cardWidth = 300; // Approximate card width
-    const cardHeight = 400; // Approximate card height
-    
-    // Constrain to viewport
-    const maxX = window.innerWidth - cardWidth;
-    const maxY = window.innerHeight - cardHeight;
-    
-    const constrainedX = Math.max(0, Math.min(maxX, e.clientX - dragOffset.x));
-    const constrainedY = Math.max(0, Math.min(maxY, e.clientY - dragOffset.y));
-    
-    setDragPosition({
-      x: constrainedX,
-      y: constrainedY
-    });
+    // Update drag position to follow cursor exactly
+    setDragPosition({ x: e.clientX, y: e.clientY });
 
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (!containerRect) return;
 
-    // Calculate dragged card center position relative to container
-    const draggedCardX = constrainedX - containerRect.left;
-    const draggedCardY = constrainedY - containerRect.top;
-    const draggedCardCenterX = draggedCardX + cardWidth / 2;
-    const draggedCardCenterY = draggedCardY + cardHeight / 2;
+    // Current cursor position relative to container
+    const cursorX = e.clientX - containerRect.left;
+    const cursorY = e.clientY - containerRect.top;
 
     const newPositions: { [key: number]: { x: number; y: number } } = {};
     
@@ -70,29 +51,26 @@ export default function Projects() {
       const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
       if (cardElement) {
         const cardRect = cardElement.getBoundingClientRect();
-        const cardContainerPos = {
-          x: cardRect.left - containerRect.left,
-          y: cardRect.top - containerRect.top
-        };
+        const cardCenterX = cardRect.left - containerRect.left + cardRect.width / 2;
+        const cardCenterY = cardRect.top - containerRect.top + cardRect.height / 2;
         
-        const cardCenterX = cardContainerPos.x + cardRect.width / 2;
-        const cardCenterY = cardContainerPos.y + cardRect.height / 2;
-
-        // Calculate distance between card centers
-        const deltaX = cardCenterX - draggedCardCenterX;
-        const deltaY = cardCenterY - draggedCardCenterY;
+        // Calculate distance from cursor to card center
+        const deltaX = cardCenterX - cursorX;
+        const deltaY = cardCenterY - cursorY;
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
         
-        // Define interaction radius (when cards start to repel each other)
-        const interactionRadius = 150;
+        // iPhone-style interaction radius
+        const interactionRadius = 120;
 
         if (distance < interactionRadius && distance > 0) {
-          // Calculate push strength based on distance (closer = stronger push)
+          // Smooth push strength - stronger when closer
           const pushStrength = (interactionRadius - distance) / interactionRadius;
-          const maxPushDistance = 80;
-          const pushDistance = pushStrength * maxPushDistance;
+          const maxPushDistance = 60;
+          // Use easing for smoother movement
+          const easedStrength = 1 - Math.pow(1 - pushStrength, 3);
+          const pushDistance = easedStrength * maxPushDistance;
           
-          // Normalize direction vector
+          // Push in direction away from cursor
           const directionX = deltaX / distance;
           const directionY = deltaY / distance;
           
@@ -101,11 +79,11 @@ export default function Projects() {
             y: directionY * pushDistance
           };
         } else {
-          // Smoothly return to original position
+          // Smooth return to original position
           const currentPos = cardPositions[index] || { x: 0, y: 0 };
           newPositions[index] = {
-            x: currentPos.x * 0.9, // Gradual return
-            y: currentPos.y * 0.9
+            x: currentPos.x * 0.85,
+            y: currentPos.y * 0.85
           };
         }
       }
@@ -121,11 +99,11 @@ export default function Projects() {
       return;
     }
 
-    // Find the card we're dropping on based on cursor position
+    // Find closest card for swapping
     const containerRect = containerRef.current?.getBoundingClientRect();
     if (containerRect) {
-      const dropX = e.clientX - containerRect.left;
-      const dropY = e.clientY - containerRect.top;
+      const cursorX = e.clientX - containerRect.left;
+      const cursorY = e.clientY - containerRect.top;
       
       let dropIndex = -1;
       let minDistance = Infinity;
@@ -136,15 +114,14 @@ export default function Projects() {
         const cardElement = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
         if (cardElement) {
           const cardRect = cardElement.getBoundingClientRect();
-          const cardCenterX = (cardRect.left - containerRect.left) + cardRect.width / 2;
-          const cardCenterY = (cardRect.top - containerRect.top) + cardRect.height / 2;
+          const cardCenterX = cardRect.left - containerRect.left + cardRect.width / 2;
+          const cardCenterY = cardRect.top - containerRect.top + cardRect.height / 2;
           
           const distance = Math.sqrt(
-            Math.pow(dropX - cardCenterX, 2) + Math.pow(dropY - cardCenterY, 2)
+            Math.pow(cursorX - cardCenterX, 2) + Math.pow(cursorY - cardCenterY, 2)
           );
           
-          // If cursor is close to this card's center, consider it for swapping
-          if (distance < 100 && distance < minDistance) {
+          if (distance < 80 && distance < minDistance) {
             minDistance = distance;
             dropIndex = index;
           }
@@ -152,7 +129,6 @@ export default function Projects() {
       });
       
       if (dropIndex !== -1) {
-        // Swap the cards
         const newProjects = [...projectList];
         const temp = newProjects[draggedCard];
         newProjects[draggedCard] = newProjects[dropIndex];
@@ -162,7 +138,7 @@ export default function Projects() {
     }
 
     setDraggedCard(null);
-    // Smoothly animate cards back to their original positions
+    // Animate all cards back to original positions
     const returnPositions: { [key: number]: { x: number; y: number } } = {};
     Object.keys(cardPositions).forEach(key => {
       returnPositions[parseInt(key)] = { x: 0, y: 0 };
@@ -170,7 +146,6 @@ export default function Projects() {
     setCardPositions(returnPositions);
   };
 
-  // Add event listeners
   React.useEffect(() => {
     if (draggedCard !== null) {
       document.addEventListener('mousemove', handleMouseMove);
@@ -181,7 +156,7 @@ export default function Projects() {
         document.removeEventListener('mouseup', handleMouseUp);
       };
     }
-  }, [draggedCard, dragOffset, projectList]);
+  }, [draggedCard, projectList, cardPositions]);
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
@@ -203,15 +178,16 @@ export default function Projects() {
               <div
                 key={project.id}
                 data-card-index={index}
-                className={`transition-all duration-300 ${isBeingDragged ? 'z-50 shadow-2xl' : ''}`}
+                className={`transition-all duration-300 ease-out ${isBeingDragged ? 'z-50' : ''}`}
                 style={{
                   transform: isBeingDragged 
-                    ? `translate(${dragPosition.x}px, ${dragPosition.y}px) rotate(2deg)` 
-                    : `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
+                    ? `translate(${dragPosition.x - dragStartPos.x}px, ${dragPosition.y - dragStartPos.y}px) scale(1.05) rotate(3deg)` 
+                    : `translate(${cardPosition.x}px, ${cardPosition.y}px) scale(1)`,
                   position: isBeingDragged ? 'fixed' : 'relative',
-                  pointerEvents: isBeingDragged ? 'none' : 'auto',
-                  width: isBeingDragged ? 'auto' : 'auto',
-                  height: isBeingDragged ? 'auto' : 'auto'
+                  pointerEvents: isBeingDragged ? 'none' : 'auto', 
+                  zIndex: isBeingDragged ? 1000 : 'auto',
+                  filter: isBeingDragged ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))' : 'none',
+                  transformOrigin: 'center center'
                 }}
               >
                 <ProjectCard 
