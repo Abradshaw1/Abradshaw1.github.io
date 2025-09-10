@@ -31,17 +31,32 @@ export default function Projects() {
   const handleMouseMove = (e: MouseEvent) => {
     if (draggedCard === null) return;
     
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    if (!containerRect) return;
+    // Get the dragged card element to know its dimensions
+    const draggedElement = document.querySelector(`[data-card-index="${draggedCard}"]`) as HTMLElement;
+    if (!draggedElement) return;
+    
+    const cardRect = draggedElement.getBoundingClientRect();
+    const cardWidth = cardRect.width;
+    const cardHeight = cardRect.height;
+    
+    // Constrain to viewport
+    const maxX = window.innerWidth - cardWidth;
+    const maxY = window.innerHeight - cardHeight;
+    
+    const constrainedX = Math.max(0, Math.min(maxX, e.clientX - dragOffset.x));
+    const constrainedY = Math.max(0, Math.min(maxY, e.clientY - dragOffset.y));
     
     setDragPosition({
-      x: e.clientX - dragOffset.x,
-      y: e.clientY - dragOffset.y
+      x: constrainedX,
+      y: constrainedY
     });
 
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    if (!containerRect) return;
+
     // Calculate dragged card position relative to container
-    const draggedCardX = e.clientX - containerRect.left - dragOffset.x;
-    const draggedCardY = e.clientY - containerRect.top - dragOffset.y;
+    const draggedCardX = constrainedX - containerRect.left;
+    const draggedCardY = constrainedY - containerRect.top;
 
     const newPositions: { [key: number]: { x: number; y: number } } = {};
     
@@ -60,8 +75,8 @@ export default function Projects() {
         const draggedCardRect = {
           x: draggedCardX,
           y: draggedCardY,
-          width: 300,
-          height: 400
+          width: cardWidth,
+          height: cardHeight
         };
 
         // Check if cards are overlapping
@@ -183,10 +198,12 @@ export default function Projects() {
                 className={`transition-all duration-300 ${isBeingDragged ? 'z-50 shadow-2xl' : ''}`}
                 style={{
                   transform: isBeingDragged 
-                    ? `translate(${dragPosition.x}px, ${dragPosition.y}px) rotate(5deg)` 
+                    ? `translate(${dragPosition.x}px, ${dragPosition.y}px) rotate(2deg)` 
                     : `translate(${cardPosition.x}px, ${cardPosition.y}px)`,
                   position: isBeingDragged ? 'fixed' : 'relative',
-                  pointerEvents: isBeingDragged ? 'none' : 'auto'
+                  pointerEvents: isBeingDragged ? 'none' : 'auto',
+                  width: isBeingDragged ? 'auto' : 'auto',
+                  height: isBeingDragged ? 'auto' : 'auto'
                 }}
               >
                 <ProjectCard 
