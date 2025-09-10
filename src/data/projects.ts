@@ -89,7 +89,7 @@ export const projects = [
     fullDescription: `Designed cross-platform applications to analyze and predict symptoms for patients with Raynaud's disease. 
     Developed full-stack frameworks with React Native and AWS, integrating multi-modal ML models for wearable health data. Collaborated with SDSU, Yale, and Rollins College experts.`,
     technologies: ['HCI', 'Multi-modal ML', 'Healthcare Applications', 'React Native', 'AWS'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/HealthApp',
     image: getProjectImage('healthapp.png', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'healthapp.png'
   },
@@ -136,7 +136,7 @@ export const projects = [
     fullDescription: `Developed a Markov Chain Monte Carlo (MCMC) algorithm to decrypt substitution ciphers by leveraging bigram frequency analysis of reference texts. 
     Implemented optimized text preprocessing and scoring functions to handle large datasets efficiently. Conducted comprehensive analysis of algorithm parameters, including iterations, text length, and scaling, and their impact on decryption accuracy.`,
     technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
-    link: '#',
+    link: 'https://github.com/Abradshaw1/decryption-Abradshaw1',
     image: getProjectImage('mcmc.png', 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800'),
     customImage: 'mcmc.png'
   },
