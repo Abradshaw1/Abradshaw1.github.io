@@ -161,11 +161,11 @@ export default function About() {
             </div>
             <div className="flex items-center gap-3">
               <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Long distance running – XC and trail running</p>
+              <p className="text-sm leading-relaxed">Long Distance Running – XC and trail running</p>
             </div>
             <div className="flex items-center gap-3">
               <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Mechanical Keyboard design – magnetic switches, hall sensors, Japanese inspired design</p>
+              <p className="text-sm leading-relaxed">Mechanical Keyboard Design – Magnetic switches, hall sensors, Japanese inspired design</p>
             </div>
           </div>
         </div>
