@@ -12,7 +12,7 @@ export default function Projects() {
   };
 
   const handleDrag = (_e: React.DragEvent) => {
-    // Drag position tracking removed as it wasn't being used
+    // Drag tracking - parameter prefixed with _ to indicate intentionally unused
   };
 
   const handleDragOver = (e: React.DragEvent) => {
