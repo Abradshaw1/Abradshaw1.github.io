@@ -23,7 +23,7 @@ function HighlightLink({
 const handleCVDownload = async (e: React.MouseEvent) => {
   e.preventDefault();
   try {
-    const response = await fetch('/project-images/Aidan_Bradshaw_Resume_CV.pdf');
+    const response = await fetch('/project-images/Aidan_Bradshaw_Academic_CV.pdf');
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
