@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
-import { Timer, Keyboard, MessageSquare, Calculator, Gamepad2 } from 'lucide-react';
+import { Music, Coffee, Brain, Timer, Keyboard } from 'lucide-react';
 
 function HighlightLink({
   href,
@@ -148,24 +148,24 @@ export default function About() {
           <div className="h-[2px] bg-[#00008B] w-full mb-6" />
           <div className="space-y-3 text-slate-600 mt-6">
             <div className="flex items-center gap-3">
-              <MessageSquare className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Music className="w-5 h-5 text-[#00008B] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Music – Synthetic pop and electronic (paid DJ at public/private events); self-taught pianist (classical and contemporary)</p>
             </div>
             <div className="flex items-center gap-3">
-              <Calculator className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Coffee className="w-5 h-5 text-[#00008B] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Coffee Brewing – Moka pot, grounds mixtures (preferably heavy caffeine), mechanical French press, and pour-over methods</p>
             </div>
             <div className="flex items-center gap-3">
-              <Gamepad2 className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Brain className="w-5 h-5 text-[#00008B] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics</p>
             </div>
             <div className="flex items-center gap-3">
               <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Long distance running - XC and trail running</p>
+              <p className="text-sm leading-relaxed">Long distance running – XC and trail running</p>
             </div>
             <div className="flex items-center gap-3">
               <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
-              <p className="text-sm leading-relaxed">Mechanical Keyboard design - magnetic switches, hall sensors, Japanese inspired design</p>
+              <p className="text-sm leading-relaxed">Mechanical Keyboard design – magnetic switches, hall sensors, Japanese inspired design</p>
             </div>
           </div>
         </div>
