@@ -8,10 +8,10 @@ export default function Footer() {
             <h3 className="text-lg font-medium text-slate-900 mb-2">Contact Me</h3>
             <p className="text-slate-600 text-sm mb-3">Feel free to reach out</p>
             <a 
-              href="mailto:abradsha@andrew.cmu.edu"
+              href="mailto:aidanbradshaw2025@u.northwestern.edu"
               className="text-[#00008B] hover:text-[#000080] underline text-sm"
             >
-              abradsha@andrew.cmu.edu
+              aidanbradshaw2025@u.northwestern.edu
             </a>
           </div>
           <div className="text-right">

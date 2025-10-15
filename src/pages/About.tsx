@@ -69,31 +69,33 @@ export default function About() {
 
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                I am an AI researcher and embedded systems designer working at
-                the intersection of ubiquitous computing, health sensing, and
-                applied machine learning. I hold an M.S. in Applied Data Science
-                from Carnegie Mellon University and a B.S. in Computer Science 
-                (with a minor in Applied Mathematics) from San Diego State University.
+                I am an applied machine learning researcher and first-year PhD student 
+                rotating in the{' '}
+                <HighlightLink href="https://spice-lab.org/" style={{ textDecorationThickness: '2px' }}>
+                  SPICE Lab
+                </HighlightLink>
+                {' '}at Northwestern University. My research spans on-device machine learning 
+                and behavioral sensing systems for digital health, activity understanding, 
+                and affective computing.
               </p>
 
               <p>
-                I am currently based in Zurich, working as a research assistant
-                at ETH Zurich&apos;s{' '}
-                <HighlightLink href="https://iis.ee.ethz.ch/" style={{ textDecorationThickness: '2px' }}>
-                  Integrated Systems Laboratory
-                </HighlightLink>
-                . My previous work spans AI applications in TinyML, sensor
-                fusion, wearables, signal processing, interface design,
-                multimodal diffusion, and mHealth during my time at Carnegie
-                Mellon University&apos;s{' '}
-                <HighlightLink href="https://hcii.cmu.edu/" style={{ textDecorationThickness: '2px' }}>
-                  Human-Computer Interaction Institute
-                </HighlightLink>{' '}
-                and{' '}
+                Before my doctoral studies, I conducted research at{' '}
                 <HighlightLink href="https://www.media.mit.edu/" style={{ textDecorationThickness: '2px' }}>
                   MIT&apos;s Media Lab
                 </HighlightLink>
-                .
+                {' '}on embedded deep learning, at Carnegie Mellon University&apos;s{' '}
+                <HighlightLink href="https://hcii.cmu.edu/" style={{ textDecorationThickness: '2px' }}>
+                  Human-Computer Interaction Institute
+                </HighlightLink>
+                {' '}on text-to-image diffusion models, and at ETH Zurich&apos;s{' '}
+                <HighlightLink href="https://iis.ee.ethz.ch/" style={{ textDecorationThickness: '2px' }}>
+                  Integrated Systems Laboratory
+                </HighlightLink>
+                , where I continue to collaborate closely with the Integrated Information 
+                Systems (IIS) Group in mobile computing. I hold an M.S. in Applied Data Science 
+                from Carnegie Mellon University and a B.S. in Computer Science with a minor 
+                in Mathematics from San Diego State University.
               </p>
             </div>
           </div>
@@ -125,7 +127,7 @@ export default function About() {
               LINKEDIN
             </a>
             <a
-              href="mailto:abradsha@andrew.cmu.edu"
+              href="mailto:aidanbradshaw2025@u.northwestern.edu"
               className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
