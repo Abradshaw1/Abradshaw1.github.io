@@ -92,8 +92,7 @@ export default function About() {
                 <HighlightLink href="https://iis.ee.ethz.ch/" style={{ textDecorationThickness: '2px' }}>
                   Integrated Systems Laboratory
                 </HighlightLink>
-                , where I continue to collaborate closely with the Integrated Information 
-                Systems (IIS) Group in mobile computing. I hold an M.S. in Applied Data Science 
+                , where I continue to collaborate closely on mobile computing research. I hold an M.S. in Applied Data Science 
                 from Carnegie Mellon University and a B.S. in Computer Science with a minor 
                 in Mathematics from San Diego State University.
               </p>
