@@ -18,6 +18,17 @@ export const projects = [
     customImage: 'muyrbridge.png'
   },
   {
+    id: 'cohort-analysis-dashboard',
+    title: 'Cohort Analysis Dashboard',
+    description: 'Interactive clinical EDA dashboard for visualizing patient cohorts and individual outcomes from medical data.',
+    fullDescription: `This work-in-progress project is an interactive visualization dashboard designed for clinical exploratory data analysis. Built with React, D3.js, and Vite, the dashboard enables researchers to compare individual patient outcomes across cohorts derived from medical datasets. The system is intended to evolve into a general-purpose intervention-visualization tool for cohort-based studies, providing intuitive, interactive visualizations that support hypothesis generation and outcome analysis in clinical research settings.`,
+    technologies: ['D3.js', 'React', 'JavaScript', 'Vite.js', 'CSS'],
+    link: 'https://github.com/Abradshaw1/Cohort_Analysis_Dashboard',
+    demoLink: 'https://abradshaw1.github.io/Cohort_Analysis_Dashboard/',
+    image: getProjectImage('Cohort_Anlaysis.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'Cohort_Anlaysis.png'
+  },
+  {
     id: 'bee-buzz-classification',
     title: 'Bee Buzz Classification',
     description: 'Tiny ML model for bee species classification.',
