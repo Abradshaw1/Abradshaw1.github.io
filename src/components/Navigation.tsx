@@ -4,7 +4,7 @@ export default function Navigation() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'About' },
+    { path: '/', label: 'About Me' },
     { path: '/projects', label: 'Projects' },
     { path: '/publications', label: 'Publications' }
   ];
