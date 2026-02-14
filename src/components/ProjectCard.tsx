@@ -24,7 +24,7 @@ export default function ProjectCard({ id, title, description, image }: ProjectCa
         />
       </div>
 
-      <div style={{ paddingTop: '14px' }}>
+      <div style={{ paddingTop: '40px' }}>
         <div className="relative inline-block">
           <h3 className="text-[18px] font-normal text-[#111] leading-snug">
             {title}
