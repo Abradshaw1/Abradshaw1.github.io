@@ -11,20 +11,24 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <div className="mx-auto px-8" style={{ width: '72%', maxWidth: '1400px' }}>
-        <div className="flex items-center justify-between" style={{ height: '90px' }}>
-          <Link to="/" className="text-[32px] font-bold text-[#111] no-underline">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          <Link
+            to="/"
+            className="text-2xl text-black no-underline"
+            style={{ fontFamily: "'Times New Roman', Georgia, serif" }}
+          >
             Aidan Bradshaw
           </Link>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             {navItems.map(({ path, label }) => (
               <Link
                 key={path}
                 to={path}
-                className={`text-lg no-underline transition-colors duration-200 ${
+                className={`text-base no-underline ${
                   location.pathname === path
-                    ? 'text-[#111] font-normal'
-                    : 'text-[#666] hover:text-[#111] font-light'
+                    ? 'text-black font-bold'
+                    : 'text-[#555]'
                 }`}
               >
                 {label}

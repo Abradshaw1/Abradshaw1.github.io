@@ -63,23 +63,18 @@ export default function ProjectDetail() {
                 <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
                 <div className="flex flex-wrap gap-3">
                   {project.link === '#' ? (
-                    <div className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm bg-slate-100">
-                      <span>CODE AVAILABLE UPON REQUEST</span>
-                    </div>
+                    <span className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-500 text-sm">
+                      CODE AVAILABLE UPON REQUEST
+                    </span>
                   ) : (
                     <a
                       href={project.link}
-                      className="group inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition-colors relative overflow-hidden"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50"
                     >
-                      <span className="relative z-10 flex items-center gap-2">
-                        VIEW SOURCE CODE
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                      <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
-                      <span className="absolute inset-0 flex items-center justify-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
-                        VIEW SOURCE CODE
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
+                      VIEW SOURCE CODE
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   )}
                   {project.demoLink && (
@@ -87,17 +82,10 @@ export default function ProjectDetail() {
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition-colors relative overflow-hidden"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-700 text-sm hover:bg-slate-50"
                     >
-                      <span className="relative z-10 flex items-center gap-2">
-                        TRY ME!
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                      <div className="absolute inset-0 bg-[#00008B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
-                      <span className="absolute inset-0 flex items-center justify-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20">
-                        TRY ME!
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
+                      TRY ME!
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   )}
                 </div>

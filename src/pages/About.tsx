@@ -4,19 +4,15 @@ import { Music, Coffee, Brain, Timer, Keyboard } from 'lucide-react';
 function HighlightLink({
   href,
   children,
-  style,
 }: {
   href: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
 }) {
   return (
-    <span className="relative inline-block align-baseline">
-      <span className="absolute inset-0 bg-[#00008B] rounded-sm"></span>
-      <a href={href} className="relative text-white px-1 hover:underline" style={style}>
-        {children}
-      </a>
-    </span>
+    <a href={href} className="text-[#00008B] underline hover:text-[#000060]">
+      {children}
+    </a>
   );
 }
 
@@ -71,7 +67,7 @@ export default function About() {
               <p>
                 I am an applied machine learning researcher and first-year PhD student 
                 rotating in the{' '}
-                <HighlightLink href="https://spice-lab.org/" style={{ textDecorationThickness: '2px' }}>
+                <HighlightLink href="https://spice-lab.org/">
                   SPICE Lab
                 </HighlightLink>
                 {' '}at Northwestern University. My research spans on-device machine learning 
@@ -81,15 +77,15 @@ export default function About() {
 
               <p>
                 Before my doctoral studies, I conducted research at{' '}
-                <HighlightLink href="https://www.media.mit.edu/" style={{ textDecorationThickness: '2px' }}>
+                <HighlightLink href="https://www.media.mit.edu/">
                   MIT&apos;s Media Lab
                 </HighlightLink>
                 {' '}on embedded deep learning, at Carnegie Mellon University&apos;s{' '}
-                <HighlightLink href="https://hcii.cmu.edu/" style={{ textDecorationThickness: '2px' }}>
+                <HighlightLink href="https://hcii.cmu.edu/">
                   Human-Computer Interaction Institute
                 </HighlightLink>
                 {' '}on text-to-image diffusion models, and at ETH Zurich&apos;s{' '}
-                <HighlightLink href="https://iis.ee.ethz.ch/" style={{ textDecorationThickness: '2px' }}>
+                <HighlightLink href="https://iis.ee.ethz.ch/">
                   Integrated Systems Laboratory
                 </HighlightLink>
                 , where my current collaborations focus on mobile computing. I hold an M.S. in Applied Data Science 
