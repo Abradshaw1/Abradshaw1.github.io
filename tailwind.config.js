@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', 'system-ui', 'sans-serif'],
+        sans: ['"Libre Franklin"', 'system-ui', 'sans-serif'],
       },
       colors: {
         stone: {

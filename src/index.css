@@ -6,23 +6,9 @@
   :root {
     color-scheme: light;
   }
-  
-  body {
-    @apply bg-stone-50 text-slate-900 antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-}
 
-@layer utilities {
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  
-  /* Standardize all underlines to 2px */
-  a {
-    text-decoration-thickness: 2px !important;
+  body {
+    @apply bg-white text-[#111] antialiased;
+    font-family: 'Libre Franklin', system-ui, sans-serif;
   }
 }

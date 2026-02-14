@@ -9,7 +9,7 @@ import Publications from './pages/Publications';
 function App() {
   return (
     <Router basename="/">
-      <div className="min-h-screen bg-stone-50">
+      <div className="min-h-screen bg-white">
         <Navigation />
         <Routes>
           <Route path="/" element={<About />} />
