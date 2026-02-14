@@ -10,7 +10,7 @@ function HighlightLink({
   style?: React.CSSProperties;
 }) {
   return (
-    <a href={href} className="text-[#00008B] underline hover:text-[#000060]">
+    <a href={href} className="text-[#111] underline hover:text-[#333]">
       {children}
     </a>
   );
@@ -38,8 +38,8 @@ const handleCVDownload = async (e: React.MouseEvent) => {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-white pb-16">
+      <div className="w-[75%] mx-auto">
         {/* header grid */}
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-1 flex justify-center items-start mt-16">
@@ -56,11 +56,11 @@ export default function About() {
             <div className="mb-2">
               <h1
                 className="text-4xl font-light text-black mb-2"
-                style={{ fontFamily: 'Georgia, serif' }}
+
               >
                 About Me
               </h1>
-              <div className="h-[2px] bg-[#00008B] w-full" />
+              <div className="h-[2px] bg-[#111] w-full" />
             </div>
 
             <div className="space-y-4 text-slate-600 leading-relaxed">
@@ -100,30 +100,30 @@ export default function About() {
         <div className="mt-24">
           <h2
             className="text-4xl font-light text-slate-900 mb-2"
-            style={{ fontFamily: 'Georgia, serif' }}
+            style={{ fontFamily: "'Libre Franklin', Arial, sans-serif" }}
           >
             Resources
           </h2>
-          <div className="h-[2px] bg-[#00008B] w-full mb-6" />
+          <div className="h-[2px] bg-[#111] w-full mb-6" />
 
           <div className="flex flex-wrap gap-4 mt-6">
             <a
               href="https://github.com/Abradshaw1"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
             >
               <Github className="w-4 h-4" />
               GITHUB
             </a>
             <a
               href="https://www.linkedin.com/in/aidanbradshaw1/"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
             >
               <Linkedin className="w-4 h-4" />
               LINKEDIN
             </a>
             <a
               href="mailto:aidanbradshaw2025@u.northwestern.edu"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               EMAIL
@@ -131,7 +131,7 @@ export default function About() {
             <a
               href="#"
               onClick={handleCVDownload}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#00008B] text-sm border-2 border-[#00008B] hover:bg-[#00008B] hover:text-white transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
             >
               <FileText className="w-4 h-4" />
               CV DOWNLOAD
@@ -141,27 +141,27 @@ export default function About() {
 
         {/* Interests */}
         <div className="mt-24">
-          <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Interests</h2>
-          <div className="h-[2px] bg-[#00008B] w-full mb-6" />
+          <h2 className="text-4xl font-light text-slate-900 mb-6" style={{ fontFamily: "'Libre Franklin', Arial, sans-serif" }}>Interests</h2>
+          <div className="h-[2px] bg-[#111] w-full mb-6" />
           <div className="space-y-3 text-slate-600 mt-6">
             <div className="flex items-center gap-3">
-              <Music className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Music className="w-5 h-5 text-[#111] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Music – Synthetic pop and electronic (paid DJ at public/private events); self-taught pianist (classical and contemporary)</p>
             </div>
             <div className="flex items-center gap-3">
-              <Coffee className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Coffee className="w-5 h-5 text-[#111] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Coffee Brewing – Moka pot, grounds mixtures (preferably heavy caffeine), mechanical French press, and pour-over methods</p>
             </div>
             <div className="flex items-center gap-3">
-              <Brain className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Brain className="w-5 h-5 text-[#111] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Logic & Language – Implicit biases, game theory, paradoxes, and linguistics</p>
             </div>
             <div className="flex items-center gap-3">
-              <Timer className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Timer className="w-5 h-5 text-[#111] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Long Distance Running – XC and trail running</p>
             </div>
             <div className="flex items-center gap-3">
-              <Keyboard className="w-5 h-5 text-[#00008B] flex-shrink-0" />
+              <Keyboard className="w-5 h-5 text-[#111] flex-shrink-0" />
               <p className="text-sm leading-relaxed">Mechanical Keyboard Design – Magnetic switches, hall sensors, Japanese inspired design</p>
             </div>
           </div>

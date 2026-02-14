@@ -1,42 +1,49 @@
 import { Link, useLocation } from 'react-router-dom';
 
+const navItems = [
+  { path: '/projects', label: 'Projects' },
+  { path: '/', label: 'About Me' },
+  { path: '/publications', label: 'Publications' },
+];
+
 export default function Navigation() {
   const location = useLocation();
 
-  const navItems = [
-    { path: '/', label: 'About Me' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/publications', label: 'Publications' }
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <header className="w-[75%] mx-auto pt-10 pb-6">
+      <div className="flex items-start justify-between">
+        <div>
           <Link
             to="/"
-            className="text-2xl text-black no-underline"
-            style={{ fontFamily: "'Times New Roman', Georgia, serif" }}
+            className="text-[26px] font-bold leading-[1.2] text-[#111] no-underline hover:no-underline"
           >
             Aidan Bradshaw
           </Link>
-          <div className="flex gap-6">
-            {navItems.map(({ path, label }) => (
+          <p className="text-[16px] font-light leading-[1.5] text-[#555] mt-2">
+            Working on improving human health and behavior with
+            <br />
+            machine learning and sensing
+          </p>
+        </div>
+
+        <nav className="flex items-center gap-6 pt-1">
+          {navItems.map(({ path, label }, i) => (
+            <span key={path} className="flex items-center gap-6">
               <Link
-                key={path}
                 to={path}
-                className={`text-base no-underline ${
-                  location.pathname === path
-                    ? 'text-black font-bold'
-                    : 'text-[#555]'
+                className={`text-[20px] font-bold text-[#111] no-underline hover:underline hover:underline-offset-4 hover:decoration-2 decoration-black ${
+                  location.pathname === path ? 'underline underline-offset-4 decoration-2' : ''
                 }`}
               >
                 {label}
               </Link>
-            ))}
-          </div>
-        </div>
+              {i < navItems.length - 1 && (
+                <span className="text-[20px] font-bold text-[#111] select-none">|</span>
+              )}
+            </span>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }

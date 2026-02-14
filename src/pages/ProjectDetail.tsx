@@ -11,7 +11,7 @@ export default function ProjectDetail() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-light text-slate-900">Project not found</h1>
-          <Link to="/projects" className="text-[#00008B] hover:text-[#000080] mt-4 inline-block">
+          <Link to="/projects" className="text-[#111] hover:text-[#333] mt-4 inline-block">
             Return to projects
           </Link>
         </div>
@@ -20,11 +20,11 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-white pb-16">
+      <div className="w-[75%] mx-auto">
         <Link 
           to="/projects" 
-          className="inline-flex items-center text-slate-600 hover:text-[#00008B] mb-8 transition-colors text-lg"
+          className="inline-flex items-center text-slate-600 hover:text-[#111] mb-8 transition-colors text-lg"
         >
           <ChevronLeft className="w-5 h-5 mr-2" />
           Back to Projects
@@ -43,7 +43,7 @@ export default function ProjectDetail() {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-light text-black mb-2">{project.title}</h1>
-                <div className="h-px bg-[#00008B] w-full"></div>
+                <div className="h-px bg-[#111] w-full"></div>
               </div>
               
               <p className="text-slate-600 leading-relaxed text-lg">
@@ -52,7 +52,7 @@ export default function ProjectDetail() {
               
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Technologies Used</h2>
-                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
+                <div className="h-0.5 bg-[#111] w-full mb-4"></div>
                 <p className="text-slate-600">
                   {project.technologies.join(', ')}
                 </p>
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
               
               <div>
                 <h2 className="text-xl font-medium text-slate-900 mb-2">Code</h2>
-                <div className="h-0.5 bg-[#00008B] w-full mb-4"></div>
+                <div className="h-0.5 bg-[#111] w-full mb-4"></div>
                 <div className="flex flex-wrap gap-3">
                   {project.link === '#' ? (
                     <span className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 text-slate-500 text-sm">

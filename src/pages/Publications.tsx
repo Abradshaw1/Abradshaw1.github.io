@@ -110,13 +110,13 @@ export default function Publications() {
         <p className="text-slate-600 text-sm mb-1">
           <span dangerouslySetInnerHTML={{ __html: authors.replace(/Aidan B\./g, '<strong>Aidan B.</strong>') }} />
         </p>
-        <p className="text-[#00008B] text-sm font-medium italic">
+        <p className="text-[#111] text-sm font-medium italic">
           {venue}
         </p>
         {(pdfLink || (showAllLinks && codeLink) || (showAllLinks && !codeLink)) && (
           <div className="flex gap-4 mt-3">
             {pdfLink && (
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
                 [PDF]
               </a>
             )}
@@ -124,7 +124,7 @@ export default function Publications() {
               <span className="text-slate-400 text-sm">[PDF Coming Soon]</span>
             )}
             {showAllLinks && codeLink && (
-              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#00008B] hover:text-[#000080] text-sm underline">
+              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
                 [Code]
               </a>
             )}
@@ -138,20 +138,20 @@ export default function Publications() {
   );
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-white pb-16">
+      <div className="w-[75%] mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-light text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>Publications</h1>
-          <div className="h-0.5 bg-[#00008B] w-full"></div>
+          <h1 className="text-4xl font-light text-black mb-2">Publications</h1>
+          <div className="h-0.5 bg-[#111] w-full"></div>
         </div>
         
         <div className="space-y-12">
           {/* Conference Papers */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-2xl font-medium text-black mb-2">
               Conference Papers
             </h2>
-            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
             <div className="space-y-0">
               {conferencePublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -161,10 +161,10 @@ export default function Publications() {
 
           {/* Journals */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-2xl font-medium text-black mb-2">
               Journals
             </h2>
-            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
             <div className="space-y-0">
               {journalPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -174,10 +174,10 @@ export default function Publications() {
 
           {/* Posters */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-2xl font-medium text-black mb-2">
               Posters
             </h2>
-            <div className="h-0.5 bg-[#00008B] w-full mb-6"></div>
+            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
             <div className="space-y-0">
               {posterPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />

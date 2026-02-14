@@ -9,7 +9,7 @@ export default function Footer() {
             <p className="text-slate-600 text-sm mb-3">Feel free to reach out</p>
             <a 
               href="mailto:aidanbradshaw2025@u.northwestern.edu"
-              className="text-[#00008B] hover:text-[#000080] underline text-sm"
+              className="text-[#111] hover:text-[#333] underline text-sm"
             >
               aidanbradshaw2025@u.northwestern.edu
             </a>
