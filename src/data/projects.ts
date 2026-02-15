@@ -172,11 +172,11 @@ export const projects = [
     id: 'genai-ct',
     title: 'Generative AI for CT Scans',
     description: 'Generative AI text-to-image models for medical imaging.',
-    fullDescription: `As part of my master’s research at Carnegie Mellon’s Human–Computer Interaction Institute, in collaboration with Boston University EECS and UPMC, I investigated how generative AI could be operationalized in medical imaging. I developed a diffusion-based text-to-image pipeline to synthesize CT scans from clinical prompts, with cross-attention attribution and sparse attention to visualize how anatomy was influenced by text conditions. By profiling, pruning, and benchmarking models, the project balanced interpretability with runtime feasibility.`,
+    fullDescription: `As part of my master's research at Carnegie Mellon's Human–Computer Interaction Institute, in collaboration with Boston University EECS and UPMC, I investigated how generative AI could be operationalized in medical imaging. I developed a diffusion-based text-to-image pipeline to synthesize CT scans from clinical prompts, with cross-attention attribution and sparse attention to visualize how anatomy was influenced by text conditions. By profiling, pruning, and benchmarking models, the project balanced interpretability with runtime feasibility.`,
     technologies: ['Diffusion models (U-Net backbone, latent consistency)', 'DPPM, DDPM sampling', 'PyTorch', 'sparse attention', 'Python', 'DICOM preprocessing'],
     link: 'https://github.com/cmudig/GenAIxRad-Viewer',
-    image: getProjectImage('genaict.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
-    customImage: 'genaict.png',
+    image: getProjectImage('MIDL_attn_pipline_cropped.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
+    customImage: 'MIDL_attn_pipline_cropped.png',
     tags: ['Machine Learning', 'Health Informatics']
   },
   {
