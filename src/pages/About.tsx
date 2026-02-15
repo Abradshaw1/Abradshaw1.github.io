@@ -40,7 +40,7 @@ export default function About() {
       <div className="w-[75%] mx-auto">
         <div className="grid md:grid-cols-[2fr_3fr] gap-12 items-start">
           <div className="md:col-span-1 flex flex-col items-center gap-6 mt-2">
-            <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '4 / 3' }}>
+            <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '1 / 1' }}>
               <img
                 src="project-images/Headshot1.jpg"
                 alt="Aidan Bradshaw"
