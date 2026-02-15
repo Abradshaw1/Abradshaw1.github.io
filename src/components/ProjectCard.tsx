@@ -27,15 +27,15 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
           }}
         />
 
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/55 transition-colors duration-[160ms] ease-out flex flex-col items-center justify-center gap-2">
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/55 transition-colors duration-[160ms] ease-out flex flex-col items-center justify-center gap-2 px-4">
           <span
-            className="text-white text-lg font-medium opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
+            className="text-white text-base font-medium opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out text-center"
             style={{ transitionDelay: '60ms' }}
           >
             {displayTags.join(' | ')}
           </span>
           <span
-            className="text-white text-lg opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
+            className="text-white text-base opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out text-center"
             style={{ transitionDelay: '160ms' }}
           >
             See Description &rarr;
