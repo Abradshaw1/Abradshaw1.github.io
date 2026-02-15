@@ -164,8 +164,8 @@ export const projects = [
     fullDescription: `This project focused on designing a single-player clicker game with adaptive challenge. Implemented in C++, the system used a dynamic difficulty adjustment mechanism and an evolving in-game environment to keep players engaged. The work served both as an exercise in applying object-oriented programming concepts and as a proof of concept for lightweight mobile game mechanics.`,
     technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
+    image: getProjectImage('C++_app_render.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'C++_app_render.png',
     tags: ['Mobile Computing']
   },
   {
