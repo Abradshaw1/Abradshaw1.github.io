@@ -107,8 +107,8 @@ export const projects = [
     fullDescription: `This project audited the reliability of small generative transformers in medical diagnostics. Using Flan-T5-Small, GPT-Neo, and DistilGPT-2, I tested model outputs on MedQA and PubMed datasets, applying red-teaming prompts in domains such as sepsis, cardiology, and radiology. PyTorch-based experiments combined error analysis with token-level attribution to uncover unsafe or biased generations. The study surfaced concrete risks of low-parameter models in clinical contexts and suggested mitigation strategies for safer deployment in healthcare.`,
     technologies: ['Hugging Face Transformers (Flan-T5-Small, GPT-Neo, DistilGPT-2)', 'Medical QA datasets (MedQA, PubMed abstracts)', 'Python', 'PyTorch'],
     link: 'https://github.com/Abradshaw1/HealthAudit-GPT',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
+    image: getProjectImage('health_gpt_render.png', 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'health_gpt_render.png',
     tags: ['Machine Learning', 'Health Informatics']
   },
   {
