@@ -30,7 +30,7 @@ export default function ProjectDetail() {
           Back to Projects
         </Link>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10 items-start">
           <div
             className="w-full overflow-hidden rounded-lg bg-slate-100"
             style={{ aspectRatio: '4 / 3' }}
@@ -42,7 +42,7 @@ export default function ProjectDetail() {
             />
           </div>
 
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col justify-start pt-0">
             <div>
               <h1 className="text-[28px] font-bold text-[#111] mb-2">{project.title}</h1>
               <div className="h-[2px] bg-black w-full"></div>
@@ -60,9 +60,9 @@ export default function ProjectDetail() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-6">
+            <div className="flex flex-wrap gap-6 mt-6">
               {project.link === '#' ? (
-                <span className="text-[#555] font-light text-sm">
+                <span className="text-[#555] font-light text-base">
                   Source code available upon request
                 </span>
               ) : (
@@ -70,10 +70,10 @@ export default function ProjectDetail() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#111] text-sm font-medium no-underline hover:underline hover:underline-offset-4 hover:decoration-1 transition-all"
+                  className="inline-flex items-center gap-2 text-[#111] text-base font-medium no-underline hover:underline hover:underline-offset-4 hover:decoration-1 transition-all"
                 >
                   View Source Code
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </a>
               )}
               {project.demoLink && (
@@ -81,10 +81,10 @@ export default function ProjectDetail() {
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#111] text-sm font-medium no-underline hover:underline hover:underline-offset-4 hover:decoration-1 transition-all"
+                  className="inline-flex items-center gap-2 text-[#111] text-base font-medium no-underline hover:underline hover:underline-offset-4 hover:decoration-1 transition-all"
                 >
                   Try Me!
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </a>
               )}
             </div>

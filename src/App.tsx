@@ -9,15 +9,17 @@ import Publications from './pages/Publications';
 function App() {
   return (
     <Router basename="/">
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white flex flex-col">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-          <Route path="/publications" element={<Publications />} />
-        </Routes>
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/publications" element={<Publications />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>
