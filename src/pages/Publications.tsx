@@ -13,8 +13,6 @@ export default function Publications() {
       title: 'A Tailored Health Application: Monitoring the Etiology of Raynaud\'s Disease',
       venue: 'CSCSU 2024',
       image: getPublicationImage('healthapp.png'),
-      customImage: 'healthapp.png',
-      showAllLinks: true,
       pdfLink: 'https://scholarworks.calstate.edu/downloads/5138jn54n',
       codeLink: 'https://github.com/Abradshaw1/HealthApp'
     },
@@ -23,8 +21,6 @@ export default function Publications() {
       title: 'Toward Interpretable 3D Diffusion in Radiology: Token-Wise Attribution for Text-to-CT Synthesis',
       venue: 'Medical Imaging in Deep Learning Conference (MIDL) 2025',
       image: getPublicationImage('MIDL_attn_pipline_final_2.png'),
-      customImage: 'MIDL_attn_pipline_final_2.png',
-      showAllLinks: true,
       pdfLink: 'https://openreview.net/pdf?id=DTYFRzRPQn',
       codeLink: 'https://github.com/cmudig/MedsynBackend'
     },
@@ -33,8 +29,6 @@ export default function Publications() {
       title: 'A Human-Centered Approach to Identifying Promises, Risks, & Challenges of Text-to-Image Generative AI in Radiology',
       venue: 'Artificial Intelligence in Ethics and Society (AIES) 2025',
       image: getPublicationImage('MedSynUI.png'),
-      customImage: 'MedSynUI.png',
-      showAllLinks: false,
       pdfLink: 'https://arxiv.org/pdf/2507.16207'
     },
     {
@@ -42,8 +36,6 @@ export default function Publications() {
       title: 'A Customizable, Real-time Mobile Health Application for Raynaud\'s Syndrome and Beyond',
       venue: 'IEEE International Conference on E-health Networking, Application & Services (IEEE Healthcom) 2025',
       image: getPublicationImage('custommHealthapp.png'),
-      customImage: 'custommHealthapp.png',
-      showAllLinks: true,
       pdfLink: 'https://healthcom2025.ieee-healthcom.org/program/detailed-program'
     }
   ];
@@ -54,8 +46,6 @@ export default function Publications() {
       title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
       venue: '(Submitted), Nature 2025',
       image: getPublicationImage('buzzdetection.png'),
-      customImage: 'buzzdetection.png',
-      showAllLinks: true,
       codeLink: 'https://github.com/Abradshaw1/AS2.0_REPO'
     },
     {
@@ -63,8 +53,6 @@ export default function Publications() {
       title: 'Muybridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
       venue: '(Submitted), Nature Sensors 2025',
       image: getPublicationImage('muybridge_temp.png'),
-      customImage: 'muybridge_temp.png',
-      showAllLinks: true,
       codeLink: 'https://github.com/Abradshaw1/Muybridge'
     }
   ];
@@ -74,10 +62,7 @@ export default function Publications() {
       authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
       title: 'Opportunities and Challenges in Designing Text-to-Image Generative AI for Medical Education, Training, and Practice',
       venue: 'Pitt AI in Healthcare Research Symposium, 2024',
-      image: getPublicationImage('pittaiposter.png'),
-      customImage: 'pittaiposter.png',
-      showAllLinks: false,
-      pdfLink: undefined
+      image: getPublicationImage('pittaiposter.png')
     }
   ];
 
@@ -92,7 +77,6 @@ export default function Publications() {
     title: string;
     venue: string;
     image: string | null;
-    showAllLinks?: boolean;
     pdfLink?: string;
     codeLink?: string;
   }) => (
