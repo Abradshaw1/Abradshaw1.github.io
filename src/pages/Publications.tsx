@@ -124,7 +124,7 @@ export default function Publications() {
 
   return (
     <div className="min-h-screen bg-white pb-16">
-      <div className="w-[75%] mx-auto">
+      <div className="w-[65%] mx-auto">
         <div className="mb-12">
           <h1 className="text-[28px] font-bold text-[#111] mb-2">Publications</h1>
           <div className="h-[2px] bg-black w-full"></div>

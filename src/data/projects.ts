@@ -10,7 +10,7 @@ export const projects = [
   {
     id: 'muybridge-gait-estimation',
     title: 'MuyBridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
-    description: 'Edge-native quantized 2.5D fusion pipeline for real-time center of mass estimation from single RGB camera.',
+    description: 'Real-time gait analysis using quantized 2.5D fusion on edge devices.',
     fullDescription: `At ETH Zurich’s Integrated Systems Laboratory, I developed MuyBridge, an edge-native pipeline for real-time gait analysis. The system fuses 2D keypoints with monocular depth and constructs a 2.5D latent axis to estimate the body’s center of mass. Using quantization, pruning, and Core ML export, I compressed a diffusion model of over a billion parameters to run on iPhone hardware at sub-300ms latency. The pipeline was evaluated with motion-capture data from Qualisys and supports applications ranging from sports biomechanics to Parkinson’s rehabilitation, enabling accurate, private, and scalable analysis outside the lab.`,
     technologies: ['PyTorch', 'MMPose', 'CoreML', 'ONNX', 'Diffusers', 'NumPy', 'SwiftUI', 'AVFoundation', 'Xcode', 'Accelerate'],
     link: 'https://github.com/Abradshaw1/Muybridge',
@@ -21,7 +21,7 @@ export const projects = [
   {
     id: 'cohort-analysis-dashboard',
     title: 'Cohort Analysis Dashboard',
-    description: 'Interactive clinical EDA dashboard for visualizing patient cohorts and individual outcomes from medical data.',
+    description: 'Clinical dashboard for interactive patient cohort and outcome visualization.',
     fullDescription: `This work-in-progress project is an interactive visualization dashboard designed for clinical exploratory data analysis. Built with React, D3.js, and Vite, the dashboard enables researchers to compare individual patient outcomes across cohorts derived from medical datasets. The system is intended to evolve into a general-purpose intervention-visualization tool for cohort-based studies, providing intuitive, interactive visualizations that support hypothesis generation and outcome analysis in clinical research settings.`,
     technologies: ['D3.js', 'React', 'JavaScript', 'Vite.js', 'CSS'],
     link: 'https://github.com/Abradshaw1/Cohort_Analysis_Dashboard',
@@ -57,7 +57,7 @@ export const projects = [
   {
     id: 'satellite-thermal-power',
     title: 'Forecasting Satellite Thermal Power – ESA Mars Express',
-    description: 'Modeled thermal power across 7,000+ orbits using STL+ARIMA and Time Series Regression.',
+    description: 'Forecasted spacecraft thermal power across 7,000+ orbits with time series models.',
     fullDescription: `I modeled spacecraft thermal power across 7,000+ orbits to inform energy-aware scheduling. An STL+ARIMA baseline captured seasonal structure, while a Time Series Regression model with exogenous telemetry (solar heating, eclipse duration, transmitter load) cut error further (MAPE 12.9% → 4.3%). The approach balances interpretability and accuracy, giving operators transparent levers for planning under changing orbital conditions.`,
     technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis', 'STL decomposition'],
     link: '#',
@@ -182,7 +182,7 @@ export const projects = [
   {
     id: 'parsons-prompt-classification',
     title: 'Automating Malicious Prompt Detection',
-    description: 'Domain-specific malicious-prompt classifier with synthetic data + RLHF and department routing.',
+    description: 'Malicious prompt classifier using synthetic data and RLHF for policy-aware routing.',
     fullDescription: `While consulting as an AI specialist for Parsons Corporation, I built a policy-aware pipeline to detect and route harmful prompts submitted to the company’s internal language models. The project combined synthetic dataset generation from policy documents with an RLHF loop that fine-tuned a Microsoft Phi-2 model to better reflect employee usage. I trained and deployed a LoRA-tuned deBERTa-v3-small classifier, achieving over 90% accuracy in routing prompts across HR, Legal, and Security categories. A web-based interface supported distributed fine-tuning and review, resulting in a lightweight safety layer ready for enterprise deployment.`,
     technologies: [
       'Python','Hugging Face','deBERTa-v3-small','LoRA/PEFT','RLHF',
