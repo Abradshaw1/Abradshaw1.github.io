@@ -20,9 +20,9 @@ export default function Navigation() {
             Aidan Bradshaw
           </Link>
           <p className="text-[18px] font-light leading-[1.5] text-[#555] mt-2">
-            Working on improving human health
+            Working on understanding human
             <br />
-            and behavior with machine learning and sensing
+            behavior with machine learning and sensing
           </p>
         </div>
 
