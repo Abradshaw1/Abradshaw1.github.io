@@ -40,7 +40,7 @@ export default function About() {
       <div className="w-[75%] mx-auto">
         <div className="grid md:grid-cols-[2fr_3fr] gap-12 items-start">
           <div className="md:col-span-1 flex flex-col items-center gap-6 mt-2">
-            <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '1 / 1' }}>
+            <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '5 / 4' }}>
               <img
                 src="project-images/Headshot1.jpg"
                 alt="Aidan Bradshaw"
@@ -121,32 +121,32 @@ export default function About() {
                 in Mathematics from San Diego State University.
               </p>
             </div>
-          </div>
-        </div>
 
-        <div className="mt-16">
-          <h2 className="text-[28px] font-bold text-[#111] mb-2">Interests</h2>
-          <div className="h-[2px] bg-black w-full mb-6" />
-          <div className="space-y-3 text-[#555] font-light mt-6">
-            <div className="flex items-center gap-3">
-              <Music className="w-5 h-5 text-[#111] flex-shrink-0" />
-              <p className="text-base leading-relaxed">Music -- Synthetic pop and electronic (paid DJ at public/private events); self-taught pianist (classical and contemporary)</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Coffee className="w-5 h-5 text-[#111] flex-shrink-0" />
-              <p className="text-base leading-relaxed">Coffee Brewing -- Moka pot, grounds mixtures (preferably heavy caffeine), mechanical French press, and pour-over methods</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Brain className="w-5 h-5 text-[#111] flex-shrink-0" />
-              <p className="text-base leading-relaxed">Logic & Language -- Implicit biases, game theory, paradoxes, and linguistics</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Timer className="w-5 h-5 text-[#111] flex-shrink-0" />
-              <p className="text-base leading-relaxed">Long Distance Running -- XC and trail running</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Keyboard className="w-5 h-5 text-[#111] flex-shrink-0" />
-              <p className="text-base leading-relaxed">Mechanical Keyboard Design -- Magnetic switches, hall sensors, Japanese inspired design</p>
+            <div className="mt-8">
+              <h2 className="text-[28px] font-bold text-[#111] mb-2">Interests</h2>
+              <div className="h-[2px] bg-black w-full mb-6" />
+              <div className="space-y-3 text-[#555] font-light mt-6">
+                <div className="flex items-center gap-3">
+                  <Music className="w-5 h-5 text-[#111] flex-shrink-0" />
+                  <p className="text-base leading-relaxed">Music -- Synthetic pop and electronic (paid DJ at public/private events); self-taught pianist (classical and contemporary)</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Coffee className="w-5 h-5 text-[#111] flex-shrink-0" />
+                  <p className="text-base leading-relaxed">Coffee Brewing -- Moka pot, grounds mixtures (preferably heavy caffeine), mechanical French press, and pour-over methods</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Brain className="w-5 h-5 text-[#111] flex-shrink-0" />
+                  <p className="text-base leading-relaxed">Logic & Language -- Implicit biases, game theory, paradoxes, and linguistics</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Timer className="w-5 h-5 text-[#111] flex-shrink-0" />
+                  <p className="text-base leading-relaxed">Long Distance Running -- XC and trail running</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Keyboard className="w-5 h-5 text-[#111] flex-shrink-0" />
+                  <p className="text-base leading-relaxed">Mechanical Keyboard Design -- Magnetic switches, hall sensors, Japanese inspired design</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
