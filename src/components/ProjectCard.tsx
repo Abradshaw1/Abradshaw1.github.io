@@ -43,7 +43,7 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
         </div>
       </div>
 
-      <h3 className="text-[#111] text-base font-bold mt-3 underline underline-offset-2 decoration-1">
+      <h3 className="text-[#111] text-[18px] font-bold mt-3 underline underline-offset-2 decoration-1">
         {title}
       </h3>
       <p className="text-[#555] text-sm mt-1">
