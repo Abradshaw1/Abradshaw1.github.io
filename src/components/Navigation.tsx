@@ -22,9 +22,7 @@ export default function Navigation() {
           <p className="text-[18px] font-light leading-[1.5] text-[#555] mt-2">
             Working on improving human health
             <br />
-            and behavior with machine learning
-            <br />
-            and sensing
+            and behavior with machine learning and sensing
           </p>
         </div>
 

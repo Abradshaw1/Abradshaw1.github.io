@@ -15,7 +15,7 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
     <Link to={`/project/${id}`} className="group block no-underline cursor-pointer">
       <div
         className="relative overflow-hidden"
-        style={{ aspectRatio: '3 / 2' }}
+        style={{ aspectRatio: '4 / 3' }}
       >
         <img
           src={image}
