@@ -12,7 +12,7 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
   const displayTags = tags || [];
 
   return (
-    <Link to={`/project/${id}`} className="group block no-underline cursor-pointer">
+    <Link to={`/project/${id}`} className="group block no-underline cursor-pointer transition-transform duration-300 ease-out hover:scale-105">
       <div
         className="relative overflow-hidden"
         style={{ aspectRatio: '4 / 3' }}
