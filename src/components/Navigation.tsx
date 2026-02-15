@@ -10,7 +10,7 @@ export default function Navigation() {
   const location = useLocation();
 
   return (
-    <header className="w-[65%] mx-auto pt-10 pb-16">
+    <header className="w-[60%] mx-auto pt-10 pb-16">
       <div className="flex items-start justify-between">
         <div>
           <Link
