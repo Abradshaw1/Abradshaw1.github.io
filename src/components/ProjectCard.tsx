@@ -29,13 +29,13 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
 
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/55 transition-colors duration-[160ms] ease-out flex flex-col items-center justify-center gap-2">
           <span
-            className="text-white text-sm font-medium opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
+            className="text-white text-lg font-medium opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
             style={{ transitionDelay: '60ms' }}
           >
             {displayTags.join(' | ')}
           </span>
           <span
-            className="text-white text-sm opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
+            className="text-white text-lg opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[400ms] ease-out"
             style={{ transitionDelay: '160ms' }}
           >
             See Description &rarr;
@@ -43,10 +43,10 @@ export default function ProjectCard({ id, title, description, image, tags }: Pro
         </div>
       </div>
 
-      <h3 className="text-[#111] text-[20px] font-bold mt-3 underline underline-offset-2 decoration-1">
+      <h3 className="text-[#111] text-[22px] font-bold mt-3 underline underline-offset-2 decoration-1">
         {title}
       </h3>
-      <p className="text-[#555] text-sm mt-1">
+      <p className="text-[#555] text-base mt-1">
         {description}
       </p>
     </Link>
