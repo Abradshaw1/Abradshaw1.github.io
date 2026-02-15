@@ -10,7 +10,7 @@ export default function Navigation() {
   const location = useLocation();
 
   return (
-    <header className="w-[75%] mx-auto pt-10 pb-6">
+    <header className="w-[75%] mx-auto pt-10 pb-12">
       <div className="flex items-start justify-between">
         <div>
           <Link
@@ -20,9 +20,9 @@ export default function Navigation() {
             Aidan Bradshaw
           </Link>
           <p className="text-[16px] font-light leading-[1.5] text-[#555] mt-2">
-            Working on improving human health and behavior with
+            Working on improving human health
             <br />
-            machine learning and sensing
+            and behavior with machine learning and sensing
           </p>
         </div>
 
