@@ -15,11 +15,11 @@ export default function Navigation() {
         <div>
           <Link
             to="/"
-            className="text-[28px] font-bold leading-[1.2] text-[#111] no-underline hover:no-underline"
+            className="text-[30px] font-bold leading-[1.2] text-[#111] no-underline hover:no-underline"
           >
             Aidan Bradshaw
           </Link>
-          <p className="text-[16px] font-light leading-[1.5] text-[#555] mt-2">
+          <p className="text-[18px] font-light leading-[1.5] text-[#555] mt-2">
             Working on improving human health
             <br />
             and behavior with machine learning and sensing
