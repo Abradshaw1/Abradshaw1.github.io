@@ -26,8 +26,8 @@ export const projects = [
     technologies: ['D3.js', 'React', 'JavaScript', 'Vite.js', 'CSS'],
     link: 'https://github.com/Abradshaw1/Cohort_Analysis_Dashboard',
     demoLink: 'https://abradshaw1.github.io/Cohort_Analysis_Dashboard/',
-    image: getProjectImage('Cohort_Anlaysis.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'Cohort_Anlaysis.png',
+    image: getProjectImage('Cohort_dashbaord_website_mockup.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'Cohort_dashbaord_website_mockup.png',
     tags: ['UI Design', 'Health Informatics']
   },
   {
@@ -61,10 +61,10 @@ export const projects = [
     fullDescription: `I modeled spacecraft thermal power across 7,000+ orbits to inform energy-aware scheduling. An STL+ARIMA baseline captured seasonal structure, while a Time Series Regression model with exogenous telemetry (solar heating, eclipse duration, transmitter load) cut error further (MAPE 12.9% → 4.3%). The approach balances interpretability and accuracy, giving operators transparent levers for planning under changing orbital conditions.`,
     technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis', 'STL decomposition'],
     link: '#',
-    image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800',
-    detailImage: getProjectImage('esapower.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
-    customImage: null,
-    detailCustomImage: 'esapower.png',
+    image: getProjectImage('esa_mars_analysis.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
+    detailImage: getProjectImage('esa_mars_analysis.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'esa_mars_analysis.png',
+    detailCustomImage: 'esa_mars_analysis.png',
     tags: ['Machine Learning', 'Computing']
   },
   {
@@ -85,8 +85,8 @@ export const projects = [
     fullDescription: `I developed a predictive framework for analyzing narcotics-related crime in Chicago. Using a Negative Binomial Generalized Linear Model, the system integrated spatial, temporal, and socioeconomic variables, including lagged crime counts and census data. Stepwise regression improved model interpretability and accuracy, revealing clear seasonal cycles and spatial clustering effects.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'NumPy', 'Matplotlib'],
     link: '#',
-    image: getProjectImage('chicago crime.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'chicago crime.png',
+    image: getProjectImage('chihcago_crime_render.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'chihcago_crime_render.png',
     tags: ['Machine Learning', 'Computing']
   },
   {
@@ -131,8 +131,8 @@ export const projects = [
     fullDescription: `This project examined the relationship between global caloric intake trends and obesity prevalence. Drawing on cross-country health datasets, I applied statistical models in Python to study correlations between dietary supply and BMI-related mortality. Data visualization played a central role: with Matplotlib, Plotly, and Seaborn, I created dashboards and infographics that communicated disparities across regions and genders.`,
     technologies: ['R', 'Matplotlib', 'Plotly', 'Seaborn'],
     link: '#',
-    image: getProjectImage('obesity.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'obesity.png',
+    image: getProjectImage('obesity_render_website.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'obesity_render_website.png',
     tags: ['Health Informatics', 'UI Design']
   },
   {
