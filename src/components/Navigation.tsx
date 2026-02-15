@@ -15,7 +15,7 @@ export default function Navigation() {
         <div>
           <Link
             to="/"
-            className="text-[26px] font-bold leading-[1.2] text-[#111] no-underline hover:no-underline"
+            className="text-[28px] font-bold leading-[1.2] text-[#111] no-underline hover:no-underline"
           >
             Aidan Bradshaw
           </Link>
