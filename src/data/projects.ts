@@ -85,8 +85,8 @@ export const projects = [
     fullDescription: `I developed a predictive framework for analyzing narcotics-related crime in Chicago. Using a Negative Binomial Generalized Linear Model, the system integrated spatial, temporal, and socioeconomic variables, including lagged crime counts and census data. Stepwise regression improved model interpretability and accuracy, revealing clear seasonal cycles and spatial clustering effects.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'NumPy', 'Matplotlib'],
     link: '#',
-    image: getProjectImage('chihcago_crime_render.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'chihcago_crime_render.png',
+    image: getProjectImage('chicago_crime_render.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'chicago_crime_render.png',
     tags: ['Machine Learning', 'Computing']
   },
   {
