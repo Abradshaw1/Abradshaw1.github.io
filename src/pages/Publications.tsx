@@ -111,24 +111,24 @@ export default function Publications() {
         )}
       </div>
       <div className="flex-1">
-        <h3 className="text-2xl font-medium text-[#111] mb-2 leading-tight">
+        <h3 className="text-[22px] font-medium text-[#111] mb-2 leading-tight">
           {title}
         </h3>
-        <p className="text-[#555] text-xl font-light mb-1">
+        <p className="text-[#555] text-lg font-light mb-1">
           <span dangerouslySetInnerHTML={{ __html: boldName(authors) }} />
         </p>
-        <p className="text-[#111] text-lg font-medium italic">
+        <p className="text-[#111] text-base font-medium italic">
           {venue}
         </p>
         {(pdfLink || codeLink) && (
           <div className="flex gap-4 mt-3">
             {pdfLink && (
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-lg underline">
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-base underline">
                 [PDF]
               </a>
             )}
             {codeLink && (
-              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-lg underline">
+              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-base underline">
                 [Code]
               </a>
             )}
@@ -142,14 +142,14 @@ export default function Publications() {
     <div className="min-h-screen bg-white pb-16">
       <div className="w-[75%] mx-auto">
         <div className="mb-12">
-          <h1 className="text-[28px] font-bold text-[#111] mb-2">Publications</h1>
+          <h1 className="text-[30px] font-bold text-[#111] mb-2">Publications</h1>
           <div className="h-[2px] bg-black w-full"></div>
         </div>
         
         <div className="space-y-12">
           {/* Conference Papers */}
           <section>
-            <h2 className="text-xl font-bold text-[#111] mb-2">
+            <h2 className="text-[22px] font-bold text-[#111] mb-2">
               Conference Papers
             </h2>
             <div className="h-[2px] bg-black w-full mb-6"></div>
@@ -162,7 +162,7 @@ export default function Publications() {
 
           {/* Journals */}
           <section>
-            <h2 className="text-xl font-bold text-[#111] mb-2">
+            <h2 className="text-[22px] font-bold text-[#111] mb-2">
               Journals
             </h2>
             <div className="h-[2px] bg-black w-full mb-6"></div>
@@ -175,7 +175,7 @@ export default function Publications() {
 
           {/* Posters */}
           <section>
-            <h2 className="text-xl font-bold text-[#111] mb-2">
+            <h2 className="text-[22px] font-bold text-[#111] mb-2">
               Posters
             </h2>
             <div className="h-[2px] bg-black w-full mb-6"></div>
