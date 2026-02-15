@@ -111,24 +111,24 @@ export default function Publications() {
         )}
       </div>
       <div className="flex-1">
-        <h3 className="text-base font-medium text-[#111] mb-2 leading-tight">
+        <h3 className="text-2xl font-medium text-[#111] mb-2 leading-tight">
           {title}
         </h3>
-        <p className="text-[#555] text-sm font-light mb-1">
+        <p className="text-[#555] text-xl font-light mb-1">
           <span dangerouslySetInnerHTML={{ __html: boldName(authors) }} />
         </p>
-        <p className="text-[#111] text-sm font-medium italic">
+        <p className="text-[#111] text-lg font-medium italic">
           {venue}
         </p>
         {(pdfLink || codeLink) && (
           <div className="flex gap-4 mt-3">
             {pdfLink && (
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-lg underline">
                 [PDF]
               </a>
             )}
             {codeLink && (
-              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
+              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-lg underline">
                 [Code]
               </a>
             )}
