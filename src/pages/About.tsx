@@ -38,7 +38,7 @@ export default function About() {
   return (
     <div className="bg-white pb-16">
       <div className="w-[75%] mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 items-start">
+        <div className="grid md:grid-cols-[2fr_3fr] gap-12 items-start">
           <div className="md:col-span-1 flex flex-col items-center gap-6 mt-2">
             <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '4 / 3' }}>
               <img
@@ -85,7 +85,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="md:col-span-2 space-y-6">
+          <div className="space-y-6">
             <div className="mb-2">
               <h1 className="text-[28px] font-bold text-[#111] mb-2">About Me</h1>
               <div className="h-[2px] bg-black w-full" />
