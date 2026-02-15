@@ -45,7 +45,7 @@ export const projects = [
     id: 'flight-delay-prediction',
     title: 'Flight Delay Prediction – Pittsburgh International Airport',
     description: 'Machine Learning contest at CMU.',
-    fullDescription: `During my master’s at CMU, I entered the Statistical Machine Learning flight prediction competition in the statistics department and won. Using an XGBoost model that achieved an AUC of 0.839, I built a delay prediction system using only pre-departure signals (schedule, route, weather, and turnaround features). Much of the performance gain came from careful feature engineering and incorporating external weather data to enhance predictive accuracy.`,
+    fullDescription: `During my master’s at CMU, I won the Statistical Machine Learning flight prediction competition in the statistics department. Using an XGBoost model that achieved an AUC of 0.839, I built a delay prediction system using only pre-departure signals (schedule, route, weather, and turnaround features). Much of the performance gain came from careful feature engineering and incorporating external weather data to enhance predictive accuracy.`,
     technologies: ['Python', 'XGBoost', 'Feature Engineering', 'Airline On-Time Performance Data', 'Pandas', 'NumPy', 'Scikit-learn'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800',
