@@ -21,7 +21,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="bg-white pb-16">
-      <div className="w-[65%] mx-auto">
+      <div className="w-[60%] mx-auto">
         <Link
           to="/projects"
           className="inline-flex items-center text-slate-600 hover:text-[#111] mb-8 transition-colors text-lg"

@@ -37,7 +37,7 @@ const handleCVDownload = async (e: React.MouseEvent) => {
 export default function About() {
   return (
     <div className="bg-white pb-16">
-      <div className="w-[65%] mx-auto">
+      <div className="w-[60%] mx-auto">
         <div className="grid md:grid-cols-[2fr_3fr] gap-12 items-start">
           <div className="md:col-span-1 flex flex-col items-center gap-6 mt-2">
             <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '5 / 4' }}>
