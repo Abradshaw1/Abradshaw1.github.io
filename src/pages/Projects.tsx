@@ -6,7 +6,7 @@ export default function Projects() {
     <div className="min-h-screen bg-white pb-16">
       <div className="w-[75%] mx-auto">
         <div className="mb-10">
-          <h1 className="text-[26px] font-bold text-[#111] mb-2">
+          <h1 className="text-[28px] font-bold text-[#111] mb-2">
             Projects
           </h1>
           <div className="h-[2px] bg-black w-full" />

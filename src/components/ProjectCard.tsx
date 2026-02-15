@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ id, title, description, image, tags }: ProjectCardProps) {
-  const displayTags = tags || ['UI Design', 'Health Informatics', 'ML'];
+  const displayTags = tags || [];
 
   return (
     <Link to={`/project/${id}`} className="group block no-underline cursor-pointer">

@@ -15,7 +15,8 @@ export const projects = [
     technologies: ['PyTorch', 'MMPose', 'CoreML', 'ONNX', 'Diffusers', 'NumPy', 'SwiftUI', 'AVFoundation', 'Xcode', 'Accelerate'],
     link: 'https://github.com/Abradshaw1/Muybridge',
     image: getProjectImage('muyrbridge.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'muyrbridge.png'
+    customImage: 'muyrbridge.png',
+    tags: ['Sensing', 'Machine Learning', 'Mobile Computing']
   },
   {
     id: 'cohort-analysis-dashboard',
@@ -26,7 +27,8 @@ export const projects = [
     link: 'https://github.com/Abradshaw1/Cohort_Analysis_Dashboard',
     demoLink: 'https://abradshaw1.github.io/Cohort_Analysis_Dashboard/',
     image: getProjectImage('Cohort_Anlaysis.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'Cohort_Anlaysis.png'
+    customImage: 'Cohort_Anlaysis.png',
+    tags: ['UI Design', 'Health Informatics']
   },
   {
     id: 'bee-buzz-classification',
@@ -36,7 +38,8 @@ export const projects = [
     technologies: ['Quantization', 'Analog devices toolchain', 'MAX7800 featherboard', 'Pytorch', 'W&B/TensorBoard', 'ESC-50 dataset', 'Spectograms', 'Sparse attention', 'Layer pruning',],
     link: 'https://github.com/Abradshaw1/AS2.0_REPO',
     image: getProjectImage('buzzdetection.png', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
-    customImage: 'buzzdetection.png'
+    customImage: 'buzzdetection.png',
+    tags: ['Sensing', 'Machine Learning']
   },
   {
     id: 'flight-delay-prediction',
@@ -48,7 +51,8 @@ export const projects = [
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('flight_prediction.png', 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800'),
     customImage: null,
-    detailCustomImage: 'flight_prediction.png'
+    detailCustomImage: 'flight_prediction.png',
+    tags: ['Machine Learning']
   },
   {
     id: 'satellite-thermal-power',
@@ -60,7 +64,8 @@ export const projects = [
     image: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('esapower.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
     customImage: null,
-    detailCustomImage: 'esapower.png'
+    detailCustomImage: 'esapower.png',
+    tags: ['Machine Learning', 'Computing']
   },
   {
     id: 'multilayer-python',
@@ -70,7 +75,8 @@ export const projects = [
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: 'https://github.com/Abradshaw1/Multi-layered-Python-scripting',
     image: getProjectImage('multilanguage.jpg', 'https://i.imghippo.com/files/dKsI4998XY.png'),
-    customImage: 'multilanguage.jpg'
+    customImage: 'multilanguage.jpg',
+    tags: ['Computing']
   },
   {
     id: 'chicago-crime-prediction',
@@ -80,7 +86,8 @@ export const projects = [
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'NumPy', 'Matplotlib'],
     link: '#',
     image: getProjectImage('chicago crime.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'chicago crime.png'
+    customImage: 'chicago crime.png',
+    tags: ['Machine Learning', 'Computing']
   },
   {
     id: 'raynaud-research',
@@ -90,7 +97,8 @@ export const projects = [
     technologies: ['React Native', 'AWS Auto-scaling', 'JavaScript', 'PostgreSQL', 'RESTAPI', 'Xcode', 'Android studio', 'mHealth Applications',],
     link: 'https://github.com/Abradshaw1/HealthApp',
     image: getProjectImage('healthapp.png', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'healthapp.png'
+    customImage: 'healthapp.png',
+    tags: ['Wearables', 'Health Informatics', 'Machine Learning']
   },
   {
     id: 'health-audit-gpt',
@@ -100,7 +108,8 @@ export const projects = [
     technologies: ['Hugging Face Transformers (Flan-T5-Small, GPT-Neo, DistilGPT-2)', 'Medical QA datasets (MedQA, PubMed abstracts)', 'Python', 'PyTorch'],
     link: 'https://github.com/Abradshaw1/HealthAudit-GPT',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Machine Learning', 'Health Informatics']
   },
   {
     id: 'bayesian-alzheimers',
@@ -112,7 +121,8 @@ export const projects = [
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800',
     detailImage: getProjectImage('alzheimers.png', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800'),
     customImage: null,
-    detailCustomImage: 'alzheimers.png'
+    detailCustomImage: 'alzheimers.png',
+    tags: ['Machine Learning', 'Health Informatics']
   },
   {
     id: 'health-obesity-analysis',
@@ -122,7 +132,8 @@ export const projects = [
     technologies: ['R', 'Matplotlib', 'Plotly', 'Seaborn'],
     link: '#',
     image: getProjectImage('obesity.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'obesity.png'
+    customImage: 'obesity.png',
+    tags: ['Health Informatics', 'UI Design']
   },
   {
     id: 'mcmc-decryption',
@@ -132,7 +143,8 @@ export const projects = [
     technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
     link: 'https://github.com/Abradshaw1/decryption-Abradshaw1',
     image: getProjectImage('mcmc.png', 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'mcmc.png'
+    customImage: 'mcmc.png',
+    tags: ['Computing', 'Machine Learning']
   },
   {
     id: 'parallel-factorization',
@@ -142,7 +154,8 @@ export const projects = [
     technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Computing']
   },
   {
     id: 'mobile-game',
@@ -152,7 +165,8 @@ export const projects = [
     technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Mobile Computing']
   },
   {
     id: 'genai-ct',
@@ -162,7 +176,8 @@ export const projects = [
     technologies: ['Diffusion models (U-Net backbone, latent consistency)', 'DPPM, DDPM sampling', 'PyTorch', 'sparse attention', 'Python', 'DICOM preprocessing'],
     link: 'https://github.com/cmudig/GenAIxRad-Viewer',
     image: getProjectImage('genaict.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
-    customImage: 'genaict.png'
+    customImage: 'genaict.png',
+    tags: ['Machine Learning', 'Health Informatics']
   },
   {
     id: 'parsons-prompt-classification',
@@ -175,7 +190,8 @@ export const projects = [
     ],
     link: '/project/src/data/Parsons_Prompt_Classification_Write_up.pdf',
     image: getProjectImage('Parsons_RLHF.png', 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'Parsons_RLHF.png'
+    customImage: 'Parsons_RLHF.png',
+    tags: ['Machine Learning', 'Computing']
   },
   {
     id: 'college-scorecard',
@@ -185,7 +201,8 @@ export const projects = [
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: 'https://github.com/Abradshaw1/CollegeScoreCard',
     image: getProjectImage('scoreavrd.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'scoreavrd.png'
+    customImage: 'scoreavrd.png',
+    tags: ['UI Design', 'Computing']
   },
   {
     id: 'salary-prediction',
@@ -195,7 +212,8 @@ export const projects = [
     technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Python'],
     link: 'https://github.com/Abradshaw1/Software-engineer-salary-predction',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Machine Learning']
   },
   {
     id: 'accident-prediction',
@@ -205,7 +223,8 @@ export const projects = [
     technologies: ['Python', 'NumPy', 'Pandas'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Machine Learning']
   },
   {
     id: 'vacuum-agent',
@@ -215,6 +234,7 @@ export const projects = [
     technologies: ['Python', 'Scikit-learn'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800',
-    customImage: null
+    customImage: null,
+    tags: ['Machine Learning', 'Computing']
   }
 ]
