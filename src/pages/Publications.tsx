@@ -43,7 +43,8 @@ export default function Publications() {
       venue: 'IEEE International Conference on E-health Networking, Application & Services (IEEE Healthcom) 2025',
       image: getPublicationImage('custommHealthapp.png'),
       customImage: 'custommHealthapp.png',
-      showAllLinks: true
+      showAllLinks: true,
+      pdfLink: 'https://healthcom2025.ieee-healthcom.org/program/detailed-program'
     }
   ];
 
@@ -80,20 +81,26 @@ export default function Publications() {
     }
   ];
 
-  const PublicationItem = ({ authors, title, venue, image, showAllLinks, pdfLink, codeLink }: { 
-    authors: string; 
-    title: string; 
-    venue: string; 
+  const boldName = (text: string) => {
+    return text
+      .replace(/Aidan B\./g, '<strong>Aidan B.</strong>')
+      .replace(/Aidan Bradshaw/g, '<strong>Aidan Bradshaw</strong>');
+  };
+
+  const PublicationItem = ({ authors, title, venue, image, pdfLink, codeLink }: {
+    authors: string;
+    title: string;
+    venue: string;
     image: string | null;
-    showAllLinks: boolean;
+    showAllLinks?: boolean;
     pdfLink?: string;
     codeLink?: string;
   }) => (
     <div className="flex gap-6 py-6 border-b border-slate-200 last:border-b-0">
-      <div className="w-64 h-40 flex-shrink-0 bg-slate-100 rounded overflow-hidden flex items-center justify-center">
+      <div className="w-64 flex-shrink-0 bg-slate-100 rounded overflow-hidden flex items-center justify-center" style={{ aspectRatio: '4 / 3' }}>
         {image ? (
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt={title}
             className="max-w-full max-h-full object-contain"
           />
@@ -104,32 +111,26 @@ export default function Publications() {
         )}
       </div>
       <div className="flex-1">
-        <h3 className="text-lg font-medium text-black mb-2 leading-tight">
+        <h3 className="text-base font-medium text-[#111] mb-2 leading-tight">
           {title}
         </h3>
-        <p className="text-slate-600 text-sm mb-1">
-          <span dangerouslySetInnerHTML={{ __html: authors.replace(/Aidan B\./g, '<strong>Aidan B.</strong>') }} />
+        <p className="text-[#555] text-sm font-light mb-1">
+          <span dangerouslySetInnerHTML={{ __html: boldName(authors) }} />
         </p>
         <p className="text-[#111] text-sm font-medium italic">
           {venue}
         </p>
-        {(pdfLink || (showAllLinks && codeLink) || (showAllLinks && !codeLink)) && (
+        {(pdfLink || codeLink) && (
           <div className="flex gap-4 mt-3">
             {pdfLink && (
               <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
                 [PDF]
               </a>
             )}
-            {!pdfLink && showAllLinks && (
-              <span className="text-slate-400 text-sm">[PDF Coming Soon]</span>
-            )}
-            {showAllLinks && codeLink && (
+            {codeLink && (
               <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
                 [Code]
               </a>
-            )}
-            {showAllLinks && !codeLink && (
-              <span className="text-slate-400 text-sm">[Code Coming Soon]</span>
             )}
           </div>
         )}
@@ -141,17 +142,17 @@ export default function Publications() {
     <div className="min-h-screen bg-white pb-16">
       <div className="w-[75%] mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-light text-black mb-2">Publications</h1>
-          <div className="h-0.5 bg-[#111] w-full"></div>
+          <h1 className="text-[28px] font-bold text-[#111] mb-2">Publications</h1>
+          <div className="h-[2px] bg-black w-full"></div>
         </div>
         
         <div className="space-y-12">
           {/* Conference Papers */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2">
+            <h2 className="text-xl font-bold text-[#111] mb-2">
               Conference Papers
             </h2>
-            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
+            <div className="h-[2px] bg-black w-full mb-6"></div>
             <div className="space-y-0">
               {conferencePublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -161,10 +162,10 @@ export default function Publications() {
 
           {/* Journals */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2">
+            <h2 className="text-xl font-bold text-[#111] mb-2">
               Journals
             </h2>
-            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
+            <div className="h-[2px] bg-black w-full mb-6"></div>
             <div className="space-y-0">
               {journalPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
@@ -174,10 +175,10 @@ export default function Publications() {
 
           {/* Posters */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-2">
+            <h2 className="text-xl font-bold text-[#111] mb-2">
               Posters
             </h2>
-            <div className="h-0.5 bg-[#111] w-full mb-6"></div>
+            <div className="h-[2px] bg-black w-full mb-6"></div>
             <div className="space-y-0">
               {posterPublications.map((pub, index) => (
                 <PublicationItem key={index} {...pub} />
