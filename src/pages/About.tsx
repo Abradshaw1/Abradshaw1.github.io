@@ -94,7 +94,7 @@ export default function About() {
             <div className="space-y-4 text-[#555] font-light leading-relaxed text-base">
               <p>
                 I am an applied machine learning researcher and first-year PhD student
-                rotating in the{' '}
+                in the{' '}
                 <HighlightLink href="https://spice-lab.org/">
                   SPICE Lab
                 </HighlightLink>
