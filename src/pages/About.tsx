@@ -18,19 +18,19 @@ function HighlightLink({
 const handleCVDownload = async (e: React.MouseEvent) => {
   e.preventDefault();
   try {
-    const response = await fetch('/project-images/Aidan_Bradshaw_Resume_CV.pdf');
+    const response = await fetch('/project-images/Aidan_Bradshaw_CV.pdf');
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Aidan_Bradshaw_Resume_CV.pdf';
+    link.download = 'Aidan_Bradshaw_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   } catch (error) {
     console.error('Download failed:', error);
-    window.open('/project-images/Aidan_Bradshaw_Resume_CV.pdf', '_blank');
+    window.open('/project-images/Aidan_Bradshaw_CV.pdf', '_blank');
   }
 };
 

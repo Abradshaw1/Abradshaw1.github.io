@@ -1,5 +1,7 @@
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-gray-200 py-8">
       <div className="max-w-4xl mx-auto px-6">
@@ -7,7 +9,7 @@ export default function Footer() {
           <div className="text-left">
             <h3 className="text-lg font-medium text-slate-900 mb-2">Contact Me</h3>
             <p className="text-slate-600 text-sm mb-3">Feel free to reach out</p>
-            <a 
+            <a
               href="mailto:aidanbradshaw2025@u.northwestern.edu"
               className="text-[#111] hover:text-[#333] underline text-sm"
             >
@@ -16,7 +18,7 @@ export default function Footer() {
           </div>
           <div className="text-right">
             <p className="text-slate-600 text-sm">
-              © 2024 Aidan Bradshaw
+              © {currentYear} Aidan Bradshaw
             </p>
           </div>
         </div>
