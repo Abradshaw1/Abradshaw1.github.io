@@ -8,6 +8,17 @@ const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
 
 export const projects = [
   {
+    id: 'namecast',
+    title: 'Namecast',
+    description: 'A one-page tool that makes LLM name bias visible using structured OpenAI outputs.',
+    fullDescription: `Namecast is a one-page site I built for a graduate tech ethics course. Using Ruha Benjamin's New Jim Code as the framing, I made a compact, knowledge-dense site that lets anyone watch LLM bias play out on their own name and see the perception research tied to that name's origins and heritage. You type in a first name and the site casts a character from it, the way a casting director would, from the name alone. It makes two OpenAI API calls, a structured JSON call that commits the model to a specific imagined life and an image call that renders a flat illustrated portrait, so every visual choice is a legible model decision rather than diffusion soup. That output is labeled plainly as an assumption and placed beside a curated, cited corpus of resume callback audits and recent LLM bias studies, never the open web. A reflection section based on Benjamin's naming exercise lets you write your own response and save it as a PDF, and nothing you type is stored or sent anywhere. The tool does not try to fix the bias. It makes it visible, and I think that is the more honest intervention.`,
+    technologies: ['React', 'Vite', 'JavaScript', 'OpenAI API', 'Structured Outputs', 'gpt-image-1'],
+    link: '#',
+    image: getProjectImage('mockup_namecast.png', 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=1200&h=800'),
+    customImage: 'mockup_namecast.png',
+    tags: ['UI Design', 'Machine Learning', 'Computing']
+  },
+  {
     id: 'muybridge-gait-estimation',
     title: 'MuyBridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
     description: 'Real-time gait analysis using quantized 2.5D fusion on edge devices.',
