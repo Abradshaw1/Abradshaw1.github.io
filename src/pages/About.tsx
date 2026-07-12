@@ -15,25 +15,6 @@ function HighlightLink({
   );
 }
 
-const handleCVDownload = async (e: React.MouseEvent) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('/project-images/Aidan_Bradshaw_CV.pdf');
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Aidan_Bradshaw_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
-  } catch (error) {
-    console.error('Download failed:', error);
-    window.open('/project-images/Aidan_Bradshaw_CV.pdf', '_blank');
-  }
-};
-
 export default function About() {
   return (
     <div className="bg-white pb-16">
@@ -42,7 +23,7 @@ export default function About() {
           <div className="md:col-span-1 flex flex-col items-center gap-6 mt-2">
             <div className="w-full overflow-hidden rounded-lg bg-slate-200" style={{ aspectRatio: '5 / 4' }}>
               <img
-                src="project-images/Headshot1.jpg"
+                src="/project-images/Headshot1.jpg"
                 alt="Aidan Bradshaw"
                 className="w-full h-full object-cover"
               />
@@ -75,8 +56,8 @@ export default function About() {
                 EMAIL
               </a>
               <a
-                href="#"
-                onClick={handleCVDownload}
+                href="/project-images/Aidan_Bradshaw_CV.pdf"
+                download="Aidan_Bradshaw_CV.pdf"
                 className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
               >
                 <FileText className="w-4 h-4" />

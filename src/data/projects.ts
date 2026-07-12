@@ -1,10 +1,4 @@
-// Helper function to get project image path
-const getProjectImage = (imageName: string | null, fallbackUrl: string) => {
-  if (imageName) {
-    return `/project-images/${imageName}`;
-  }
-  return fallbackUrl;
-};
+const projectImage = (name: string) => `/project-images/${name}`;
 
 export const projects = [
   {
@@ -14,8 +8,8 @@ export const projects = [
     fullDescription: `Namecast is a one-page site I built for a graduate tech ethics course. Using Ruha Benjamin's New Jim Code as the framing, I made a compact, knowledge-dense site that lets anyone watch LLM bias play out on their own name and see the perception research tied to that name's origins and heritage. You type in a first name and the site casts a character from it, the way a casting director would, from the name alone. It makes two OpenAI API calls, a structured JSON call that commits the model to a specific imagined life and an image call that renders a flat illustrated portrait, so every visual choice is a legible model decision rather than diffusion soup. That output is labeled plainly as an assumption and placed beside a curated, cited corpus of resume callback audits and recent LLM bias studies, never the open web. A reflection section based on Benjamin's naming exercise lets you write your own response and save it as a PDF, and nothing you type is stored or sent anywhere. The tool does not try to fix the bias. It makes it visible, and I think that is the more honest intervention.`,
     technologies: ['React', 'Vite', 'JavaScript', 'OpenAI API', 'Structured Outputs', 'gpt-image-1'],
     link: '#',
-    image: getProjectImage('mockup_namecast.png', 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'mockup_namecast.png',
+    demoLink: 'https://abradshaw1.github.io/namecast/',
+    image: projectImage('mockup_namecast.png'),
     tags: ['UI Design', 'Machine Learning', 'Computing']
   },
   {
@@ -25,8 +19,7 @@ export const projects = [
     fullDescription: `At ETH Zurich’s Integrated Systems Laboratory, I developed MuyBridge, an edge-native pipeline for real-time gait analysis. The system fuses 2D keypoints with monocular depth and constructs a 2.5D latent axis to estimate the body’s center of mass. Using quantization, pruning, and Core ML export, I compressed a diffusion model of over a billion parameters to run on iPhone hardware at sub-300ms latency. The pipeline was evaluated with motion-capture data from Qualisys and supports applications ranging from sports biomechanics to Parkinson’s rehabilitation, enabling accurate, private, and scalable analysis outside the lab.`,
     technologies: ['PyTorch', 'MMPose', 'CoreML', 'ONNX', 'Diffusers', 'NumPy', 'SwiftUI', 'AVFoundation', 'Xcode', 'Accelerate'],
     link: 'https://github.com/Abradshaw1/Muybridge',
-    image: getProjectImage('muyrbridge.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'muyrbridge.png',
+    image: projectImage('muyrbridge.png'),
     tags: ['Sensing', 'Machine Learning', 'Mobile Computing']
   },
   {
@@ -37,8 +30,7 @@ export const projects = [
     technologies: ['D3.js', 'React', 'JavaScript', 'Vite.js', 'CSS'],
     link: 'https://github.com/Abradshaw1/Cohort_Analysis_Dashboard',
     demoLink: 'https://abradshaw1.github.io/Cohort_Analysis_Dashboard/',
-    image: getProjectImage('Cohort_dashbaord_website_mockup.png', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'Cohort_dashbaord_website_mockup.png',
+    image: projectImage('Cohort_dashbaord_website_mockup.png'),
     tags: ['UI Design', 'Health Informatics']
   },
   {
@@ -48,8 +40,7 @@ export const projects = [
     fullDescription: `During my time as a Visiting Researcher at the MIT Media Lab in the Responsive Environments group, I worked on building TinyML models for invasive and native bee species classification. Using field recordings collected in Patagonia, Argentina, I ported existing audio frameworks and designed custom residual architectures optimized for small memory footprints. Hyperparameter tuning and visualization in Weights & Biases guided improvements, while pruning and quantization enabled deployment on MAX7800-class microcontrollers. The result was a lightweight yet accurate real-time classifier for buzz/no-buzz detection, developed in collaboration with researchers from MIT, ETH Zurich, and Kioxia R&D.`,
     technologies: ['Quantization', 'Analog devices toolchain', 'MAX7800 featherboard', 'Pytorch', 'W&B/TensorBoard', 'ESC-50 dataset', 'Spectograms', 'Sparse attention', 'Layer pruning',],
     link: 'https://github.com/Abradshaw1/AS2.0_REPO',
-    image: getProjectImage('buzzdetection.png', 'https://images.unsplash.com/photo-1440985890253-d024718e8e44?q=80&w=1200&h=800&auto=format&fit=crop'),
-    customImage: 'buzzdetection.png',
+    image: projectImage('buzzdetection.png'),
     tags: ['Sensing', 'Machine Learning']
   },
   {
@@ -59,10 +50,7 @@ export const projects = [
     fullDescription: `During my master's at CMU, I won the Statistical Machine Learning flight prediction competition in the statistics department. Using an XGBoost model that achieved an AUC of 0.839, I built a delay prediction system using only pre-departure signals (schedule, route, weather, and turnaround features). Much of the performance gain came from careful feature engineering and incorporating external weather data to enhance predictive accuracy.`,
     technologies: ['Python', 'XGBoost', 'Feature Engineering', 'Airline On-Time Performance Data', 'Pandas', 'NumPy', 'Scikit-learn'],
     link: '#',
-    image: getProjectImage('flight_prediction_render_website.png', 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800'),
-    detailImage: getProjectImage('flight_prediction_render_website.png', 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'flight_prediction_render_website.png',
-    detailCustomImage: 'flight_prediction_render_website.png',
+    image: projectImage('flight_prediction_render_website.png'),
     tags: ['Machine Learning']
   },
   {
@@ -72,10 +60,7 @@ export const projects = [
     fullDescription: `I modeled spacecraft thermal power across 7,000+ orbits to inform energy-aware scheduling. An STL+ARIMA baseline captured seasonal structure, while a Time Series Regression model with exogenous telemetry (solar heating, eclipse duration, transmitter load) cut error further (MAPE 12.9% → 4.3%). The approach balances interpretability and accuracy, giving operators transparent levers for planning under changing orbital conditions.`,
     technologies: ['R', 'ARIMA/SARIMA', 'Time Series Regression', 'Space Telemetry Analysis', 'STL decomposition'],
     link: '#',
-    image: getProjectImage('esa_mars_analysis.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
-    detailImage: getProjectImage('esa_mars_analysis.png', 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'esa_mars_analysis.png',
-    detailCustomImage: 'esa_mars_analysis.png',
+    image: projectImage('esa_mars_analysis.png'),
     tags: ['Machine Learning', 'Computing']
   },
   {
@@ -85,8 +70,7 @@ export const projects = [
     fullDescription: `This project evaluated how different programming languages handle runtime, memory, and image-processing tasks. I designed a Python framework that called external routines in Prolog, Matlab, C, Haskell, and Java to perform rotation and manipulation of images. By benchmarking performance across languages, I highlighted trade-offs in speed, efficiency, and cross-language compatibility. The work underscores the value of language interoperability for applied computing.`,
     technologies: ['Python Scripting', 'Prolog', 'Matlab', 'C', 'Haskell', 'Java', 'Image Processing'],
     link: 'https://github.com/Abradshaw1/Multi-layered-Python-scripting',
-    image: getProjectImage('multilanguage.jpg', 'https://i.imghippo.com/files/dKsI4998XY.png'),
-    customImage: 'multilanguage.jpg',
+    image: projectImage('multilanguage.jpg'),
     tags: ['Computing']
   },
   {
@@ -96,8 +80,7 @@ export const projects = [
     fullDescription: `I developed a predictive framework for analyzing narcotics-related crime in Chicago. Using a Negative Binomial Generalized Linear Model, the system integrated spatial, temporal, and socioeconomic variables, including lagged crime counts and census data. Stepwise regression improved model interpretability and accuracy, revealing clear seasonal cycles and spatial clustering effects.`,
     technologies: ['Negative Binomial GLM', 'Stepwise Regression', 'Spatial Data Analysis', 'Python', 'NumPy', 'Matplotlib'],
     link: '#',
-    image: getProjectImage('chicago_crime_render.png', 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'chicago_crime_render.png',
+    image: projectImage('chicago_crime_render.png'),
     tags: ['Machine Learning', 'Computing']
   },
   {
@@ -107,8 +90,7 @@ export const projects = [
     fullDescription: `As a Human-Centered Computing Researcher in the Computer Architecture and Systems Laboratory at San Diego State University, I led the development of a cross-platform medical application for patients with Raynaud’s disease. The system integrated wearable health and physiological data into multi-modal machine learning models for symptom prediction, while a fine-tuned React Native speech-to-text engine supported doctor–patient interactions. On the backend, I created a full-stack framework with AWS autoscaling, PostgreSQL, and REST APIs to ensure reliable deployment across iOS and Android. This project was carried out in collaboration with the Chair of Computer Science at SDSU, Yale School of Medicine, and Rollins College (UK).`,
     technologies: ['React Native', 'AWS Auto-scaling', 'JavaScript', 'PostgreSQL', 'RESTAPI', 'Xcode', 'Android studio', 'mHealth Applications',],
     link: 'https://github.com/Abradshaw1/HealthApp',
-    image: getProjectImage('healthapp.png', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'healthapp.png',
+    image: projectImage('healthapp.png'),
     tags: ['Wearables', 'Health Informatics', 'Machine Learning']
   },
   {
@@ -118,8 +100,7 @@ export const projects = [
     fullDescription: `This project audited the reliability of small generative transformers in medical diagnostics. Using Flan-T5-Small, GPT-Neo, and DistilGPT-2, I tested model outputs on MedQA and PubMed datasets, applying red-teaming prompts in domains such as sepsis, cardiology, and radiology. PyTorch-based experiments combined error analysis with token-level attribution to uncover unsafe or biased generations. The study surfaced concrete risks of low-parameter models in clinical contexts and suggested mitigation strategies for safer deployment in healthcare.`,
     technologies: ['Hugging Face Transformers (Flan-T5-Small, GPT-Neo, DistilGPT-2)', 'Medical QA datasets (MedQA, PubMed abstracts)', 'Python', 'PyTorch'],
     link: 'https://github.com/Abradshaw1/HealthAudit-GPT',
-    image: getProjectImage('health_gpt_render.png', 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'health_gpt_render.png',
+    image: projectImage('health_gpt_render.png'),
     tags: ['Machine Learning', 'Health Informatics']
   },
   {
@@ -130,9 +111,7 @@ export const projects = [
     technologies: ['R', 'tidyverse', 'ggplot2', 'Stan', 'Bayesian Inference', 'Bootstrapping', 'Negative Binomial Modeling', 'Gene–Pathology Analysis'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800',
-    detailImage: getProjectImage('alzheimers.png', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=800'),
-    customImage: null,
-    detailCustomImage: 'alzheimers.png',
+    detailImage: projectImage('alzheimers.png'),
     tags: ['Machine Learning', 'Health Informatics']
   },
   {
@@ -142,8 +121,7 @@ export const projects = [
     fullDescription: `This project examined the relationship between global caloric intake trends and obesity prevalence. Drawing on cross-country health datasets, I applied statistical models in Python to study correlations between dietary supply and BMI-related mortality. Data visualization played a central role: with Matplotlib, Plotly, and Seaborn, I created dashboards and infographics that communicated disparities across regions and genders.`,
     technologies: ['R', 'Matplotlib', 'Plotly', 'Seaborn'],
     link: '#',
-    image: getProjectImage('obesity_render_website.png', 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'obesity_render_website.png',
+    image: projectImage('obesity_render_website.png'),
     tags: ['Health Informatics', 'UI Design']
   },
   {
@@ -153,8 +131,7 @@ export const projects = [
     fullDescription: `I built a Markov Chain Monte Carlo algorithm to decrypt substitution ciphers by leveraging statistical properties of natural language. The approach used bigram frequency models to score candidate decryptions, with NumPy optimizations to handle large search spaces efficiently. Profiling tools such as cProfile, line_profiler, and SnakeViz guided performance tuning. Experiments showed how iterations, text length, and scaling impact decryption accuracy, demonstrating the usefulness of probabilistic methods for classical cryptography problems.`,
     technologies: ['Python', 'NumPy', 'cProfile', 'Line Profiler', 'SnakeViz'],
     link: 'https://github.com/Abradshaw1/decryption-Abradshaw1',
-    image: getProjectImage('mcmc.png', 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'mcmc.png',
+    image: projectImage('mcmc.png'),
     tags: ['Computing', 'Machine Learning']
   },
   {
@@ -165,7 +142,6 @@ export const projects = [
     technologies: ['Python', 'Multiprocessing', 'Matplotlib', 'Sorting Algorithms'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
     tags: ['Computing']
   },
   {
@@ -175,8 +151,7 @@ export const projects = [
     fullDescription: `This project focused on designing a single-player clicker game with adaptive challenge. Implemented in C++, the system used a dynamic difficulty adjustment mechanism and an evolving in-game environment to keep players engaged. The work served both as an exercise in applying object-oriented programming concepts and as a proof of concept for lightweight mobile game mechanics.`,
     technologies: ['C++', 'Game Development', 'Mobile Development'],
     link: '#',
-    image: getProjectImage('C++_app_render.png', 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'C++_app_render.png',
+    image: projectImage('C++_app_render.png'),
     tags: ['Mobile Computing']
   },
   {
@@ -186,8 +161,7 @@ export const projects = [
     fullDescription: `As part of my master's research at Carnegie Mellon's Human–Computer Interaction Institute, in collaboration with Boston University EECS and UPMC, I investigated how generative AI could be operationalized in medical imaging. I developed a diffusion-based text-to-image pipeline to synthesize CT scans from clinical prompts, with cross-attention attribution and sparse attention to visualize how anatomy was influenced by text conditions. By profiling, pruning, and benchmarking models, the project balanced interpretability with runtime feasibility.`,
     technologies: ['Diffusion models (U-Net backbone, latent consistency)', 'DPPM, DDPM sampling', 'PyTorch', 'sparse attention', 'Python', 'DICOM preprocessing'],
     link: 'https://github.com/cmudig/GenAIxRad-Viewer',
-    image: getProjectImage('MIDL_attn_pipline_cropped.png', 'https://i.imghippo.com/files/wFHc9914FhQ.png'),
-    customImage: 'MIDL_attn_pipline_cropped.png',
+    image: projectImage('MIDL_attn_pipline_cropped.png'),
     tags: ['Machine Learning', 'Health Informatics']
   },
   {
@@ -199,9 +173,8 @@ export const projects = [
       'Python','Hugging Face','deBERTa-v3-small','LoRA/PEFT','RLHF',
       'FLAN-T5','SBERT','Legal-BERT','MPNet','UMAP','Streamlit','PyMuPDF'
     ],
-    link: '/project/src/data/Parsons_Prompt_Classification_Write_up.pdf',
-    image: getProjectImage('Parsons_RLHF.png', 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'Parsons_RLHF.png',
+    link: '#',
+    image: projectImage('Parsons_RLHF.png'),
     tags: ['Machine Learning', 'Computing']
   },
   {
@@ -211,8 +184,7 @@ export const projects = [
     fullDescription: `I implemented a Python–PostgreSQL pipeline to analyze U.S. higher education data via the Department of Education’s IPEDS API. Streamlit provided a lightweight interface for interactive dashboards, while Psycopg handled SQL queries for institutional performance metrics. Users could explore trends in admissions, graduation rates, and student debt through dynamic visualizations.`,
     technologies: ['Python', 'PostgreSQL', 'Streamlit', 'Psycopg', 'SQL'],
     link: 'https://github.com/Abradshaw1/CollegeScoreCard',
-    image: getProjectImage('scoreavrd.png', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800'),
-    customImage: 'scoreavrd.png',
+    image: projectImage('scoreavrd.png'),
     tags: ['UI Design', 'Computing']
   },
   {
@@ -223,7 +195,6 @@ export const projects = [
     technologies: ['Machine Learning', 'Recurrent Neural Networks(RNN)', 'Long-Short Term Memory(LSTM)', 'Python'],
     link: 'https://github.com/Abradshaw1/Software-engineer-salary-predction',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
     tags: ['Machine Learning']
   },
   {
@@ -234,7 +205,6 @@ export const projects = [
     technologies: ['Python', 'NumPy', 'Pandas'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
     tags: ['Machine Learning']
   },
   {
@@ -245,7 +215,6 @@ export const projects = [
     technologies: ['Python', 'Scikit-learn'],
     link: '#',
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&h=800',
-    customImage: null,
     tags: ['Machine Learning', 'Computing']
   }
 ]
