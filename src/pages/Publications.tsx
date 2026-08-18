@@ -1,86 +1,122 @@
+import { Paperclip, Github, Link, FileText, LucideIcon } from 'lucide-react';
+
+interface Publication {
+  authors: string;
+  title: string;
+  venue: string;
+  image?: string;
+  paperLink?: string;
+  codeLink?: string;
+  projectLink?: string;
+}
+
 export default function Publications() {
   const publicationImage = (name: string) => `/project-images/${name}`;
 
-  const conferencePublications = [
+  const conferencePublications: Publication[] = [
     {
-      authors: 'Aidan B., Ramaz T., Shangping R., and Ben S.',
-      title: 'A Tailored Health Application: Monitoring the Etiology of Raynaud\'s Disease',
-      venue: 'CSCSU 2024',
-      image: publicationImage('healthapp.png'),
-      pdfLink: 'https://scholarworks.calstate.edu/downloads/5138jn54n',
-      codeLink: 'https://github.com/Abradshaw1/HealthApp'
+      authors: 'Yiquan Li*, Aidan Bradshaw*, Jesse Gao, and Karan Ahuja (*equal contribution)',
+      title: 'Towards General-Purpose Inertial Foundation Models',
+      venue: 'ICLR 2027 (In Preparation)'
     },
     {
-      authors: 'Aidan B., Katelyn M., Arpit M., Weicheng D., Motahhare E., Kayhan B., and Adam P.',
+      authors: 'Aidan Bradshaw, Riku Arakawa, Xin Liu, and Karan Ahuja',
+      title: 'TransfHAR: Self-Supervised Wrist Representations for On-Demand Activity Recognition',
+      venue: 'ACM UIST 2026',
+      image: publicationImage('transfhar.jpg'),
+      paperLink: 'https://arxiv.org/abs/2608.15861',
+      projectLink: 'https://spice-lab.org/projects/TransfHAR/'
+    },
+    {
+      authors: 'Sawyer T. Jones, Aidan Bradshaw, Ramaz Tskhadadze, Ben Shen, and Shangping Ren',
+      title: 'A Customizable, Real-Time Mobile Health Application for Raynaud\'s Syndrome and Beyond',
+      venue: 'IEEE HealthCom 2025',
+      image: publicationImage('custommHealthapp.png'),
+      paperLink: 'https://ieeexplore.ieee.org/document/11343427'
+    },
+    {
+      authors: 'Katelyn Morrison, Arpit Mathur, Aidan Bradshaw, Tom Wartmann, Steven Lundi, Afrooz Zandifar, Weichang Dai, Kayhan Batmanghelich, Motahhare Eslami, and Adam Perer',
+      title: 'A Human-Centered Approach to Identifying Promises, Risks, and Challenges of Text-to-Image Generative AI in Radiology',
+      venue: 'ACM AIES 2025',
+      image: publicationImage('MedSynUI.png'),
+      paperLink: 'https://ojs.aaai.org/index.php/AIES/article/view/36672/38810'
+    },
+    {
+      authors: 'Aidan Bradshaw, Katelyn Morrison, Arpit Mathur, Weichang Dai, Motahhare Eslami, Kayhan Batmanghelich, and Adam Perer',
       title: 'Toward Interpretable 3D Diffusion in Radiology: Token-Wise Attribution for Text-to-CT Synthesis',
-      venue: 'Medical Imaging in Deep Learning Conference (MIDL) 2025',
+      venue: 'MIDL 2025 (Short Paper)',
       image: publicationImage('MIDL_attn_pipline_final_2.png'),
-      pdfLink: 'https://openreview.net/pdf?id=DTYFRzRPQn',
+      paperLink: 'https://openreview.net/pdf?id=DTYFRzRPQn',
       codeLink: 'https://github.com/cmudig/MedsynBackend'
     },
     {
-      authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
-      title: 'A Human-Centered Approach to Identifying Promises, Risks, & Challenges of Text-to-Image Generative AI in Radiology',
-      venue: 'Artificial Intelligence in Ethics and Society (AIES) 2025',
-      image: publicationImage('MedSynUI.png'),
-      pdfLink: 'https://arxiv.org/pdf/2507.16207'
-    },
-    {
-      authors: 'Sawyer J., Aidan B., Ramaz T., Ben S., Shangping R.',
-      title: 'A Customizable, Real-time Mobile Health Application for Raynaud\'s Syndrome and Beyond',
-      venue: 'IEEE International Conference on E-health Networking, Application & Services (IEEE Healthcom) 2025',
-      image: publicationImage('custommHealthapp.png'),
-      pdfLink: 'https://healthcom2025.ieee-healthcom.org/program/detailed-program'
+      authors: 'Aidan Bradshaw, Ramaz Tskhadadze, Shangping Ren, and Ben Shen',
+      title: 'A Tailored Health Application: Monitoring the Etiology of Raynaud\'s Disease',
+      venue: 'CSCSU 2024',
+      image: publicationImage('healthapp.png'),
+      paperLink: 'https://scholarworks.calstate.edu/concern/publications/np193j359',
+      codeLink: 'https://github.com/Abradshaw1/HealthApp'
     }
   ];
 
-  const journalPublications = [
+  const journalPublications: Publication[] = [
     {
-      authors: 'Patrick Chwalek, Marie Kuronaga, Marco Giordano, Aidan Bradshaw, Isamar Zhu, Marina Arbetman, and Joseph A. Paradiso.',
-      title: 'Autonomous Low-Power Distributed Acoustic System for Detecting Endangered Bombus Dahlbomii In Situ',
-      venue: '(Submitted), Nature 2025',
-      image: publicationImage('buzzdetection.png'),
-      codeLink: 'https://github.com/Abradshaw1/AS2.0_REPO'
-    },
-    {
-      authors: 'Aidan Bradshaw, Elif Basokur, Marco Giordano, Luca Benini and Christoph Lietner.',
-      title: 'Muybridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
-      venue: '(Submitted), Nature Sensors 2025',
+      authors: 'Aidan Bradshaw, Elif Basokur, Marco Giordano, Luca Benini, and Christoph Leitner',
+      title: 'MuyBridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
+      venue: 'IEEE Sensors Journal (Submitted)',
       image: publicationImage('muybridge_temp.png'),
       codeLink: 'https://github.com/Abradshaw1/Muybridge'
+    },
+    {
+      authors: 'Patrick Chwalek, Marie Kuronaga, Marco Giordano, Aidan Bradshaw, Isamar Zhu, Marina Arbetman, and Joseph A. Paradiso',
+      title: 'On-Device Deep Learning for Real-Time Acoustic Monitoring of Endangered Bombus Dahlbomii and Invasive Congeners',
+      venue: 'Scientific Reports 2026',
+      image: publicationImage('buzzdetection.png'),
+      paperLink: 'https://www.nature.com/articles/s41598-026-65371-1',
+      codeLink: 'https://github.com/Abradshaw1/AS2.0_REPO'
     }
   ];
 
-  const posterPublications = [
+  const posterPublications: Publication[] = [
     {
-      authors: 'Katelyn M., Arpit M., Aidan B., Tom W., Steven L., Afrooz Z., Weichang D., Kayhan B., Motahhare E., Adam P.',
+      authors: 'Katelyn Morrison, Arpit Mathur, Aidan Bradshaw, Tom Wartmann, Steven Lundi, Afrooz Zandifar, Weichang Dai, Kayhan Batmanghelich, Motahhare Eslami, and Adam Perer',
       title: 'Opportunities and Challenges in Designing Text-to-Image Generative AI for Medical Education, Training, and Practice',
-      venue: 'Pitt AI in Healthcare Research Symposium, 2024',
+      venue: 'Pitt AI in Healthcare Research Symposium 2024',
       image: publicationImage('pittaiposter.png')
     }
   ];
 
-  const boldName = (text: string) => {
-    return text
-      .replace(/Aidan B\./g, '<strong>Aidan B.</strong>')
-      .replace(/Aidan Bradshaw/g, '<strong>Aidan Bradshaw</strong>');
-  };
+  const boldName = (text: string) =>
+    text.replace(/Aidan Bradshaw/g, '<strong>Aidan Bradshaw</strong>');
 
-  const PublicationItem = ({ authors, title, venue, image, pdfLink, codeLink }: {
-    authors: string;
-    title: string;
-    venue: string;
-    image: string;
-    pdfLink?: string;
-    codeLink?: string;
+  const LinkChip = ({ href, icon: Icon, label }: {
+    href: string;
+    icon: LucideIcon;
+    label: string;
   }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 px-3 py-1 border border-[#111] rounded-md bg-white text-[#111] text-[13px] hover:bg-[#111] hover:text-white transition-all duration-300"
+    >
+      <Icon className="w-3.5 h-3.5" />
+      {label}
+    </a>
+  );
+
+  const PublicationItem = ({ authors, title, venue, image, paperLink, codeLink, projectLink }: Publication) => (
     <div className="flex gap-6 py-6 border-b border-slate-200 last:border-b-0">
       <div className="w-64 flex-shrink-0 bg-slate-100 rounded overflow-hidden flex items-center justify-center" style={{ aspectRatio: '4 / 3' }}>
-        <img
-          src={image}
-          alt={title}
-          className="max-w-full max-h-full object-contain"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="max-w-full max-h-full object-contain"
+          />
+        ) : (
+          <FileText className="w-8 h-8 text-slate-300" />
+        )}
       </div>
       <div className="flex-1">
         <h3 className="text-[18px] font-medium text-[#111] mb-1.5 leading-tight">
@@ -92,18 +128,11 @@ export default function Publications() {
         <p className="text-[#111] text-sm font-medium italic">
           {venue}
         </p>
-        {(pdfLink || codeLink) && (
-          <div className="flex gap-4 mt-2">
-            {pdfLink && (
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
-                [PDF]
-              </a>
-            )}
-            {codeLink && (
-              <a href={codeLink} target="_blank" rel="noopener noreferrer" className="text-[#111] hover:text-[#333] text-sm underline">
-                [Code]
-              </a>
-            )}
+        {(paperLink || codeLink || projectLink) && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {paperLink && <LinkChip href={paperLink} icon={Paperclip} label="Paper" />}
+            {projectLink && <LinkChip href={projectLink} icon={Link} label="Project Page" />}
+            {codeLink && <LinkChip href={codeLink} icon={Github} label="Code" />}
           </div>
         )}
       </div>
@@ -117,7 +146,7 @@ export default function Publications() {
           <h1 className="text-[28px] font-bold text-[#111] mb-2">Publications</h1>
           <div className="h-[2px] bg-black w-full"></div>
         </div>
-        
+
         <div className="space-y-12">
           <section>
             <h2 className="text-[22px] font-bold text-[#111] mb-2">
