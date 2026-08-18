@@ -15,11 +15,6 @@ export default function Publications() {
 
   const conferencePublications: Publication[] = [
     {
-      authors: 'Yiquan Li*, Aidan Bradshaw*, Jesse Gao, and Karan Ahuja (*equal contribution)',
-      title: 'Towards General-Purpose Inertial Foundation Models',
-      venue: 'ICLR 2027 (In Preparation)'
-    },
-    {
       authors: 'Aidan Bradshaw, Riku Arakawa, Xin Liu, and Karan Ahuja',
       title: 'TransfHAR: Self-Supervised Wrist Representations for On-Demand Activity Recognition',
       venue: 'ACM UIST 2026',
@@ -60,13 +55,6 @@ export default function Publications() {
   ];
 
   const journalPublications: Publication[] = [
-    {
-      authors: 'Aidan Bradshaw, Elif Basokur, Marco Giordano, Luca Benini, and Christoph Leitner',
-      title: 'MuyBridge: Quantized 2.5D Network Fusion for On-Device Gait Estimation',
-      venue: 'IEEE Sensors Journal (Submitted)',
-      image: publicationImage('muybridge_temp.png'),
-      codeLink: 'https://github.com/Abradshaw1/Muybridge'
-    },
     {
       authors: 'Patrick Chwalek, Marie Kuronaga, Marco Giordano, Aidan Bradshaw, Isamar Zhu, Marina Arbetman, and Joseph A. Paradiso',
       title: 'On-Device Deep Learning for Real-Time Acoustic Monitoring of Endangered Bombus Dahlbomii and Invasive Congeners',
