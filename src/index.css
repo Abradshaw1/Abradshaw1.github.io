@@ -5,6 +5,8 @@
 @layer base {
   :root {
     color-scheme: light;
+    --accent: #2f6fb0;
+    --accent-tint: rgba(47, 111, 176, 0.08);
   }
 
   body {

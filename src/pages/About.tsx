@@ -9,7 +9,7 @@ function HighlightLink({
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} className="text-[#2563eb] hover:text-[#1d4ed8] underline underline-offset-2">
+    <a href={href} className="text-[var(--accent)] no-underline border-b border-b-[rgba(47,111,176,0.35)] hover:border-b-[var(--accent)] focus-visible:border-b-[var(--accent)] transition-colors duration-150">
       {children}
     </a>
   );
@@ -34,7 +34,7 @@ export default function About() {
                 href="https://github.com/Abradshaw1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 h-[38px] rounded-md text-[0.85rem] text-[var(--accent)] bg-transparent border border-[rgba(47,111,176,0.4)] hover:bg-[var(--accent-tint)] hover:border-[var(--accent)] focus-visible:bg-[var(--accent-tint)] focus-visible:border-[var(--accent)] transition-colors duration-150"
               >
                 <Github className="w-4 h-4" />
                 GITHUB
@@ -43,14 +43,14 @@ export default function About() {
                 href="https://www.linkedin.com/in/aidanbradshaw1/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 h-[38px] rounded-md text-[0.85rem] text-[var(--accent)] bg-transparent border border-[rgba(47,111,176,0.4)] hover:bg-[var(--accent-tint)] hover:border-[var(--accent)] focus-visible:bg-[var(--accent-tint)] focus-visible:border-[var(--accent)] transition-colors duration-150"
               >
                 <Linkedin className="w-4 h-4" />
                 LINKEDIN
               </a>
               <a
                 href="mailto:aidanbradshaw2025@u.northwestern.edu"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 h-[38px] rounded-md text-[0.85rem] text-[var(--accent)] bg-transparent border border-[rgba(47,111,176,0.4)] hover:bg-[var(--accent-tint)] hover:border-[var(--accent)] focus-visible:bg-[var(--accent-tint)] focus-visible:border-[var(--accent)] transition-colors duration-150"
               >
                 <Mail className="w-4 h-4" />
                 EMAIL
@@ -58,7 +58,7 @@ export default function About() {
               <a
                 href="/project-images/Aidan_Bradshaw_CV.pdf"
                 download="Aidan_Bradshaw_CV.pdf"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#111] text-sm border-2 border-[#111] hover:bg-[#111] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 h-[38px] rounded-md text-[0.85rem] text-[var(--accent)] bg-transparent border border-[rgba(47,111,176,0.4)] hover:bg-[var(--accent-tint)] hover:border-[var(--accent)] focus-visible:bg-[var(--accent-tint)] focus-visible:border-[var(--accent)] transition-colors duration-150"
               >
                 <FileText className="w-4 h-4" />
                 CV
