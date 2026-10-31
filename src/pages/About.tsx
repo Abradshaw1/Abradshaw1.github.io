@@ -56,7 +56,7 @@ export default function About() {
                 EMAIL
               </a>
               <a
-                href="/project-images/Aidan_Bradshaw_CV.pdf?v=2026-09-02"
+                href="/project-images/Aidan_Bradshaw_CV.pdf?v=2026-10-31"
                 download="Aidan_Bradshaw_CV.pdf"
                 className="inline-flex items-center justify-center gap-2 h-[38px] rounded-md text-[0.85rem] text-[var(--accent)] bg-transparent border border-[rgba(47,111,176,0.4)] hover:bg-[var(--accent-tint)] hover:border-[var(--accent)] focus-visible:bg-[var(--accent-tint)] focus-visible:border-[var(--accent)] transition-colors duration-150"
               >
